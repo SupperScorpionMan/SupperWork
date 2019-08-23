@@ -1,0 +1,94 @@
+.head-xu{  
+    width: 100%;
+	height: 2.5rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+}
+.head-xu p.active{
+    color: #0cd4d3;
+    border-bottom: 0.02rem solid #0cd4d3;
+}
+.head-xu p{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 0.9rem;
+    color: #707070;
+}
+
+
+.content{
+    background-color: #ecebeb;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0.8rem 0.8rem 0 0.8rem;
+}
+.content-neirong{ 
+    width: 21.5rem;
+	height: 8rem;
+	background-color: #ffffff;
+    border-radius: 0.6rem;
+    padding: 0.8rem;
+}
+.dingdan-nub{
+    margin-bottom: 0.5rem;
+	width: 100%;
+	font-size: 0.9rem;
+    color: #707070;
+    display: flex;
+    justify-content:space-between; 
+}
+.text-nub{
+    font-size: 0.8rem;
+}
+.text-wen{
+    color: #ff4536;
+}
+.dingdan-zhan{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+}
+.product{
+    width: 30%;
+	height: 100%;
+	background-color: #9597a6;
+    border-radius: 0.3rem;
+}
+.brief-introduction{
+    width: 68%;
+    position: relative;
+}
+.brief-introduction>p{
+    display: flex;
+    align-items: center;
+    margin-top: 0.7rem;
+}
+.one-text{
+	font-size: 0.9rem;
+	color: #030303;
+}
+.two-text{
+	font-size: 0.9rem;
+	color: #707070;
+}
+.dingdan-zhan-text{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items:flex-end;
+    justify-content: space-between;
+}
+.text-nubmer{
+	font-size: 0.5rem;
+    color: #ff4536;
+}
+.text-mul{
+    font-size: 0.5rem;
+    color: #9597a6;
+}

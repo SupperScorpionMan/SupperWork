@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/order/dingDan.css">
+    <script src="../../js/vue.js"></script>
+    <title>异业联盟客户端</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- 头部信息 -->
+
+        <div class="head-xu" >
+            <p :class="indexNum == index ? 'active':''" v-for="(item,index) in testList" @click="btnOrder(index)">{{item}}</p>
+        </div>
+
+        <!-- 订单详情第一页 -->
+        <div class="content" v-for="(item,index) in arrlist">
+
+            <div class="content-neirong" >
+                <div class="dingdan-nub">
+                    <p>订单号:<span class="text-nub">{{item.title}}</span></p>
+                    <p class="text-wen">{{item.status}}</p>
+                </div>
+                <div class="dingdan-zhan">
+                    <div class="product"></div>
+                    <div class="brief-introduction">
+                        <p class="one-text">{{item.name}}</p>
+                        <p class="two-text">{{item.titleTest}}</p>
+                        <div class="dingdan-zhan-text">
+                            <span class="text-nubmer">￥{{item.pirce}}</span>
+                            <span class="text-mul">×{{item.numders}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'.app',
+        data:{
+            testList:["全部","待收款","待发货","已发货"],
+            arrlist:[],
+            shopAll:[
+                {id:1,title:'1233455324568456',status:'待发货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'},
+                {id:2,title:'13211311',status:'待收货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'5'},
+                {id:3,title:'55858585',status:'待付款',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'},
+                {id:4,title:'57578555757557',status:'待发货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'9'},
+                {id:5,title:'7575757575755',status:'待发货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'}
+            ],
+            shopHuo:[
+                {id:1,title:'1233455324568456',status:'待发13货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'},
+                {id:2,title:'13211311',status:'587',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'5'},
+                {id:3,title:'55858585',status:'57',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'},
+                {id:4,title:'57578555757557',status:'待发57货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'9'},
+                {id:5,title:'7575757575755',status:'待57发货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2'}
+            ],
+            indexNum:0
+        },
+        created(){
+
+        },
+        methods:{
+            btnOrder(index){
+                this.indexNum=index
+                if(index==0){
+                        this.arrlist=this.shopAll
+                }else if(index==1){
+                    this.arrlist=this.shopHuo
+                }
+            }
+        }
+    })
+</script>
+</html>
