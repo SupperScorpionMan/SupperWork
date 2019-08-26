@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../css/order/dingDanpending.css">
     <link rel="stylesheet" href="../../css/order/orderDetails.css">
     <script src="../../js/vue.js"></script>
+    <!-- <script src="../../js/clipboard.js-master/dist/clipboard.min.js"></script> -->
     <title>已发货</title>
     <style>
         *{
@@ -35,9 +36,7 @@
                                         <p>[广州市]广州市海珠区的张伟[15321546214]正在派件</p>
                                         <p class="time">2019.08.22 12:23:44</p>
                                 </div>
-                                <div class="iconImg">
-                                        1
-                                </div>
+                                <div class="iconImg">1</div>
                         </div>
                     </div>
 
@@ -74,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="fontSize" >订单编号：11313</p>
+                <p class="fontSize">订单编号：{{age}}&nbsp;&nbsp;<button class="copy" @click="copyShaneUrl">复制</button></p>
                 <p class="fontSize" >下单时间：1321313</p>
                 <p class="fontSize" >配送方式：宅急送</p>
                 <p class="fontSize" >支付方式：货到付款</p>
@@ -111,15 +110,26 @@
             ],
             indexNum:0,
             wuliu:true,
+            age:'5466767789'  
         },
         created(){
 
         },
+        
+
         methods:{
             btnOrder(index){
                 this.indexNum=index
                 
-            }
+            },
+            copyShaneUrl(){
+            var _input = document.createElement("input");
+            _input.value = this.age;
+            document.body.appendChild(_input);
+            _input.select();
+            document.execCommand("Copy");
+            document.body.removeChild(_input);
+        },
         }
     })
 </script>
