@@ -1,4 +1,5 @@
-.head-xu{  
+
+.head-xu{
     width: 100%;
 	height: 2.5rem;
     background-color: #ffffff;
@@ -6,8 +7,8 @@
     justify-content: space-around;
 }
 .head-xu p.active{
-    color: #0cd4d3;
-    border-bottom: 0.02rem solid #0cd4d3;
+    color: #0090fa;
+    border-bottom: 0.02rem solid #0090fa;
 }
 .head-xu p{
     display: flex;
@@ -22,24 +23,23 @@
     justify-content: center;
     flex-flow: row wrap;
     box-sizing: border-box;
-    padding:0.8rem 0.3rem 0rem 0.3rem;
+     padding-bottom:1rem;
 }
-.content-neirong{ 
+.content-neirong{
     width: 92%;
 	background-color: #ffffff;
-    border-radius: 0.6rem;
-    padding: 0.5rem 0.8rem;
-    box-sizing: border-box;
-    margin-top: 1rem;
+    border-radius: 0.6rem; 
+    padding:0.5rem 0.8rem;
+    box-sizing: border-box;   
 }
 .dingdan-nub{
-    width: 100%;
-    height: 2.5rem;
+	width: 100%;
+	height: 2.5rem;
 	font-size: 0.9rem;
     color: #707070;
     display: flex;
     justify-content:space-between; 
-    align-items: center;
+    align-items: center; 
 }
 .text-nub{
     font-size: 0.8rem;
@@ -72,53 +72,50 @@
     height: 1.6rem;
 }
 .one-text{
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-    letter-spacing: 0rem;
+	font-size: 0.9rem;
+	line-height: 1.4rem;
+	letter-spacing: 0rem;
 	color: #030303;
 }
 .two-text{
-    line-height: 1.4rem;
-    letter-spacing: 0rem;
 	font-size: 0.9rem;
+	line-height: 1.4rem;
+	letter-spacing: 0rem;
 	color: #707070;
 }
 .dingdan-zhan-text{
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
+
 .text-nubmer{
 	font-size: 0.5rem;
-    color: #ff4536
+    color: #ff4536;
 }
 .text-mul{
     font-size: 0.5rem;
     color: #9597a6;
+    
+
 }
 
-.dingDanNull{
-    width: 100%;
-    height: 43.5rem;
-    background: #ecebeb;
+
+.footer-xu{
+    width: 23.4rem;
+	height: 2.8rem;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer-xu p{
+    font-size: 0.9rem;
     color: #707070;
 }
-.NullLcon{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 8rem;
-}
-.NullLconWords{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
-}
-
 .submsBtn{
     height: 2rem;
     margin-top: 0.2rem;
@@ -136,7 +133,7 @@
 .userImg{
     width: 1rem;
     height: 1rem;
-    background: #0cd4d3;
+    background: red;
     border-radius: 50%;
     margin-right: 0.2rem;
 }
@@ -149,8 +146,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0.05rem solid #0cd4d3;
+    border: 0.05rem solid #0090fa;
     border-radius: 0.9rem;
     font-size: 0.9rem;
-    color: #0cd4d3;
+    color: #0090fa;
 }
