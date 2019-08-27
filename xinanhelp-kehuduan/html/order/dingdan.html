@@ -49,6 +49,8 @@
             </div>
         </div>
 
+
+        <!-- 暂无订单信息页面代码 -->
         <div class="dingDanNull" v-else>
             <div class="NullLcon">￥</div>
                 <p class="NullLconWords">您暂时没有订单哦！</p>
@@ -62,7 +64,7 @@
     var app = new Vue({
         el:'.app',
         data:{
-            testList:["全部","待收款","待发货","已发货"],
+            testList:["全部","待收款","待发货","已发货","已完成","退款/售后"],
             arrlist:[],
             shopAll:[
                 {id:1,title:'1233455324568456',status:'待发货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2',img:'',userName:'商品信息'},

@@ -15,14 +15,21 @@
 </head>
 <body>
     <div class="app">
-        
+        <div class='cardlist' v-for="i in item" :key='index' :class='obj[i.bank]'></div>
+        <a v-bind:href="url"></a>
     </div>
 </body>
 <script>
     var app = new Vue({
         el:'.app',
         data:{
-
+            item:[ 
+                {bank:'工商银行'},
+                {bank:'农业银行'}],
+                obj:{
+                    '工商银行':'redtype',
+                    '农业银行':'greentype'
+                    }
         },
         methods:{
 

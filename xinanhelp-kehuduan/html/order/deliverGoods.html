@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/order/dingDanpending.css">
-    <link rel="stylesheet" href="../../css/order/orderDetails.css">
+    <link rel="stylesheet" href="../../css/order/deliverGoods.css">
     <script src="../../js/vue.js"></script>
-    <title>订单详情--已发货</title>
+    <title>发货</title>
     <style>
         *{
             margin: 0;
@@ -18,13 +18,15 @@
 <body>
     <div class="app">
          
-        <div class="headerTitle">
-            已发货
-            <div class="boxthite"></div>
-        </div>
+        <div class="headerTitle">发货</div>
         
 
         <div class="content" >
+
+            <div class="searchDiv">
+                <input type="text" placeholder="配送查询" class="searchInput"></input>
+            </div>
+
             <div class="logisticsTest">
                 <div class="logisticsTestcar">
                     <span>12</span>
@@ -72,27 +74,8 @@
                         </div>
                     </div>
                 </div>
-                <p class="fontSize">订单编号：{{age}}&nbsp;&nbsp;<span class="copy" @click="copyShaneUrl">复制</span></p>
+                <p class="fontSize">订单编号：{{age}}&nbsp;&nbsp;<button class="copy" @click="copyShaneUrl">复制</button></p>
                 <p class="fontSize" >下单时间：1321313</p>
-                <p class="fontSize" >配送方式：宅急送</p>
-                <p class="fontSize" >支付方式：货到付款</p>
-                <p class="fontSize" >支付时间：2019.08.22 12:25:32</p>
-            </div>
-
-            <div class="allPirce">
-                <div class="listFlex">
-                    <p>商品总额</p>
-                    <p>￥1233.00</p>
-                </div>
-                <div class="listFlex">
-                        <p>运费</p>
-                        <p>￥0.00</p>
-                    </div>
-                    <div class="lineheight"></div>
-                    <div class="listFlex">
-                            <p>实付款</p>
-                            <p class="colorRed">￥3542.00</p>
-                        </div>
             </div>
 
         </div>
