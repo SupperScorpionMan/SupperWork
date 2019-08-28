@@ -1,171 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/me/mymored.css">
-    <script src="../js/vue.js"></script>
+    <script src="../../js/vue.js"></script>
     <title>异业联盟客户端</title>
     <style>
         *{
             margin: 0;
         }
-        .headGeren{
-            width: 100%;
-            height: 12rem;
-            background-color: #0cd4d3; 
-            display: flex;
-            justify-content: center;
-            position: relative;
+        .app{
+            background-color: #ecebeb;
         }
-        .gerenXinXi{
-            width: 5rem;
-            height: 5rem;
-            border-radius: 2.5rem;
-            margin-top: 2rem;
-            background-color: #aef4e7;
-        }
-        .gerenNub{
-            position: absolute;
-            bottom: 3rem;
-        }
-        .headBox{
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 2rem;
-            background-color: #cef25c;
-            border-radius: 0.5rem 0.5rem 0 0;
-        }
-
-
-.myContent{
-    background-color: #ecebeb;
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    box-sizing: border-box;
-    padding-top:1rem;    
-}
-.MyContentInformation{
-    width: 92%;
-    padding: 1rem 0.8rem;
-    box-sizing: border-box;
-    background: #fff;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-
-}
-.myInformation{
-    margin-top:0.2rem; 
-    display: flex;
-    justify-content: space-between;  
-}
-.myChoice{
-    margin-top:0.2rem; 
-    display: flex;
-    justify-content: space-around;
-}
-.myInformation>span{
-    font-size: 0.8rem;
-    width: 30%;
-}
-.myInformation .flexbuju{
-    font-size: 0.9rem;
-    display: flex;
-    justify-content: space-between;
-}
-.myInformation .flexbuju p{
-    margin-top: 0.2rem;
-}
-.time{
-    font-size: 0.7rem;
-    color: #707070
-}
-.ChoiceTitle{
-    display: flex;
-}
-.myChoice p{
-    font-size: 0.8rem;
-    color: #707070;
-}
-.Choice{
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid #707070;
-
-}
-
-
-
-.myContentInvoice{
-    width: 92%;
-    padding: 1rem 0.8rem;
-    box-sizing: border-box;
-    background: #fff;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-.myInvoice{
-    margin-top:0.2rem; 
-    display: flex;
-    justify-content: space-between; 
-}
-.myContentInvoice>span{
-    font-size: 0.8rem;
-    width: 30%;
-}
-.myTicket{
-    margin-top:0.2rem; 
-    display: flex;
-    justify-content: space-around;
-}
-.Ticket{
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid #707070;
-}
-.myTicket p{
-    font-size: 0.8rem;
-    color: #707070;
-}
-
-
-
-.myContentHelp{
-    width: 92%;
-    padding: 2.5rem 0.8rem;
-    box-sizing: border-box;
-    background: #fff;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-.myHelp{
-    margin-top:0.2rem; 
-    display: flex;
-    justify-content: space-around;
-}
-.Help{
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid #707070;
-}
-.myHelp p{
-    font-size: 0.8rem;
-    color: #707070;
-}
     </style>
 </head>
-<body>
-    <div class="app">
+<body style="height: 100%;">
+    <div class="app" style="height: 100%;">
  
         <!-- app头部栏 -->
         <div class="headGeren">
             <div class="gerenXinXi">
             </div>
             <p class="gerenNub">156****4758</p>
-            <div class="headBox"></div>
         </div>
 
         <div class="myContent">
@@ -181,13 +39,25 @@
                 </div>
                 <div class="myChoice">
                     <div class="ChoiceTitle">
-                        <div class="Choice"></div>
+                        <div class="Choice">￥</div>
                         <p>待付款</p>
                     </div>
-                    <p>待发货</p>
-                    <p>已发货</p>
-                    <p>已完成</p>
-                    <p>退货/售后</p>       
+                    <div class="ChoiceTitle">
+                        <div class="Choice">￥</div>
+                        <p>待发货</p>
+                    </div>
+                    <div class="ChoiceTitle">
+                        <div class="Choice">￥</div>
+                        <p>已发货</p>
+                    </div>
+                    <div class="ChoiceTitle">
+                        <div class="Choice">￥</div>
+                        <p>已完成</p>
+                    </div>
+                    <div class="ChoiceTitle">
+                        <div class="Choice">￥</div>
+                        <p>退货/售后</p>
+                    </div>       
                 </div>
             </div>
 
@@ -199,33 +69,46 @@
 
                 <div class="myTicket">
                     <div class="TicketTitle">
-                        <div class="Ticket"></div>
+                        <div class="Ticket">￥</div>
                         <p>发票抬头</p>
                     </div>
-                    <p>申请发票</p>
-                    <p>已开发票</p>
-                    <p>开票须知</p>
+                    <div class="TicketTitle">
+                            <div class="Ticket">￥</div>
+                        <p>申请发票</p>
+                    </div>
+                    <div class="TicketTitle">
+                        <div class="Ticket">￥</div>
+                        <p>已开发票</p>
+                    </div>
+                    <div class="TicketTitle">
+                        <div class="Ticket">￥</div>
+                        <p>开票须知</p>
+                    </div>
                 </div>
             </div>
 
             <div class="myContentHelp">
                     <div class="myHelp">
                         <div class="HelpTitle">
-                            <div class="Help"></div>
+                            <div class="Help">￥</div>
                             <p>发票抬头</p>
                         </div>
                         <div class="HelpTitle">
-                            <div class="Help"></div>
+                            <div class="Help">￥</div>
                             <p>申请发票</p>
                         </div>
                         <div class="HelpTitle">
-                            <div class="Help"></div>
+                            <div class="Help">￥</div>
                             <p>已开发票</p>
                         </div>   
                         <div class="HelpTitle">
-                            <div class="Help"></div>    
+                            <div class="Help">￥</div>    
                             <p>开票须知</p>
                         </div>
+                        <div class="HelpTitle">
+                                <div class="Help">￥</div>    
+                                <p>开票须知</p>
+                            </div>
                 </div>
             </div>
 

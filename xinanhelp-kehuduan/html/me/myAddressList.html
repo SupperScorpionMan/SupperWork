@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/vue.js"></script>
+    <title>地址列表</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .listHead{
+            height: 4rem;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: #0cd4d3;
+        }
+        .listContent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .listContent>div{
+            margin-top: 0.5rem;
+        }
+        .nubList{
+            width: 80%;
+            border-right: 0.01rem solid #dddddd;
+        }
+        .listName{
+            width: 65%;
+            font-size: 0.8rem;
+            margin: 0.3rem 0.3rem 0.3rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .listPhone{
+            width: 42%;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .Silent{
+            width: 15%;
+            font-size: 0.01rem;
+            text-align: center;
+            background-color: #f96165;
+            color: #ffffff;
+            border-radius: 0.2rem;
+        }
+        .listWhere{
+            font-size: 0.5rem;
+            margin: 0.3rem 0.3rem 0.3rem 1.5rem;
+            color: #707070;
+        }
+        .editList{
+            font-size: 0.8rem;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- 头部信息块 -->
+        <div class="listHead">
+            <p>地址管理</p>
+        </div>
+
+        <!-- 内容信息块 -->
+        <div class="listContent">
+            <div class="nubList">
+                <p class="listName">郭华萍<span class="listPhone">15255558932</span><span class="Silent">默认</span></p>
+                <p class="listWhere">江西赣州市瑞金市象湖镇沙子岗象湖镇沙子岗住70</p>
+            </div>
+            <div class="editList">
+                <p>编辑</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'.app',
+        data:{
+            
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>

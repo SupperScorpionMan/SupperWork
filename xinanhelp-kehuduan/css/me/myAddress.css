@@ -1,0 +1,180 @@
+/* 头部信息Css */
+.Addresshead{
+    width: 100%;
+    height: 4rem;
+    text-align: center;
+    color: white;
+    background-color: #0cd4d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Addresshead>p{
+    font-size: 1rem;
+}
+
+/* 个人信息Css */
+.AddressPersonal{
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+}
+.AddressPersonal>div{
+    font-size: 0.8rem;
+}
+.PersonalAddress{
+    height: 8rem;
+}
+.PersonalName {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    border-bottom: 0.08rem solid #EBEBEB;
+}
+.PersonalName span{
+    width: 20%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content:center;
+    align-items:center ;
+}
+.PersonalName input{
+    width: 80%;
+    border: none;
+    outline: none;
+    text-indent: 2rem;
+}
+
+
+.PersonalTelephone {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    border-bottom: 0.08rem solid #EBEBEB;
+}
+.PersonalTelephone span{
+    width: 20%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content:center;
+    align-items:center ;
+}
+.PersonalTelephone input{
+    width: 80%;
+    border: none;
+    outline: none;
+    text-indent: 2rem;
+}
+
+.PersonalRegion {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    border-bottom: 0.08rem solid #EBEBEB;
+}
+.PersonalRegion span{
+    width: 20%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content:center;
+    align-items:center ;
+}
+.PersonalRegion input{
+    width: 80%;
+    border: none;
+    outline: none;
+    text-indent: 2rem;
+}
+
+
+
+.MiddleBox{
+    height: 1rem;
+    background-color: #f0f1f5;
+}
+
+
+.PersonalAddress{
+    display: flex;
+    justify-content: space-between;
+}
+.PersonalAddress span{
+    width: 30%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content:center;
+}
+.PersonalAddress textarea{
+    width: 70%;
+    height: 4rem;
+    border: none;
+    outline: none;
+}
+
+/* 默认地址Css */
+.AddressDefault{
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0.8rem;
+}
+.AddressDefault .DeInput{
+   width: 70%;
+    height: 2rem;
+    border: none;
+    outline: none;
+    /* text-align: right;   */
+}
+.DefaultLabel{
+    display: flex;
+    justify-content: center;
+}
+.DefaultLabel{
+    font-size: 0.8rem;
+    border-bottom: 0.08rem solid #EBEBEB;
+}
+.DefaultSet{
+    font-size: 0.8rem;
+    border-bottom: 0.08rem solid #EBEBEB;
+}
+.DefaultLabel span{
+    width: 30%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content:center;
+    align-items: center;
+}
+.DefaultSet{
+    display: flex;
+    justify-content: center;
+}
+.DefaultSet span{
+    width: 45%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.DefaultPreservation{
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.PreservationBtn{
+    width: 95%;
+    height: 3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #0cd4d3;
+    outline: none;
+}
+.DeInput input-placeholder{
+    color: #dddddd;
+}
+
+
