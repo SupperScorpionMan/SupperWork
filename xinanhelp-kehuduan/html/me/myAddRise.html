@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/me/myAddRise.css">
+    <link rel="stylesheet" href="../../css/element.css">
+    <script src="../../js/vue.js"></script>
+    <title>添加抬头</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        
+        /* 头部信息Css */
+.AddRiseHead{
+    width: 100%;
+    height: 4rem;
+    text-align: center;
+    color: white;
+    background-color: #0cd4d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.AddRiseHead>p{
+    font-size: 1rem;
+}
+
+
+/* 个人信息Css */
+.AddressPersonal{
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+}
+.AddressPersonal>div{
+    font-size: 0.8rem;
+}
+.PersonalAddress{
+    height: 8rem;
+}
+.PersonalName {
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    border-bottom: 0.08rem solid #EBEBEB;
+}
+.PersonalName div{
+    width: 40%;
+}
+.radios{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+.PersonalName p{
+    color: #707070;
+}
+.PersonalName span{
+    width: 100%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content:center;
+    align-items:center ;
+}
+.PersonalName input{
+    width: 70%;
+    border: none;
+    outline: none;
+    text-indent: 2rem;
+}
+input::-webkit-input-placeholder{
+    color: #707070;
+    text-align: right; 
+}
+
+
+.PersonalTelephone {
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    border-bottom: 0.08rem solid #EBEBEB;
+}
+.PersonalTelephone span{
+    width: 30%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content:center;
+    align-items:center ;
+}
+.PersonalTelephone input{
+    width: 70%;
+    border: none;
+    outline: none;
+    text-indent: 2rem;
+}
+
+.PersonalRegion {
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    border-bottom: 0.08rem solid #EBEBEB;
+}
+.PersonalRegion span{
+    width: 30%;
+    display: flex;
+    font-size: 0.9rem;
+    justify-content:center;
+    align-items:center ;
+}
+.PersonalRegion input{
+    width: 70%;
+    border: none;
+    outline: none;
+    text-indent: 2rem;
+}
+
+
+/* 按钮信息 */
+.DefaultPreservation{
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PreservationBtn{
+    color: white;
+    width: 95%;
+    height: 3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #0cd4d3;
+    outline: none;
+}
+
+#Namebtn{
+    width: 1rem;
+    height: 1rem;
+}
+
+    </style>
+</head>
+<body style="height: 100%;">
+    <div class="app" style="height: 100%;">
+        <div class="myAddressContent">
+
+            <!-- 头部信息 -->
+            <div class="AddRiseHead">
+                <p>添加抬头</p>
+            </div>
+            
+            <!-- 个人信息块 -->
+            <!-- <div class="AddressPersonal">
+                
+                <div class="PersonalName">
+                    <span>抬头类型</span>
+                </div>
+                <div class="PersonalTelephone">
+                        
+                        <span><p class="redStar" style="color: #f96165;">*</p>抬头名称</span>
+                        <input type="text" placeholder="收货人手机号" class="Input">
+                </div>
+
+                <div class="PersonalRegion">
+                
+                        <span><p class="redStar" style="color: #f96165;">*</p>公司税号</span>
+                        <input type="text" placeholder="选择省 / 市 / 区" class="Input">
+                </div>
+
+                <div class="PersonalName">
+                        <span>抬头类型</span>
+                        <input type="text" placeholder="收货人姓名" class="Input">
+                    </div>
+                    <div class="PersonalTelephone">
+                            
+                            <span><p class="redStar" style="color: #f96165;">*</p>抬头名称</span>
+                            <input type="text" placeholder="收货人手机号" class="Input">
+                    </div>
+    
+                    <div class="PersonalRegion">
+                    
+                            <span><p class="redStar" style="color: #f96165;">*</p>公司税号</span>
+                            <input type="text" placeholder="选择省 / 市 / 区" class="Input">
+                    </div>
+
+                    <div class="PersonalName">
+                            <span>抬头类型</span>
+                            <input type="text" placeholder="收货人姓名" class="Input">
+                        </div>
+                        
+            </div> -->
+
+            
+            <!-- 个人信息块 -->
+            <div class="AddressPersonal">
+                
+                    <div class="PersonalName" v-for="(item,index) in optiontest">
+                        <div class="NameSpan">
+                            <span>抬头类型</span>
+                        </div>
+                        <div class="radios"><input type="radio" name="a" :value="item.val" :checked='item.checked'>{{item.name}}</div>
+                    </div>
+                    <div class="item.Personal">
+                        <div class="PersonalTelephone">
+                                
+                                <span><p class="redStar" style="color: #f96165;">*</p>抬头名称</span>
+                                <input type="text" placeholder="收货人手机号" class="Input">
+                        </div>
+        
+                        <div class="PersonalRegion">
+                        
+                                <span><p class="redStar" style="color: #f96165;">*</p>公司税号</span>
+                                <input type="text" placeholder="选择省 / 市 / 区" class="Input">
+                        </div>
+                    </div>
+                            
+                </div>
+
+ 
+                <!-- 按钮块 -->
+                <div class="DefaultPreservation">
+                    <button class="PreservationBtn">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el:'.app',
+        data:{
+            optiontest:[
+                {name:'单位',val:'0',checked:true},
+                {name:'个人/非单位',val:'1',checked:false},
+            ]
+        },
+        methods:{
+            
+        }
+    })
+</script>
+</html>
