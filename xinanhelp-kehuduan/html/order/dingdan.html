@@ -47,7 +47,7 @@
                     <div class="userName">
                         <div class="userImg">{{item.img}}</div><span>{{item.userName}}</span>
                         </div>
-                        <div class="userBtn">{{item.status}}</div>
+                        <button class="userBtn">{{item.buyStatus}}</button>
                 </div>
             </div>
         </div>
@@ -70,10 +70,10 @@
             testList:["全部","待收款","待发货","已发货","已完成","退款/售后"],
             arrlist:[],
             shopAll:[
-                {id:1,title:'1233455324568456',status:'待发货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2',img:'',userName:'商品信息'},
-                {id:2,title:'13211311',status:'待收货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'5',img:'',userName:'商品'},
-                {id:3,title:'55858585',status:'待付款',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2',img:'',userName:'哦！'},
-                {id:4,title:'57578555757557',status:'已发货',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'9'}
+                {id:1,title:'1233455324568456',status:'待发货',buyStatus:'付款',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2',img:'',userName:'商品信息'},
+                {id:2,title:'13211311',status:'待收货',buyStatus:'付款',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'5',img:'',userName:'商品'},
+                {id:3,title:'55858585',status:'已完成',buyStatus:'再来一单',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2',img:'',userName:'哦！'},
+                {id:4,title:'57578555757557',status:'查看物流',buyStatus:'查看物流',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'9'}
             ],
             indexNum:0
         },
@@ -81,8 +81,8 @@
 
         },
         methods:{
-            btnOrder(index){
-                this.indexNum=index
+            btnOrder(index){   
+                this.indexNum=index  
                 if(index==0){
                         this.arrlist=this.shopAll
                 }else{

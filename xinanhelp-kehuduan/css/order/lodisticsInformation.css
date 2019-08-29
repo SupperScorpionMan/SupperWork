@@ -26,3 +26,10 @@
     font-size: 0.8rem;
     color: #9597A6;
 }
+.copy{
+    text-align: center;
+    font-size: 0.1rem;
+    border-radius: 25%;
+    color: #707070;
+    background-color:#ebe9e9;
+}

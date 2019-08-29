@@ -1,0 +1,42 @@
+.Invoice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.InvoiceContent{
+    width: 95%;
+    height: 5rem;
+    background-color: #ffffff;
+    margin-top: 2rem;
+    border-radius: 0.3rem;
+
+}
+.InvoiceTile{
+    font-size: 0.8rem;
+    height: 2.5rem;
+    border-bottom: 0.05rem solid #dddddd;
+    box-sizing: border-box;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.InvoiceTile p {
+    color: #686868;
+}
+.RedDefault{
+    font-size: 0.5rem;
+    background-color: #f96165;
+    color: #ffffff;
+    border-radius: 0.2rem; 
+}
+.InvoicePersonal{
+    font-size: 0.5rem;
+    height: 2.5rem;
+    box-sizing: border-box;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #686868;
+}
