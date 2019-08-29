@@ -118,25 +118,28 @@
 .AddressDefault{
     background-color: white;
     box-sizing: border-box;
-    padding: 0.8rem;
+    padding: 0.8rem 1rem;
 }
 .AddressDefault .DeInput{
-   width: 70%;
+   width: 50%;
     height: 2rem;
     border: none;
     outline: none;
-    /* text-align: right;   */
 }
 .DefaultLabel{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 .DefaultLabel{
     font-size: 0.8rem;
     border-bottom: 0.08rem solid #EBEBEB;
 }
 .DefaultSet{
+    margin-top: 0.6rem;
+    height: 2rem;
     font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 0.08rem solid #EBEBEB;
 }
 .DefaultLabel span{
@@ -145,13 +148,10 @@
     font-size: 0.9rem;
     justify-content:center;
     align-items: center;
-}
-.DefaultSet{
-    display: flex;
-    justify-content: center;
+    
 }
 .DefaultSet span{
-    width: 45%;
+    width: 40%;
     display: flex;
     font-size: 0.9rem;
     justify-content: center;
@@ -159,13 +159,16 @@
 }
 
 
+/* 按钮信息 */
 .DefaultPreservation{
     height: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .PreservationBtn{
+    color: white;
     width: 95%;
     height: 3rem;
     border-radius: 0.3rem;
@@ -173,8 +176,17 @@
     background-color: #0cd4d3;
     outline: none;
 }
-.DeInput input-placeholder{
+
+
+.textlist{
+    width: 12%;
+    height: 1.2rem;
+    border: 0.04rem solid #dddddd;
     color: #dddddd;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
