@@ -27,6 +27,9 @@
     display: flex;
     justify-content: space-between;
 }
+.listName span{
+    font-size: 0.6rem;
+}
 .listPhone{
     width: 42%;
     font-size: 0.8rem;
@@ -75,6 +78,9 @@
     margin: 0.3rem 0.3rem 0.3rem 1.5rem;
     display: flex;
     justify-content: space-between;
+}
+.listNameTwo span{
+    font-size: 0.6rem;
 }
 .listPhoneTwo{
     width: 57%;

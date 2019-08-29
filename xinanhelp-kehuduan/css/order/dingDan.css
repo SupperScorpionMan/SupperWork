@@ -146,11 +146,11 @@
 }
 .userBtn{
     padding: 0.2rem 0.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: white;
+    border: none;
+    outline: none;
     border: 0.05rem solid #0cd4d3;
     border-radius: 0.9rem;
     font-size: 0.9rem;
-    color: #0cd4d3;
+    color: #3c2a10;
 }
