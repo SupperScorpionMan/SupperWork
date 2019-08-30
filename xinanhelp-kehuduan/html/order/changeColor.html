@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="../../css/me/myOersonalInvoice.css"> -->
+    <script src="../../js/vue.js"></script>
+    <title>选项全选功能</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .app{
+            background-color:#ecebeb;
+        }
+    
+
+    </style>
+</head>
+<body style="height: 100%; line-style:none;">
+    <div class="app" style="height: 100%;">
+        <div class="InputElection">
+            <input type="checkbox" @click="checkAll" v-model="checked">
+            <span>全选</span>
+        </div>
+        <ul>
+            <li v-for="(item,index) in list" :key="index" style="margin-top: 2rem;">
+                <input type="checkbox" v-model="checkModel" :value="item">
+                <span>{{ item.name }}--</span>
+                <span>{{ item.age }}--</span>
+                <span>-</span>
+                <span>{{ item.money }}元</span>
+                <span>+</span>
+                <mt-button @click="remove(index)" type="primary">删除</mt-button>
+            </li>
+        </ul>
+
+    </div>
+    
+</body>
+
+
+<script>
+    
+    var app = new Vue({
+        el:'.app',
+        data:{
+            list:[
+                {id:1,name:'明明',age:23,money:100},
+                {id:2,name:'红红',age:22,money:124},
+                {id:3,name:'莉莉',age:24,money:123}
+            ],
+            checked:false,
+            checkModel:[]
+        },
+        watch:{
+            checkModel(){
+            if (this.checkModel.length==this.list.length) {
+                    this.checked=true;
+
+                }else{
+                    this.checked=false;
+                }
+            }
+            // Total(){
+            //     var pirce = 0;
+            //     if(this.checkModel.indexOf(item.id)==-1){
+            //             pirce +=this.checkModel.item.money
+            //         }
+            //         return pirce
+            // }
+        },
+        methods:{
+           checkAll(){
+               if(this.checked){
+                    this.checkModel=[];
+               }else{
+                   this.list.forEach(item => {
+                       if(this.checkModel.indexOf(item.id)==-1){
+                           this.checkModel.push(item)
+                       }
+                   })  
+               }
+           }
+        }
+    })
+</script>
+</html>
