@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/home/element.css">
+    <link rel="stylesheet" href="../../css/me/haveInvoice.css">
+    <script src="../../js/vue.js"></script>
+    <script src="../../js/element.js"></script>
+    <title>已开发票</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="app">
+       <div class="invoice" v-for='(item,index) in invoice'>
+            <div class="head">
+                <div style="flex: 2;" class="green">{{item.genre}}</div>
+                <div style="flex: 2;">2019-08-23 11：08</div>
+                <div style="flex: 1;" class="red">已开发票</div>
+            </div>
+            <div class="company">
+                {{item.company}}
+            </div>
+            <div class="invoiceInfo">
+                <div style="flex: 2;">发票代码</div>
+                <div style="flex: 2;">发票号码</div>
+                <div style="flex: 1;">开票金额</div>
+            </div>
+            <div class="info">
+                <div style="flex: 2;">{{item.code}}</div>
+                <div style="flex: 2;">{{item.number}}</div>
+                <div style="flex: 1;">￥{{item.money}}</div>
+            </div>
+       </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {
+            invoice:[
+                {genre:'个人（电子发票）',time:'2019-08-23 11：08',company:'深圳市跨越新科技有限公司',code:'044031800311',number:'55409854',money:'3542.00'},
+                {genre:'个人（电子发票）',time:'2019-08-23 11：08',company:'深圳市跨越新科技有限公司',code:'044031800311',number:'55409854',money:'3542.00'},
+                {genre:'公司（电子发票）',time:'2019-08-23 11：08',company:'深圳市跨越新科技有限公司',code:'044031800311',number:'55409854',money:'3542.00'},
+            ]
+        },
+        methods: {
+
+           
+        }
+
+    })
+</script>
+
+</html>
