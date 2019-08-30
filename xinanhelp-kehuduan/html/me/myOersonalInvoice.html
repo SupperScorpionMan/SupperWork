@@ -15,15 +15,31 @@
             background-color:#ecebeb;
         }
 
+        .InvoiceBtn{
+            height: 12rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .BtnAdd{
+            width: 95%;
+            height: 2.5rem;
+            color: white;
+            background-color: #0cd4d3;
+            border: none;
+            outline: none;
+            border-radius: 0.3rem;
+        }
         
     </style>
 </head>
 <body style="height: 100%;">
     <div class="app" style="height: 100%;">
+        <!-- 开票信息内容 -->
         <div class="Invoice">
             <div class="InvoiceContent">
                 <div class="InvoiceTile">
-                    <span>吕先生&nbsp;&nbsp;<span class="RedDefault">默认</span></span>
+                    <span class="TileName">吕先生&nbsp;&nbsp;<span class="RedDefault">默认</span></span>
                     <p>￥</p>
                 </div>
                 <div class="InvoicePersonal">
@@ -36,7 +52,7 @@
         <div class="Invoice">
                 <div class="InvoiceContent">
                     <div class="InvoiceTile">
-                        <span>珠海市海露智能物联科技有限公司</span>
+                        <span class="TileName">珠海市海露智能物联科技有限公司</span>
                         <p>￥</p>
                     </div>
                     <div class="InvoicePersonal">
@@ -49,7 +65,7 @@
             <div class="Invoice">
                     <div class="InvoiceContent">
                         <div class="InvoiceTile">
-                            <span>王先生</span>
+                            <span class="TileName">王先生</span>
                             <p>￥</p>
                         </div>
                         <div class="InvoicePersonal">
@@ -57,6 +73,10 @@
                             <p>$</p>
                         </div>
                     </div>
+            </div>
+
+            <div class="InvoiceBtn">
+                <button class="BtnAdd">添加新的发票抬头</button>
             </div>
 
     </div>

@@ -14,6 +14,7 @@
         .app{
             background-color: #ecebeb;
         }
+
     </style>
 </head>
 <body style="height: 100%;">
@@ -48,6 +49,8 @@
                         <div class="userImg">{{item.img}}</div><span>{{item.userName}}</span>
                         </div>
                         <button class="userBtn">{{item.buyStatus}}</button>
+                        
+
                 </div>
             </div>
         </div>
@@ -58,8 +61,6 @@
             <div class="NullLcon">￥</div>
                 <p class="NullLconWords">您暂时没有订单哦！</p>
         </div>
-        
-        
 
     </div>
 </body>
@@ -75,7 +76,8 @@
                 {id:3,title:'55858585',status:'已完成',buyStatus:'再来一单',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'2',img:'',userName:'哦！'},
                 {id:4,title:'57578555757557',status:'查看物流',buyStatus:'查看物流',name:'中化石油加油卡礼包',titleTest:'内含一张1000元加油卡',pirce:'3455.00',numders:'9'}
             ],
-            indexNum:0
+            indexNum:0,
+            changeLeftBackground:0
         },
         created(){
 
@@ -89,6 +91,7 @@
                     this.arrlist=''
                 }
             }
+            
         }
     })
 </script>

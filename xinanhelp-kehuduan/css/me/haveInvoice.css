@@ -1,0 +1,44 @@
+html{
+    background-color: #F0F0F0;
+}
+.invoice{
+    width: 90%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 3%;
+    border-radius: 0.5rem;
+    margin-top: 4%;
+}
+.invoice>div{
+    display: flex;
+    margin-bottom: 2%;
+}
+.invoice>div div{
+   
+    font-size: 0.6rem;
+}
+.invoice>div div:last-child{
+    text-align: right;
+}
+.invoice>div:last-child{
+    margin-bottom: 0;
+}
+.head .green{
+    color: #0CD4D3;
+    font-weight: bold;
+}
+.head .red{
+    color: #F96165;
+}
+.invoice .company{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 0.9rem;
+}
+.invoiceInfo{
+    color: #707070;
+}
+.info div:last-child{
+    font-weight: bold;
+    font-size: 0.8rem;
+}
