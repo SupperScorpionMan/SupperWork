@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/element.css">
+    <script src="../../js/vue.js"></script>
+    <script src="../../js/element.js"></script>
+    <title>提交订单</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .addSite {
+            display: flex;
+            width: 92%;
+            padding: 4%;
+            border-bottom: #0CD4D3 0.2rem dashed;
+            background-color: #ffffff;
+        }
+
+        .addSite .btn {
+            width: 2rem;
+            height: 2rem;
+            background-color: #0CD4D3;
+            color: #ffffff;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .addSite .right {
+            position: absolute;
+            right: 4%;
+            top: 3%;
+        }
+
+        .addSite .explain {
+            margin-left: 4%;
+            line-height: 4%;
+            line-height: 195%;
+
+        }
+
+        .modity {
+            width: 92%;
+            padding: 4%;
+            background-color: #F7F7F7;
+            position: relative;
+        }
+
+        .modity .modityImg {
+            width: 5rem;
+            height: 5.5rem;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modity .modityImg .img {
+            width: 85%;
+            height: 85%;
+            background: #000;
+        }
+
+        .details {
+            width: 60%;
+            position: absolute;
+            right: 4%;
+            top: 20%;
+        }
+
+        .red {
+            color: #F96165;
+            font-size: 0.6rem;
+        }
+
+        .addNum {
+            display: flex;
+            margin-top: 10%;
+        }
+
+        .addNum .right {
+            position: absolute;
+            right: 4%;
+
+        }
+
+        .addNum .right div {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            text-align: center;
+            line-height: 0.9rem;
+        }
+
+        .addNum .right .btn {
+            border-radius: 0.5rem;
+            border: #0CD4D3 0.05rem solid;
+            color: #0CD4D3;
+            font-weight: bold;
+        }
+
+        .addNum .right .active {
+            background-color: #0CD4D3;
+            color: #ffffff;
+        }
+
+        .empty {
+            width: 92%;
+            /* height: 10rem; */
+            background-color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .emptyList {
+            background-color: #F7F7F7;
+            width: 100%;
+            height: 2rem;
+        }
+
+        .foot {
+            width: 100%;
+            height: 3rem;
+            background-color: #FFF4F4;
+            position: fixed;
+            bottom: 0;
+            display: flex;
+        }
+
+        .foot div {
+            flex: 1;
+        }
+
+        .footBtn {
+            font-size: 1rem;
+            text-align: center;
+            color: #ffffff;
+            background-color: #F96165;
+            line-height: 3rem;
+        }
+
+        .money {
+            color: #F96165;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 3rem;
+        }
+
+        .money span {
+            color: #707070;
+            font-size: 0.5rem;
+        }
+
+        .original {
+            text-align: center;
+            line-height: 3.5rem;
+            color: #707070;
+            font-size: 0.5rem;
+            text-decoration: line-through;
+        }
+
+        .install {
+            width: 96%;
+        }
+
+        .install>div {
+            width: 100%;
+            height: 3rem;
+            border-bottom: #DDDDDD 0.05rem solid;
+        }
+
+        .choice {
+            display: flex;
+        }
+
+        .choice div {
+            
+            line-height: 3rem;
+            margin-left: 4%;
+            font-size: 0.7rem;
+        }
+
+        .message {
+            position: relative;
+        }
+
+        .message div {
+            color: #707070;
+            font-size: 0.5rem;
+            margin-left: 4%;
+            margin-top: 2%;
+        }
+
+        .message textarea {
+            position: absolute;
+            right: 10%;
+            top: 0;
+            border: none;
+            outline: none;
+            resize: none;
+        }
+
+        .siteDetails {
+            width: 92%;
+            padding: 4%;
+            border-bottom: #0CD4D3 0.2rem dashed;
+            background-color: #ffffff;
+        }
+
+        .userInfo {
+            width: 100%;
+        }
+
+        .userInfo div {
+            display: inline-block;
+
+        }
+
+        .siteInfo {
+            width: 100%;
+        }
+
+        .siteInfo div {
+            display: inline-block;
+            font-size: 0.7rem;
+        }
+
+        .model {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+        .modelInfo{
+            width: 100%;
+            height: 40%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            z-index: 100;
+        }
+        .modelInfo>div{
+            width: 100%;
+            height: 15%;
+            border-bottom: #707070 solid 0.05rem;
+        }
+        .means{
+          padding-left: 35%;
+          font-size: 0.8rem;
+        }
+        .means div{
+            display: inline-block;
+            margin-top: 2%;
+        }
+        .means .meansIcon{
+            width: 1rem;
+            height: 1rem;
+            background-color: #707070;
+            
+        }
+        .el-radio{
+            margin-right: 10%;
+        }
+        .el-radio__label{
+            padding-left: 0;
+            font-size: 0.5rem;
+        }
+        .el-radio__input.is-checked+.el-radio__label{
+            color: #000;
+        }
+        .el-radio__input.is-checked .el-radio__inner{
+            border-color: #F96165;
+            background: #F96165;
+        }
+        /* .choice span{
+            margin-left: 5%;
+            display: inline-block;
+            width: 5rem;
+        } */
+        .reserve{
+            width: 100%;
+            padding: 4%;
+            border-bottom: #707070 solid 0.05rem;
+        }
+        .empty div{
+            margin-bottom: 2%;
+        }
+        .particulars{
+            font-size: 0.8rem;
+            padding: 4%;
+        }
+        .protocol{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="siteDetails" v-if='site.length'>
+            <div class="userInfo">
+                <div>收件人：</div>
+                <div style="margin-right: 20%">{{site[0].recipients}}</div>
+                <div>{{site[0].phone}}</div>
+            </div>
+            <div class="siteInfo">
+                <div>收货地址:</div>
+                <div>{{site[0].site}}</div>
+            </div>
+        </div>
+        <div class="addSite" v-else>
+            <div class="btn">+</div>
+            <div class="explain">新建收货地址</div>
+            <div class="right">></div>
+        </div>
+
+        <div class="modity">
+            <div class="modityImg">
+                <div class="img"></div>
+            </div>
+            <div class="details">
+                <div style="font-size: 0.6rem">海露中航国际5A净水系统一体直饮净水机
+                    您身边的健康饮水专家</div>
+                <div class="addNum">
+                    <div class="red">￥730.00</div>
+                    <div class="right">
+                        <div class="btn" @click='subtract'>-</div>
+                        <div style="font-size: 0.6rem;">{{num}}</div>
+                        <div class="btn active" @click='addnum'>+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty">
+            <div class="reserve">订单详情</div>
+            <div class="particulars">
+                <div v-for='(item,index) in particulars'>{{item.content}}</div>
+                
+                <div style="text-align: center; color: #707070; font-size: 0.8rem;">净水器设备由平台商家珠海海露智能物联网发货并提供售后服务</div>
+                <div class="protocol">
+                    <template>
+                        <!-- `checked` 为 true 或 false -->
+                        <el-checkbox v-model="checked">我已阅读并同意<span style="color:cornflowerblue">《海路用户协议》</span></el-checkbox>
+                      </template>
+                </div>
+            </div>
+        </div>
+        <div class="emptyList"></div>
+        <div class="more">
+            <div class="install">
+                <div style="padding: 4% 0 0 4%;">店铺活动</div>
+                <div class="choice">
+                    <div style="flex: 1;">优惠卷</div>
+                    <div style="flex: 2;"><template>
+                        <el-radio v-model="radio" label="1">使用优惠卷</el-radio>
+                        <el-radio v-model="radio" label="2">不使用优惠卷</el-radio>
+                        </template>
+                    </div>
+                </div>
+                <div class="choice">
+                    <div style="flex: 1;">配送方式</div>
+                    <div style="flex: 2;"><template>
+                        <el-radio v-model="radio1" label="1">自提</el-radio>
+                        <el-radio v-model="radio1" label="2">快递</el-radio>
+                        </template>
+                    </div>
+                </div>
+                <div class="choice">
+                    <div style="flex: 1;">是否需要安装</div>
+                    <div style="flex: 2;"><template>
+                        <el-radio v-model="radio2" label="1">安装</el-radio>
+                        <el-radio v-model="radio2" label="2">不需要按照</el-radio>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="message">
+                <div>买家留言</div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="建议留言前先与商家沟通确认"></textarea>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="money">￥730.00<span>/件</span></div>
+            <div class="original">￥6980</div>
+            <div class="footBtn" @click='putin'>提交订单</div>
+        </div>
+
+        <div class="model" v-if='show' @click='shut'></div>
+        <div class="modelInfo" v-if='show'>
+            <div class="means" @click='pay'>
+                <div class="meansIcon"></div>
+                <div class="meansName">微信支付</div>
+            </div>
+            <div class="means" @click='pay'>
+                <div class="meansIcon"></div>
+                <div class="meansName">支付宝支付</div>
+            </div>
+            <div class="means" @click='pay'>
+                <div class="meansIcon"></div>
+                <div class="meansName">货到付款</div>
+            </div>
+            <div class="means" @click='pay'>
+                <div class="meansIcon"></div>
+                <div class="meansName">（珠海）上门交易</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {
+            radio: '1',
+            radio1: '1',
+            radio2: '1',
+            checked: true,
+            num: 3,
+            show:false,
+            site: [
+                { recipients: '郭大大', phone: '15288884562', site: '广东省珠海市新香洲区柠溪路' }
+            ],
+            particulars:[
+                {content:'1.全国统一零售价：6880元'},
+                {content:'2.国际5A净水系统，达到值饮水标准'},
+                {content:'3.可挂墙壁，支持多种安装方式'},
+                {content:'4.免费上门安装，免费换滤芯，免费售后维修'},
+            ]
+        },
+        methods: {
+
+            subtract() {
+                var sum = ''
+                if (this.num < 1) {
+                    this.num = 0
+                    console.log(this.num)
+                } else {
+                    this.num--
+                    console.log(this.num)
+                }
+            },
+            addnum() {
+                this.num++
+                console.log(this.num)
+            },
+            putin(){
+                this.show=true 
+            },
+            shut(){
+                this.show=false 
+            },
+            pay(){
+                this.show=false
+            }
+        }
+
+    })
+</script>
+
+</html>
