@@ -6,29 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/home/element.css">
     <link rel="stylesheet" href="../../css/home/putIn.css">
+    <link rel="stylesheet" href="../../css/icon/iconfont.css">
     <script src="../../js/vue.js"></script>
     <script src="../../js/element.js"></script>
+    <script src="../../js/iconfont.js"></script>
     <title>提交订单</title>
     <style>
         * {
             margin: 0;
         }
-        .el-checkbox__inner{
+        
+        .el-checkbox__inner {
             border-radius: 50%;
-            
         }
-        .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
-            background-color:#F96165;
-            border-color: #F96165;
-        }
-        .el-checkbox__inner:hover {
-            border-color: #F96165;
-        }
-        .el-checkbox__input.if-focus .el-checkbox__inner{
+        
+        .el-checkbox__input.is-checked .el-checkbox__inner,
+        .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+            background-color: #F96165;
             border-color: #F96165;
         }
         
-       
+        .el-checkbox__inner:hover {
+            border-color: #F96165;
+        }
+        
+        .el-checkbox__input.if-focus .el-checkbox__inner {
+            border-color: #F96165;
+        }
+        
+        .el-checkbox__inner {
+            z-index: 0;
+        }
     </style>
 </head>
 
@@ -56,8 +64,8 @@
                 <div class="img"></div>
             </div>
             <div class="details">
-                <div style="font-size: 0.6rem">海露中航国际5A净水系统一体直饮净水机
-                    您身边的健康饮水专家</div>
+                <div style="font-size: 0.6rem">海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家
+                </div>
                 <div class="addNum">
                     <div class="red">￥730.00</div>
                     <div class="right">
@@ -82,7 +90,7 @@
                       </template>
                 </div>
             </div> -->
-            
+
         </div>
         <div class="emptyList"></div>
         <div class="more">
@@ -109,7 +117,7 @@
                     <div style="flex: 1;">是否需要安装</div>
                     <div style="flex: 2;"><template>
                         <!-- <el-radio v-model="radio2" label="1">安装</el-radio> -->
-                        <el-checkbox v-model="checked1">备选项</el-checkbox>
+                        <el-checkbox v-model="checked1">安装</el-checkbox>
                         <!-- <el-radio v-model="radio2" label="2">不需要按照</el-radio> -->
                         </template>
                     </div>
@@ -155,46 +163,51 @@
             // radio1: '1',
             // radio2: '1',
             // checked: true,
-            checked1:true,
+            checked1: true,
             num: 1,
-            show:false,
-            site: [
-                { recipients: '郭大大', phone: '15288884562', site: '广东省珠海市新香洲区柠溪路' }
-            ],
-            particulars:[
-                {content:'1.全国统一零售价：6880元'},
-                {content:'2.国际5A净水系统，达到值饮水标准'},
-                {content:'3.可挂墙壁，支持多种安装方式'},
-                {content:'4.免费上门安装，免费换滤芯，免费售后维修'},
-            ]
+            show: false,
+            site: [{
+                recipients: '郭大大',
+                phone: '15288884562',
+                site: '广东省珠海市新香洲区柠溪路'
+            }],
+            particulars: [{
+                content: '1.全国统一零售价：6880元'
+            }, {
+                content: '2.国际5A净水系统，达到值饮水标准'
+            }, {
+                content: '3.可挂墙壁，支持多种安装方式'
+            }, {
+                content: '4.免费上门安装，免费换滤芯，免费售后维修'
+            }, ]
         },
-        computed:{
+        computed: {
 
         },
         methods: {
 
             subtract(num) {
                 // console.log(num)
-                if (num <1) {
+                if (num < 1) {
                     this.num = 0
                 } else {
-                    this.num=num-1
+                    this.num = num - 1
                     console.log(this.num)
                 }
-               
+
             },
             addnum(num) {
-                this.num = num+1
+                this.num = num + 1
                 console.log(this.num)
             },
-            putin(){
-                this.show=true 
+            putin() {
+                this.show = true
             },
-            shut(){
-                this.show=false 
+            shut() {
+                this.show = false
             },
-            pay(){
-                this.show=false
+            pay() {
+                this.show = false
             }
         }
 

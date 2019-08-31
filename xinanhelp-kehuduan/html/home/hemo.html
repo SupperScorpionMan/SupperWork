@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,127 +11,138 @@
     <script src="../../js/vue.js"></script>
     <title>海露会员商店</title>
     <style style="height: 100%;">
-        *{
+        * {
             margin: 0;
         }
-        .app{
-            background-color: #ecebeb; 
-        }
-        .content{
+        
+        html {
             background-color: #ecebeb;
         }
-        .first{
-            padding: 0.45rem;
-            display: flex;
-            flex-flow: row wrap; 
-            justify-content:space-between;
-        }
-        .content-one{
-            margin-top: 1rem;
-            background-color: white;
-            padding: 0.5rem;
-            box-sizing: border-box;
-            border-radius: 0.5rem; 
-            max-width: 50%;    
-        }
-        .content-oneDiv{
-            width: 10rem;
-            max-width: 100%;
-            height: 10rem;
-            background-color: tomato;
-        }
-        .text{
-            width: 10rem;
-            max-width: 100%;
-            font-size: 0.05rem;
-            color: #858485;
-            word-wrap: break-word;
-            word-break: break-all;
-        }
-        .text-content{
-            width: 10rem;
-            display: flex;
-            justify-content: space-between;
-        }
-        .text-content p {
-            display: flex;
-            justify-content: space-between;
-            width: 3rem;
-            max-width: 50%;
-        }
-        .text-nub{
-            font-size: 0.25rem;
-            color: #fa5a5a;
-        }
-        .text-hua{
-            font-size: 0.1rem;
-            color: #858485;
-            text-decoration: line-through;
-        }
-        .text-biao{
-            font-size: 0.05rem;
-            color: #fa5a5a;
+        
+        .content {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 4%;
+            height: 100%;
         }
         
+        .first {
+            width: 92%;
+            margin: 0 auto;
+            height: 100%;
+        }
+        
+        .content-one {
+            width: 45%;
+            height: 35%;
+            background-color: #ffffff;
+            display: inline-block;
+            padding: 2%;
+            margin-top: 2%;
+            margin-right: 1%;
+        }
+        
+        .content-oneDiv {
+            width: 100%;
+            height: 60%;
+            background-color: red;
+            margin: 0 auto;
+        }
+        
+        .content .text {
+            width: 100%;
+            height: 20%;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            margin: 4% 0;
+            color: #707070;
+        }
+        
+        .text-nub {
+            color: #F96165;
+        }
+        
+        .text-hua {
+            text-decoration: line-through;
+            color: #707070;
+            font-size: 0.7rem;
+        }
+        
+        .text-biao {
+            float: right;
+            margin-top: -13%;
+        }
     </style>
 </head>
+
 <body style="height: 100%;">
     <div class="app" style="height: 100%;">
         <!-- //轮播图 -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"> Slide1</div>
-                </div>
-                <div class="pagination"></div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> Slide1</div>
             </div>
+            <div class="pagination"></div>
+        </div>
 
-            <!-- 内容 -->
-            <div class="content">
-                <div class="first">
-                    <div class="content-one">
-                        <div class="content-oneDiv"></div>
-                        <p class="text">中石化中石化中石化中石化中石化中石化....</p>
-                        <div class="text-content">
-                            <p class="text-nub">￥730.00<span class="text-hua">￥6900</span></p>
-                            <p class="text-biao">￥</p>
-                        </div>
+        <!-- 内容 -->
+        <div class="content">
+            <div class="first">
+                <div class="content-one" v-for='(item,index) in content'>
+                    <div class="content-oneDiv"></div>
+                    <p class="text">{{item.text}}</p>
+                    <div class="text-content">
+                        <p class="text-nub">￥{{item.textnub}}<span class="text-hua">￥{{item.texthua}}</span></p>
+                        <p class="text-biao">￥</p>
                     </div>
-                    
-                    <div class="content-one">
-                        <div class="content-oneDiv"></div>
-                        <p class="text">中石化中石化中石化中石化中石化中石化....</p>
-                        <div class="text-content">
-                            <p class="text-nub">￥730.00<span class="text-hua">￥6900</span></p>
-                            <p class="text-biao">￥</p>
-                        </div>
-                    </div>
-                    <!-- <div class="content-two">
-                    </div>
-                    <div class="content-three">
-                    </div>
-                    <div class="content-frouth">
-                    </div> -->
                 </div>
+
+
+
             </div>
-            
+        </div>
+
     </div>
 </body>
 <script>
     window.onload = function() {
-        var mySwiper = new Swiper('.swiper-container',{
-                autoplay : 4000,//可选选项，自动滑动
-                loop : true,//可选选项，开启循
-            pagination : '.pagination',
-        });  
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: 4000, //可选选项，自动滑动
+            loop: true, //可选选项，开启循
+            pagination: '.pagination',
+        });
     }
     var app = new Vue({
-        el:'.app',
-        data:{
-
+        el: '.app',
+        data: {
+            content: [{
+                text: '1中石化中石化中石化中石化中石化中石化',
+                img: '',
+                textnub: '730.00',
+                texthua: '6900'
+            }, {
+                text: '2中石化中石化中石化中石化中石化中石化',
+                img: '',
+                textnub: '730.00',
+                texthua: '6900'
+            }, {
+                text: '3中石化中石化中石化中石化中石化中石化',
+                img: '',
+                textnub: '730.00',
+                texthua: '6900'
+            }, {
+                text: '4中石化中石化中石化中石化中石化中石化',
+                img: '',
+                textnub: '730.00',
+                texthua: '6900'
+            }]
         },
-        methods:{
+        methods: {
 
         }
     })
 </script>
+
 </html>
