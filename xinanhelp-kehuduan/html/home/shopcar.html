@@ -38,11 +38,11 @@
 
         <div class="bottombtn">
             <div class="checkboxs checkedtwo">
-                <el-checkbox class="daffdfa" :checked="checkedAll" @change="checkedAllclick(checkedAll)">全选</el-checkbox>
+                <el-checkbox class="daffdfa" :checked="checkedAll" >全选</el-checkbox>
             </div>
             <div class="displayright">
                 <div class="rightbuju">
-                    <p>合计：￥730.00</p>
+                    <p>合计：730.00</p>
                     <span class="spans">不含运费</span>
                 </div>
                 <div class="redBtn">
@@ -50,6 +50,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 <script src="../../js/vue.js"></script>
@@ -61,10 +62,13 @@
         data:{
             checkedAll:false,
             listtest:[
-                {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,checked:false},
-                {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,checked:false},
-                {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,checked:false}
+                {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,},
+                {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,},
+                {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,}
             ]
+        },
+        computed:{
+
         },
         methods:{
             jianshu(index,num){
@@ -75,9 +79,7 @@
             add(index,num){
                 this.listtest[index].num=num+1
             },
-            checkedAllclick(dd){
-                
-            }
+            
 
         }
     })
