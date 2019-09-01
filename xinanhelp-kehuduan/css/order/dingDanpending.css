@@ -163,3 +163,20 @@
     font-size: 0.9rem;
     color: #0090fa;
 }
+.colorBtn{
+    width: 92%;
+    height: 2.5rem;
+    background: #0CD4D3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    color: #fff;
+    font-size: 0.9rem;
+
+}
+.colorBtntwo{
+    color: #030303;
+    background: #fff;
+}

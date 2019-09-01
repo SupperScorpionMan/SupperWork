@@ -163,4 +163,9 @@ textarea::-webkit-textarea-placeholder{
     align-items: center;
     outline: none;
 }
+.textlist.active{
+    background: #0CD4D3;
+    color: #fff;
+
+}
  
