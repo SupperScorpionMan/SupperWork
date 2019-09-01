@@ -1,4 +1,4 @@
-.headerTitle{ 
+.headerTitle {
     width: 100%;
     height: 5rem;
     background: #0cd4d3;
@@ -8,70 +8,80 @@
     color: #fff;
     position: relative;
 }
-.boxthite{
-    
+
+.boxthite {
     position: absolute;
     bottom: 0;
     width: 92%;
     height: 1rem;
     border-radius: 0.5rem 0.5rem 0 0;
     background: #fff;
-
 }
-.logisticsTest{
+
+.logisticsTest {
     width: 92%;
     padding: 1rem 0.8rem;
     box-sizing: border-box;
     background: #fff;
     border-radius: 0 0 0.5rem 0.5rem;
     margin-bottom: 1rem;
+}
 
-}
-.logisticsTestcar{
-    margin-top:0.2rem; 
+.logisticsTestcar {
+    margin-top: 0.2rem;
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between;
 }
-.logisticsTestcar>span{
+
+.logisticsTestcar>span {
     width: 10%;
 }
-.logisticsTestcar .flexbuju{
+
+.logisticsTestcar .flexbuju {
     font-size: 0.9rem;
     display: flex;
     justify-content: space-between;
 }
-.logisticsTestcar .flexbuju p{
+
+.logisticsTestcar .flexbuju p {
     margin-top: 0.2rem;
 }
-.logisticsTestcar div span{
+
+.logisticsTestcar div span {
     color: #0cd4d3;
 }
-.logisticsTestcar>div .iconImg{
+
+.logisticsTestcar>div .iconImg {
     width: 10%;
     display: flex;
     align-items: center;
 }
-.time{
+
+.time {
     font-size: 0.7rem;
     color: #707070
 }
-.testwuliu{
+
+.testwuliu {
     width: 90%;
     font-size: 0.9rem;
 }
-.fontSize{
+
+.fontSize {
     font-size: 0.7rem;
     margin: 0.8rem 0;
     color: #707070;
 }
-.copy{
+
+.copy {
     text-align: center;
     font-size: 0.1rem;
     border-radius: 25%;
     color: #707070;
-    background-color:#ebe9e9;
+    background-color: #ebe9e9;
 }
-.allPirce{
+
+.allPirce {
     margin-top: 1rem;
     width: 92%;
     padding: 1rem 0.8rem;
@@ -80,31 +90,42 @@
     border-radius: 0.5rem;
     font-size: 0.8rem;
 }
-.listFlex{
+
+.listFlex {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.listFlex p{
+
+.listFlex p {
     margin: 0.1rem 0;
 }
-.colorRed{
+
+.colorRed {
     color: #FF4536;
 }
-.lineheight{
+
+.lineheight {
     margin: 0.5rem 0;
     height: 0.05rem;
     background: #EBEBEB;
 }
-.submitBtn{
+
+.submitBtn {
     width: 92%;
     height: 2.5rem;
     margin-top: 1rem;
     border-radius: 0.5rem;
     color: #fff;
-    background: #0090FA;
+    background: #0cd4d3;
     font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.iconfonts {
+    height: 01.1rem;
+    width: 01.1rem;
+    margin-right: 0.2rem;
 }

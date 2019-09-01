@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/home/element.css">
+    <link rel="stylesheet" href="../../css/me/dispose.css">
+    <script src="../../js/vue.js"></script>
+    <title>申请售后</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        html {
+            background-color: #F1F1F1;
+        }
+        
+        .dispose {
+            width: 100%;
+        }
+        
+        .dispose>div {
+            width: 86%;
+            padding: 4%;
+            background-color: #ffffff;
+            margin: 0 auto;
+            margin-top: 4%;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            color: #030303;
+        }
+        
+        .select {
+            display: flex;
+        }
+        
+        .money input {
+            width: 74%;
+            background: none;
+            outline: none;
+            border: none;
+            margin-top: 8%;
+            color: #FF4536;
+        }
+        
+        textarea {
+            border: none;
+            resize: none;
+            height: 2rem;
+            outline: none;
+        }
+        
+        input {
+            width: 90%;
+            background: none;
+            outline: none;
+            border: none;
+        }
+        
+        .img {
+            display: flex;
+        }
+        
+        .img div {
+            flex: 1;
+            background-color: #dddddd;
+            width: 30%;
+            height: 5rem;
+            margin: 4% 2%;
+            border-radius: 0.5rem;
+            text-align: center;
+            line-height: 5rem;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        
+        .dispose .upBtn {
+            text-align: center;
+            background-color: #0CD4D3;
+            color: #ffffff;
+        }
+        
+        .model {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modelInfo {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        
+        .modelInfo div {
+            padding: 4%;
+            width: 90%;
+            text-align: center;
+            margin: 0 auto;
+            border-bottom: #EBEBEB solid 0.05rem;
+        }
+        
+        .fadelogIn {
+            -webkit-animation: fadelogIn .4s;
+            animation: fadelogIn .4s;
+        }
+        
+        @keyframes fadelogIn {
+            0% {
+                -webkit-transform: translate3d(0, 100%, 0);
+                -webkit-transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+                transform: translate3d(0, 100%, 0);
+            }
+            100% {
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+        
+        @-webkit-keyframes fadelogIn {
+            0% {
+                -webkit-transform: translate3d(0, 100%, 0);
+            }
+            100% {
+                -webkit-transform: none;
+            }
+        }
+        
+        .ensure {
+            width: 80%;
+            position: fixed;
+            top: 30%;
+            left: 10%;
+            background-color: #ffffff;
+            text-align: center;
+            /* padding: 5% 5% 0 5%; */
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .ensure div {
+            margin-top: 4%;
+        }
+        
+        .ensure .icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            border: #0CD4D3 solid 0.5rem;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-top: 4%;
+        }
+        
+        .notice {
+            width: 70%;
+            margin: 0 auto;
+            font-size: 0.8rem;
+            color: #707070;
+        }
+        
+        .btn {
+            padding: 3% 0;
+            background-color: #0CD4D3;
+            color: #ffffff;
+        }
+        
+        .upInput {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            background-color: transparent;
+            filter: alpha(opacity=0);
+            -moz-opacity: 0;
+            -khtml-opacity: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="dispose">
+            <div class="select" @click='select'>
+                <div style="flex: 20;">{{genre}}</div>
+                <div style="flex: 1;">></div>
+            </div>
+            <div class="money" v-if='hide'>
+                <div>退款金额</div>
+                <div>
+                    <span style="color: #FF4536;">¥</span>
+                    <input type="text" placeholder="请输入退款金额（不可超过订单金额）" v-model='value'>
+                    <span style="color: #0CD4D3;" @click='rests' v-if='moneyRests'>其他金额</span>
+                </div>
+            </div>
+            <div>
+                <!-- <textarea name="" id="" placeholder="请说明原因"></textarea> -->
+                <input type="text" placeholder="请说明原因">
+            </div>
+            <div class="upImg">
+                <div>上传图片</div>
+                <div class="img">
+                    <div><input type='file' class="upInput" @change="addImg" ref="inputer"></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="upBtn" @click='upApply'>提交申请</div>
+        </div>
+        <div class="model" @click='shut' v-if='show'></div>
+        <div class="modelInfo fadelogIn" v-if='modelShow'>
+            <div @click='change(index)' v-for='(item,index) in modelInfo'>{{item.select}}</div>
+
+        </div>
+        <div class="ensure" v-if='hint'>
+
+            <div class="icon"></div>
+            <div class="">提交成功</div>
+            <div class="notice">商家将尽快处理您的售后申请请注意查看售后订单状态</div>
+            <div class="btn" @click='know'>知道了</div>
+        </div>
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {
+            hint: false,
+            value: '5241.00',
+            hide: '5241.00',
+            genre: '仅退款',
+            moneyRests: true,
+            modelShow: false,
+            show: false,
+            modelInfo: [{
+                select: '仅退款',
+                money: '5241.00'
+            }, {
+                select: '退货退款',
+                money: '5241.00'
+            }, {
+                select: '商品维修',
+                money: ''
+            }, {
+                select: '商品更换',
+                money: ''
+            }]
+        },
+        computed: {
+
+        },
+        methods: {
+            select() {
+                this.show = true
+                this.modelShow = true
+            },
+            shut() {
+                this.show = false
+                this.modelShow = false
+                this.hint = false
+            },
+            change(index) {
+                // console.log(this.modelInfo[index].select)
+                this.genre = this.modelInfo[index].select
+                this.show = false
+                this.hide = this.modelInfo[index].money
+                this.modelShow = false
+                console.log(this.genre)
+            },
+            rests() {
+                this.value = ''
+                this.moneyRests = false
+            },
+            upApply() {
+                this.show = true
+                this.hint = true
+            },
+            know() {
+                this.show = false
+                this.hint = false
+            },
+            addImg(e) {
+                console.log(this.$refs.inputer)
+            }
+
+        }
+
+    })
+</script>
+
+</html>
