@@ -25,26 +25,6 @@
 .PersonalAddress{
     height: 8rem;
 }
-.PersonalName {
-    height: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items:center ;
-    border-bottom: 0.08rem solid #EBEBEB;
-}
-.PersonalName span{
-    width: 20%;
-    display: flex;
-    font-size: 0.9rem;
-    justify-content:center;
-    align-items:center ;
-}
-.PersonalName input{
-    width: 80%;
-    border: none;
-    outline: none;
-    text-indent: 2rem;
-}
 
 
 .PersonalTelephone {
@@ -58,8 +38,8 @@
     width: 20%;
     display: flex;
     font-size: 0.9rem;
-    justify-content:center;
-    align-items:center ;
+    justify-content:flex-start;
+    align-items:center;
 }
 .PersonalTelephone input{
     width: 80%;
@@ -67,28 +47,6 @@
     outline: none;
     text-indent: 2rem;
 }
-
-.PersonalRegion {
-    height: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items:center ;
-    border-bottom: 0.08rem solid #EBEBEB;
-}
-.PersonalRegion span{
-    width: 20%;
-    display: flex;
-    font-size: 0.9rem;
-    justify-content:center;
-    align-items:center ;
-}
-.PersonalRegion input{
-    width: 80%;
-    border: none;
-    outline: none;
-    text-indent: 2rem;
-}
-
 
 
 .MiddleBox{
@@ -98,6 +56,7 @@
 
 
 .PersonalAddress{
+    margin-top: 0.5rem;
     display: flex;
     justify-content: space-between;
 }
@@ -105,7 +64,7 @@
     width: 30%;
     display: flex;
     font-size: 0.9rem;
-    justify-content:center;
+    justify-content:flex-start;
 }
 .PersonalAddress textarea{
     width: 70%;
@@ -128,7 +87,7 @@
 }
 .DefaultLabel{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .DefaultLabel{
     font-size: 0.8rem;
@@ -146,7 +105,7 @@
     width: 30%;
     display: flex;
     font-size: 0.9rem;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
     
 }
@@ -154,8 +113,16 @@
     width: 40%;
     display: flex;
     font-size: 0.9rem;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+input::-webkit-input-placeholder{
+    font-size: 0.9rem;
+    color: #707070;
+}
+textarea::-webkit-textarea-placeholder{
+    font-size: 0.9rem;
+    color: #707070;
 }
 
 
@@ -177,16 +144,23 @@
     outline: none;
 }
 
+.DefaultLabel div{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
+}
 .textlist{
-    width: 12%;
+    width: 80%;
     height: 1.2rem;
     border: 0.04rem solid #dddddd;
     color: #dddddd;
+    background-color: white;
     border-radius: 0.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
 }
-
-
+ 

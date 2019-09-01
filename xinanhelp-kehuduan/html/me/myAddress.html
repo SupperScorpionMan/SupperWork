@@ -26,7 +26,7 @@
             
             <!-- 个人信息块 -->
             <div class="AddressPersonal">
-                <div class="PersonalName">
+                <div class="PersonalTelephone">
                     <span>姓名</span>
                     <input type="text" placeholder="收货人姓名" class="Input">
                 </div>
@@ -35,12 +35,11 @@
                         <input type="text" placeholder="收货人手机号" class="Input">
                 </div>
 
-                <div class="PersonalRegion">
+                <div class="PersonalTelephone">
                         <span>地区</span>
                         <input type="text" placeholder="选择省 / 市 / 区" class="Input">
+                        <div>￥</div>
                 </div>
-
-                
                 
                 <div class="PersonalAddress">
                     <span>详细地址</span>
@@ -55,8 +54,10 @@
                 <div class="DefaultLabel">
                     <span>地址标签</span>
                     <input type="text" class="DeInput">
-                    <p class="textlist">家</p>
-                    <p class="textlist">公司</p>
+                    
+                    <div  v-for="(item,index) in list" >   
+                        <p class="textlist">{{ item.name }}</p>
+                    </div>
                 </div>
                 <div class="DefaultSet">
                     <span>设为默认地址</span>
@@ -83,10 +84,14 @@
     var app = new Vue({
         el:'.app',
         data:{
-            value: true
+            value: true,
+            list:[
+                {name:'家',checked:true},
+                {name:'公司',checked:false}
+            ],
+            checkModel:false,
         },
         methods:{
-
         }
     })
 </script>
