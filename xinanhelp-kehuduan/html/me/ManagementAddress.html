@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,61 +11,158 @@
         *{
             margin: 0;
         }
-        
+        .app{
+            background-color: #ecebeb;
+        }
+
+    .modelInfo{
+    width: 60%;
+    height: 8rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    border-radius: 0.5rem;
+}
+.means{
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.model {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    
+}
+.meansName{
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #ecebeb solid 0.05rem;
+}
+.meansChoice{
+    display: flex;
+    justify-content: center;
+}
+.ChoiceNo{
+    width: 50%;
+    height: 3rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: #ecebeb solid 0.05rem;
+    color: #707070;
+}
+.ChoiceYes{
+    width: 50%;
+    height: 3rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #707070;
+}
+
+
     </style>
 </head>
-<body>
-    <div class="app">
+<body style="height: 100%;">
+    <div class="app" style="height: 100%;">
         <!-- 头部信息块 -->
         <div class="listHead">
             <p>地址管理</p>
         </div>
 
         <!-- 内容信息块 -->
-        <div class="listContentOne">
-            <div class="nubList">
-                <p class="listName">郭华萍<span class="listPhone">15255558932</span><span class="Silent">默认</span></p>
-                <p class="listWhere">江西赣州市瑞金市象湖镇沙子岗象湖镇沙子岗住70</p>
+        <div class="listContentTwoTile">
+            <div class="listContent">
+                <div class="nubList">
+                    <div class="Box">
+                    <p class="listName">郭华萍<span class="listPhone">15255558932</span>
+                        <span class="BlueSilent">公司</span>
+                        <span class="Silent">默认</span>
+                    </p>
+                    <span class="SDelete" @click='putin'>删除</span>
+                    </div>
+                    <p class="listWhere">广东省广州市海珠区白蕉镇虹桥三路金地格林伯乐北路388号龙王冰馆56栋2408号</p>
+                </div>
             </div>
-            <div class="editList">
-                <p>编辑</p>
+        </div>
+
+
+
+        <div class="listContentTwoTile">
+                <div class="listContent">
+                    <div class="nubList">
+                        <p class="listName">郭华萍<span class="listPhone">15255558932</span>
+                            <span class="BlueSilent">公司</span>
+                            </p>
+                        <p class="listWhere">广东省广州市海珠区白蕉镇虹桥三路金地格林伯乐北路388号龙王冰馆56栋2408号</p>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="listContentTwo">
-                <div class="nubListTwo">
-                    <p class="listNameTwo">郭华萍<span class="listPhoneTwo">15255558932</span></p>
-                    <p class="listWhereTwo">江西赣州市瑞金市象湖镇沙子岗象湖镇沙子岗住70</p>
-                </div>
-                <div class="editListTwo">
-                    <p>编辑</p>
-                </div>
-        </div>
 
-        <div class="listContentTwo">
-                <div class="nubListTwo">
-                    <p class="listNameTwo">郭华萍<span class="listPhoneTwo">15255558932</span></p>
-                    <p class="listWhereTwo">江西赣州市瑞金市象湖镇沙子岗象湖镇沙子岗住70</p>
+            <div class="listContentTwoTile">
+                    <div class="listContent">
+                        <div class="nubList">
+                            <p class="listName">郭华萍<span class="listPhone">15255558932</span>
+                                <span class="GreenSilent">家</span>
+                                </p>
+                            <p class="listWhere">广东省广州市海珠区白蕉镇虹桥三路金地格林伯乐北路388号龙王冰馆56栋2408号</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="editListTwo">
-                    <p>编辑</p>
+        
+        
+                <div class="listButton">
+                    <button class="ButtonBuild">新建收货地址</button>
                 </div>
-        </div>
 
-        <div class="listButton">
-            <button class="ButtonBuild">新建收货地址</button>  
-        </div>
+                <div class="model" v-if='show' @click='shut'></div>
+                <div class="modelInfo" v-if='show'>
+                        <div class="means">
+                            <div class="meansName">确定删除该地址吗？</div> 
+                        </div>
+                        <div class="meansChoice">
+                            <div class="ChoiceNo" @click="NoCho">否</div>
+                            <div class="ChoiceYes" @click="YesCho">是</div>
+                        </div>
 
+                    </div>
+            
     </div>
 </body>
 <script>
     var app = new Vue({
         el:'.app',
         data:{
-            
+            num: 1,
+            show: false,
+
         },
         methods:{
-
+            putin() {
+                this.show = true
+            },
+            shut() {
+                this.show = false
+            },
+            NoCho() {
+                this.show = false
+            },
+            YesCho() {
+                this.show = false
+            }
+            
         }
     })
 </script>
