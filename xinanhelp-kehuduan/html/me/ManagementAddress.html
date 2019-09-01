@@ -129,12 +129,12 @@
 
                 <div class="model" v-if='show' @click='shut'></div>
                 <div class="modelInfo" v-if='show'>
-                        <div class="means" @click='pay'>
+                        <div class="means">
                             <div class="meansName">确定删除该地址吗？</div> 
                         </div>
                         <div class="meansChoice">
-                            <div class="ChoiceNo">否</div>
-                            <div class="ChoiceYes">是</div>
+                            <div class="ChoiceNo" @click="NoCho">否</div>
+                            <div class="ChoiceYes" @click="YesCho">是</div>
                         </div>
 
                     </div>
@@ -156,9 +156,13 @@
             shut() {
                 this.show = false
             },
-            pay() {
+            NoCho() {
+                this.show = false
+            },
+            YesCho() {
                 this.show = false
             }
+            
         }
     })
 </script>
