@@ -1,60 +1,108 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/me/myInFormation.css">
     <script src="../../js/vue.js"></script>
+    <script src="../../js/iconfont.js"></script>
     <title>我的--信息中心</title>
     <style>
-        *{
+        * {
             margin: 0;
         }
-        .app{
-            background-color:#ecebeb;
+        html{
+            background-color: #ecebeb;
+        }
+        .app {
+            background-color: #ecebeb;
+        }
+
+        .dingDanNull {
+            width: 100%;
+            height: 43.5rem;
+            background: #ecebeb;
+            color: #707070;
+        }
+
+        .NullLcon {
+            width: 100%;
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 8rem;
+        }
+
+        .NullLconWords {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-size: 1rem;
         }
     </style>
 </head>
+
 <body style="height: 100%;">
     <div class="app" style="height: 100%;">
-        <div class="informationDateTime">
-            <span class="DateTime">2019年08月29日13:01</span>
-        </div>
-        <div class="informationContent">
-            <div class="informationTitle">
-                <span>消息标题</span>
-                <p>消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454</p>
-            </div>
-        </div>
 
-
-        <div class="informationDateTime">
-                <span class="DateTime">2019年08月29日13:01</span>
-            </div>
-            <div class="informationContent">
-                <div class="informationTitle">
-                    <span>消息标题</span>
-                    <p>消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</p>
-                    <div class="ImageDiv">
-
+        <div v-if="arrlist.length !== 0">
+            <div class="informationtitle" v-for="(item,index) in arrlist" v-model="TitleMain">
+                <div class="informationDateTime">
+                    <span class="DateTime">{{ item.date }}</span>
+                </div>
+                <div class="informationContent">
+                    <div class="informationTitle">
+                        <span>{{ item.Title }}</span>
+                        <p>{{ item.neitong }}</p>
+                        <div class="ImageDiv">
+                            {{ item.Img }}
+                        </div>
+                        <div class="informationlist"><span class="listTile">查看详情</span>
+                            <svg class="icon" aria-hidden="true" style="width: 0.8rem;height:0.8rem;">
+                                <use xlink:href="#iconxiaofanhui"></use>
+                            </svg>
+                        </div>
                     </div>
                 </div>
+
             </div>
+        </div>
+
+        <div class="dingDanNull" v-else>
+            <div class="NullLcon">
+                <svg class="icon" aria-hidden="true" style="height:5rem;width:5rem;">
+                    <use xlink:href="#icondingdan1"></use>
+                </svg>
+            </div>
+            <p class="NullLconWords">暂时没有任何消息哦！</p>
+        </div>
+
     </div>
+
+
+
+
 </body>
 
 
 <script>
-    
+
     var app = new Vue({
-        el:'.app',
-        data:{
-          
+        el: '.app',
+        data: {
+
+            arrlist: [
+                { date: '2019年08月29日13:01', Title: '消息标题', neitong: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454', Img: '' },
+                { date: '2019年08月29日13:01', Title: '消息标题', neitong: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454' },
+            ]
         },
-        methods:{
+        methods: {
 
         }
     })
 </script>
+
 </html>
