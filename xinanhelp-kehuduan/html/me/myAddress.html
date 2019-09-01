@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/me/myAddress.css">
     <link rel="stylesheet" href="../../css/home/element.css">
+    <link rel="stylesheet" href="../../css/icon/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     
     <title>创建地址</title>
     <style>
@@ -26,7 +28,7 @@
             
             <!-- 个人信息块 -->
             <div class="AddressPersonal">
-                <div class="PersonalName">
+                <div class="PersonalTelephone">
                     <span>姓名</span>
                     <input type="text" placeholder="收货人姓名" class="Input">
                 </div>
@@ -35,12 +37,19 @@
                         <input type="text" placeholder="收货人手机号" class="Input">
                 </div>
 
-                <div class="PersonalRegion">
+                <div class="PersonalTelephone">
                         <span>地区</span>
                         <input type="text" placeholder="选择省 / 市 / 区" class="Input">
+                        <div>
+                                <svg
+                                class="icon"
+                                aria-hidden="true"
+                                style="height:0.9rem;width:0.9rem;"
+                              >
+                                <use xlink:href="#iconxiaofanhui"></use>
+                              </svg> 
+                        </div>
                 </div>
-
-                
                 
                 <div class="PersonalAddress">
                     <span>详细地址</span>
@@ -55,8 +64,10 @@
                 <div class="DefaultLabel">
                     <span>地址标签</span>
                     <input type="text" class="DeInput">
-                    <p class="textlist">家</p>
-                    <p class="textlist">公司</p>
+                    
+                    <div  v-for="(item,index) in list" >   
+                        <p class="textlist" :class="item.checked ?'active':''" @click="change(index)">{{ item.name }}</p>
+                    </div>
                 </div>
                 <div class="DefaultSet">
                     <span>设为默认地址</span>
@@ -66,8 +77,8 @@
                         inactive-color="#0cd4d3">
                     </el-switch>
                 </div>
-
-                <!-- 按钮块 -->
+ 
+                <!-- 按钮块 -->   
                 <div class="DefaultPreservation">
                     <button class="PreservationBtn">保存并使用</button>
                 </div>
@@ -83,10 +94,36 @@
     var app = new Vue({
         el:'.app',
         data:{
-            value: true
+            value: true,
+            list:[ 
+                {name:'家',checked:true},
+                {name:'公司',checked:false}
+            ],
+            checkModel:false,
         },
         methods:{
+            change(index){
+                for(var i=0;i<this.list.length;i++){
+                    if(i!=index){
+                        this.list[i].checked=false
+                    }else{
+                        if(this.list[i].checked==false){
+                            this.list[i].checked=true                     
+                        }else{
+                            this.list[i].checked=false   
+                        }
+                        
+                        
 
+                    }
+
+                    
+                }
+                
+                
+                
+                
+            }
         }
     })
 </script>

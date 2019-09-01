@@ -50,7 +50,7 @@ h2{
     color: #fff; 
 } 
 .nowshop{
-    background: #F96165;
+    background: #0CD4D3;
 }
 .contents{
      margin-bottom:3rem; 
@@ -72,5 +72,10 @@ h2{
  color: #979595;
 }
 .shopcar{
-    background: #616161;
+    background: #FCAF03;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
 }
