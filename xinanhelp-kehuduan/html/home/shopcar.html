@@ -1,71 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;background: #F1F1F1;">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/home/shopcar.css">
     <script src="../../js/vue.js"></script>
     <title>购物车</title>
     <style>
 
-    </style>
+    </style>  
 </head>
-
 <body>
     <div class="app">
         <div class="contents">
-            <div class="ulList" v-for="(item,index) in shopcartList">
-                <!-- <div class="checkboxs">
-                    <input :id="'shopCart_id'+ index" class="color-input-red" type="checkbox" :checked="item.checked" />
-                    <label :for="'shopCart_id' + index"></label>
-                    <div @click="singleSelect(item, index)"></div>
-                </div> -->
+           <div class="ulList" v-for="(item,index) in shopcartList">
                 <div class="checkboxs">
-                    <input :id="'shopCart_id'+ index" class="color-input-red" type="checkbox" :checked="item.checked" />
-                    <label :for="'shopCart_id' + index"></label>
-                    <div @click="singleSelect(item, index)"></div>
+                    <input :id="'shopCart_id'+ index" class="color-input-red" type="checkbox"  v-model="checkboxitem" :value="item"/>
+                    <label  :for="'shopCart_id' + index"></label>
                 </div>
                 <div class="imgs">
-                    <img :src="item.img">
+                     <img :src="item.img">
                 </div>
                 <div class="contenttest">
-                    <p class="testxianqing">{{item.title}}</p>
-                    <p class="testxianqingtwo">{{item.test}}</p>
-                    <div class="pircenumber">
-                        <span class="span">￥{{item.pirce}}</span>
-                        <div class="sdfafd">
-                            <div class="btns" @click='jianshu(index,item.num)'>-</div>
-                            <span>{{item.num}}</span>
-                            <div class="btns add" @click="add(index,item.num)">+</div>
-                        </div>
-                    </div>
+                     <p class="testxianqing">{{item.title}}</p>
+                     <p  class="testxianqingtwo">{{item.test}}</p>
+                     <div class="pircenumber">
+                         <span class="span">￥{{item.pirce}}</span>
+                         <div class="sdfafd">
+                             <div class="btns" @click='jianshu(index,item.num)'>-</div>
+                             <span >{{item.num}}</span>
+                             <div class="btns add" @click="add(index,item.num)">+</div>
+                         </div>
+                     </div>
                 </div>
             </div>
         </div>
 
         <div class="bottombtn">
-            <!-- <div class="checkboxs checkedtwo">
-                <input id="color-input-all" class=" color-input-red" type="checkbox" :checked='selectAll' />
-                <label for="color-input-all" class="marginRight"></label >
-                    全选   
-            </div> -->
             <div class="checkboxs checkedtwo">
-                <input id="color-input-all" class=" color-input-red" type="checkbox" :checked="isAllSelected" />
-                <label for="color-input-all" class="marginRight"></label >
-                    <div @click="allSelect"></div>
-                        全选   
-                </div>
+                <input id="color-input-all" class=" color-input-red" type="checkbox"  :checked='selectAll'  @click="allPick" />
+                <label  for="color-input-all" class="marginRight"></label >
+                    全选
+            </div>
+            {{all}}
             <div class="displayright">
                 <div class="rightbuju">
-                    <p>合计：730.00</p>
+                    <p>合计：￥{{total}}</p>
                 </div>
-                <div class="del">
+                <div class="del" @click="del">
                     删除
                 </div>
                 <div class="redBtn">
-                    结算<span>(2)</span>
+                    结算<span v-if="jians!=0">({{jians}})</span>
                 </div>
             </div>
         </div> 
@@ -81,12 +68,30 @@
                 selectAll:false,
                 checkboxitem:[],
                 shopcartList:[
-                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,checked: false},
-                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,checked: false},
-                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,checked: false}
+                    {id:1,title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',test:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1},
+                    {id:2,title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',test:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1},
+                    {id:3,title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',test:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,}
                 ]
         },
         methods:{
+            allPick(){
+                if(this.selectAll){
+                    this.selectAll=false
+                    this.checkboxitem = []
+                    console.log(1)
+                }else{
+                    this.selectAll=true
+                    this.checkboxitem = this.shopcartList
+                }
+
+            },
+            del(){
+                for(let i=0;i<this.checkboxitem.length;i++){
+                    console.log(this.checkboxitem)
+                this.checkboxitem.splice(i,1)
+                this.shopcartList.splice(i,1)
+            }
+            },
             jianshu(index,num){
                 if(num>1){
                     this.shopcartList[index].num=num-1
@@ -95,41 +100,32 @@
             add(index,num){
                 this.shopcartList[index].num=num+1
             },
-            singleSelect(item, index) {
-                console.log(111)
-                item.checked = !item.checked;
-                    this.shopcartList.splice(index, 1, item);
-                },
-            allSelect() {
-                let checked = true;
-                    // 全选
-                if (this.isAllSelected) {
-                    checked = false;
-                }
-                this.shopcartList = this.shopcartList.map(el => {
-                    el.checked = checked;
-                    return el;
-                }) 
-            },
+            
         },
         computed:{
             all(){
-            if(this.checkboxitem.length==0){
-                this.selectAll=false
-                // this.$refs.closeMoney.style.color =' rgba(255, 255, 255, 0.5)'
-            }else if(this.checkboxitem.length==this.shopcartList.length){
-                this.selectAll=true
-                // this.$refs.closeMoney.style.color = "white"
-            }else{
-                this.selectAll=false
-                // this.$refs.closeMoney.style.color = "rgba(255, 255, 255, 0.5)"
-            }
-        },
-        isAllSelected() {
-            return this.shopcartList.every((el) => {
-                    return el.checked;
-                })
+                if(this.checkboxitem.length==0){
+                    this.selectAll=false
+                }else if(this.checkboxitem.length==this.shopcartList.length){
+                    this.selectAll=true
+                }else{
+                    this.selectAll=false
+                }
             },
+            total(){
+                var sum=0
+                for(var i=0;i<this.checkboxitem.length;i++){
+                    sum+=parseInt(this.checkboxitem[i].num)*parseFloat(this.checkboxitem[i].pirce)
+                }
+                return sum
+            },
+            jians(){
+                let jian = 0
+                for(var i=0;i<this.checkboxitem.length;i++){
+                    jian+=parseInt(this.checkboxitem[i].num)
+                }
+                return jian
+            }
         }
         
     })
