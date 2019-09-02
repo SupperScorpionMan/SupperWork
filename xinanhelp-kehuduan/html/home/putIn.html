@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 
 <head>
     <meta charset="UTF-8">
@@ -15,142 +15,183 @@
         * {
             margin: 0;
         }
-        
+
+        .app {
+            background-color: #ecebeb;
+        }
+
+
         .el-checkbox__inner {
             border-radius: 50%;
         }
-        
+
         .el-checkbox__input.is-checked .el-checkbox__inner,
         .el-checkbox__input.is-indeterminate .el-checkbox__inner {
             background-color: #F96165;
             border-color: #F96165;
         }
-        
+
         .el-checkbox__inner:hover {
             border-color: #F96165;
         }
-        
+
         .el-checkbox__input.if-focus .el-checkbox__inner {
             border-color: #F96165;
         }
-        
+
         .el-checkbox__inner {
             z-index: 0;
         }
     </style>
 </head>
 
-<body>
-    <div class="app">
-        <div class="siteDetails" v-if='site.length'>
-            <div class="userInfo">
-                <div><i class="el-icon-location-outline"></i>收件人：</div>
-                <div style="margin-right: 20%">{{site[0].recipients}}</div>
-                <div>{{site[0].phone}}</div>
+<body style="height: 100%;">
+    <div class="app" style="height: 100%;">
+        <div class="siteContent">
+
+            <div class="siteHead">
+                <div class="headman">
+                    <svg class="icon" aria-hidden="true" style="width: 2rem;height:2rem;">
+                        <use xlink:href="#icondizhi"></use>
+                    </svg>
+                </div>
+
+                <div class="siteDetails" v-if='site.length'>
+                    <div class="userInfo">
+                        <div style="margin-right: 20%">{{site[0].recipients}}</div>
+                        <div class="phoneNub">{{site[0].phone}}</div>
+                    </div>
+                    <div class="siteInfo">
+                        <div>{{site[0].site}}</div>
+                    </div>
+                </div>
+
+                <div class="jiantou">
+                    <svg class="icon" aria-hidden="true" style="width: 0.8rem;height:0.8rem;">
+                        <use xlink:href="#iconxiaofanhui"></use>
+                    </svg>
+                </div>
             </div>
-            <div class="siteInfo">
-                <div>收货地址:</div>
-                <div>{{site[0].site}}</div>
-            </div>
+
         </div>
+
         <div class="addSite" v-else>
             <div class="btn">+</div>
             <div class="explain">新建收货地址</div>
             <div class="right">></div>
         </div>
 
-        <div class="modity">
-            <div class="modityImg">
-                <div class="img"></div>
-            </div>
-            <div class="details">
-                <div style="font-size: 0.6rem">海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家
+        <div class="siteModity">
+
+
+            <div class="modity">
+                <div class="shoptitle">
+                    <p>商品信息</p>
                 </div>
-                <div class="addNum">
-                    <div class="red">￥730.00</div>
-                    <div class="right">
-                        <div class="btn" @click='subtract(num)'>-</div>
-                        <div style="font-size: 0.6rem;">{{num}}</div>
-                        <div class="btn active" @click='addnum(num)'>+</div>
+
+                <div class="modityBox">
+                    <div class="modityImg">
+                        <div class="img"></div>
+                    </div>
+                    <div class="details">
+                        <div class="textwen" style="font-size: 0.6rem">海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家
+                        </div>
+                        <p>免费领取安装、换新机、检测维护</p>
+                        <div class="addNum">
+                            <div class="red">￥730.00</div>
+                            <div class="right">
+                                <div class="btn" @click='subtract(num)'>-</div>
+                                <div style="font-size: 0.6rem;">{{num}}</div>
+                                <div class="btn active" @click='addnum(num)'>+</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </div>
 
-        <div class="empty">
-            <!-- <div class="reserve">订单详情</div>
-            <div class="particulars">
-                <div v-for='(item,index) in particulars'>{{item.content}}</div>
-                
-                <div style="text-align: center; color: #707070; font-size: 0.8rem;">净水器设备由平台商家珠海海露智能物联网发货并提供售后服务</div>
-                <div class="protocol">
-                    <template>
-                        
-                        <el-checkbox v-model="checked">我已阅读并同意<span style="color:cornflowerblue">《海路用户协议》</span></el-checkbox>
-                      </template>
-                </div>
-            </div> -->
 
-        </div>
-        <div class="emptyList"></div>
-        <div class="more">
-            <div class="install">
-                <!-- <div style="padding: 4% 0 0 4%;">店铺活动</div> -->
-                <div></div>
-                <div class="choice">
-                    <!-- <div style="flex: 1;">优惠卷</div>
-                    <div style="flex: 2;"><template>
-                        <el-radio v-model="radio" label="1">使用优惠卷</el-radio>
-                        <el-radio v-model="radio" label="2">不使用优惠卷</el-radio>
-                        </template>
-                    </div> -->
-                </div>
-                <div class="choice">
-                    <!-- <div style="flex: 1;">配送方式</div>
-                    <div style="flex: 2;"><template>
-                        <el-radio v-model="radio1" label="1">自提</el-radio>
-                        <el-radio v-model="radio1" label="2">快递</el-radio>
-                        </template>
-                    </div> -->
-                </div>
-                <div class="choice">
-                    <div style="flex: 1;">是否需要安装</div>
-                    <div style="flex: 2;"><template>
-                        <!-- <el-radio v-model="radio2" label="1">安装</el-radio> -->
-                        <el-checkbox v-model="checked1">安装</el-checkbox>
-                        <!-- <el-radio v-model="radio2" label="2">不需要按照</el-radio> -->
-                        </template>
+            <div class="modity">
+
+                <div class="modityBox">
+                    <div class="modityImg">
+                        <div class="img"></div>
+                    </div>
+                    <div class="details">
+                        <div class="textwen" style="font-size: 0.6rem">海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家
+                        </div>
+                        <p>免费领取安装、换新机、检测维护</p>
+                        <div class="addNum">
+                            <div class="red">￥730.00</div>
+                            <div class="right">
+                                <div class="btn" @click='subtract(num)'>-</div>
+                                <div style="font-size: 0.6rem;">{{num}}</div>
+                                <div class="btn active" @click='addnum(num)'>+</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            <div class="message">
-                <div>买家留言</div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="建议留言前先与商家沟通确认"></textarea>
+
+            <div class="lineBox">
+                <div class="lineText">
+                    <p class="TextPo">配送方式</p>
+                    <p class="TextPt">快递</p>
+                </div>
+                <div class="lineText">
+                    <p class="TextPo">安装服务</p>
+                    <p class="TextPtRed">￥0.00</p>
+                </div>
+                <div class="lineText">
+                    <p class="TextPo">开具发票</p>
+                    <p class="TextPt">本次不开具发票
+                        <span class="svgSpan">
+                            <svg class="icon" aria-hidden="true" style="width: 0.5rem;height:0.5rem;">
+                                <use xlink:href="#iconxiaofanhui"></use>
+                            </svg>
+                        </span>
+                    </p>
+
+                </div>
+                <div class="lineTextBox">
+                    <div class="TextPoBox">订单备注</div>
+                    <textarea class="TextPtBox" name="" id="" cols="30" rows="10" placeholder="选填、请注意商品详情说明"></textarea>
+                </div>
             </div>
+
+
+
         </div>
+
+
+
         <div class="foot">
-            <div class="money">￥730.00<span>/件</span></div>
-            <div class="original">￥6980</div>
+            <div class="money">￥730.00</div>
             <div class="footBtn" @click='putin'>提交订单</div>
         </div>
 
         <div class="model" v-if='show' @click='shut'></div>
         <div class="modelInfo" v-if='show'>
-            <div class="means" @click='pay'>
-                <div class="meansIcon"></div>
-                <div class="meansName">微信支付</div>
+            <div class="means">
+                
+                <div class="meansName">选择支付方式</div>
             </div>
             <div class="means" @click='pay'>
-                <div class="meansIcon"></div>
-                <div class="meansName">支付宝支付</div>
+                
+                <div class="meansName" style="color: green;">微信支付</div>
             </div>
             <div class="means" @click='pay'>
-                <div class="meansIcon"></div>
-                <div class="meansName">货到付款</div>
+                
+                <div class="meansName"  style="color: blue;">支付宝支付</div>
             </div>
             <div class="means" @click='pay'>
-                <div class="meansIcon"></div>
-                <div class="meansName">（珠海）上门交易</div>
+                
+                <div class="meansName"  style="color: orange;">货到付款</div>
+            </div>
+            <div class="means" @click='pay'>
+                
+                <div class="meansName"  style="color: red;">（珠海）上门交易</div>
             </div>
         </div>
     </div>
@@ -159,10 +200,7 @@
     var app = new Vue({
         el: '.app',
         data: {
-            // radio: '1',
-            // radio1: '1',
-            // radio2: '1',
-            // checked: true,
+            
             checked1: true,
             num: 1,
             show: false,
@@ -179,7 +217,7 @@
                 content: '3.可挂墙壁，支持多种安装方式'
             }, {
                 content: '4.免费上门安装，免费换滤芯，免费售后维修'
-            }, ]
+            },]
         },
         computed: {
 
