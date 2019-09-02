@@ -45,7 +45,9 @@
     width: 80%;
     border: none;
     outline: none;
-    text-indent: 2rem;
+}
+.cityy{
+    width: 80%; 
 }
 
 
@@ -128,13 +130,14 @@ textarea::-webkit-textarea-placeholder{
 
 /* 按钮信息 */
 .DefaultPreservation{
-    height: 8rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .PreservationBtn{
+    font-size: 1rem;
     color: white;
     width: 95%;
     height: 3rem;
@@ -142,6 +145,10 @@ textarea::-webkit-textarea-placeholder{
     border: none;
     background-color: #0cd4d3;
     outline: none;
+}
+.DefaultPreservation .PreservationBtntwo{
+    color:#FF4536;
+    background: #fff;
 }
 
 .DefaultLabel div{
@@ -167,5 +174,59 @@ textarea::-webkit-textarea-placeholder{
     background: #0CD4D3;
     color: #fff;
 
+}
+.modelInfo{
+    width: 60%;
+    height: 8rem;
+    background-color: #ffffff;
+    z-index: 100;
+    border-radius: 0.5rem;
+}
+.means{
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.model {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.meansName{
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #ecebeb solid 0.05rem;
+}
+.meansChoice{
+    display: flex;
+    justify-content: center;
+}
+.ChoiceNo{
+    width: 50%;
+    height: 3rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: #ecebeb solid 0.05rem;
+    color: #707070;
+}
+.ChoiceYes{
+    width: 50%;
+    height: 3rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #707070;
 }
  

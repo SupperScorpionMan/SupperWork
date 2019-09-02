@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;background:#F1F1F1;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/me/feedback.css">
+    <link rel="stylesheet" href="../../css/icon/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
     <title>客服反馈</title>
     <style>
@@ -14,21 +16,17 @@
 <body>
     <div class="app">
         <div class="concent">
-                <p class="title">请您把问题留下，我们为您提供专业化的解决方案</p>
-                <div class="options">
-                    <div v-for="(item,index) in optiontest">
-                        <div class="radios"><input type="radio" name="a" :value="item.val" :checked='item.checked'>{{item.name}}</div>
-                    </div>
-                </div>
                 <input type="text" placeholder="请输入你的姓名（必填）" class="inputs">
                 <input type="text" placeholder="请输入你的手机号（必填）" class="inputs">
                 <textarea name="" id="" cols="30" rows="10" placeholder="请把问题留给我们，我们会提供让您满意答复~~"></textarea>
                 <div class="photoList">
                         <div class="photo">
-                                12313
+                                <svg class="icon" aria-hidden="true" style="width:2.5rem;height:2.5rem;">
+                                        <use xlink:href="#iconxiangji"></use>
+                                    </svg>
                         </div>
                         <div class="picture">
-                                <img src="../../img/daffodil.jpg">
+                                <!-- <img src="../../img/daffodil.jpg"> -->
                         </div>
                 </div>
                 <div class="submitBtn">
@@ -43,11 +41,7 @@
     var app = new Vue({
         el:'.app',
         data:{
-            optiontest:[
-                {name:'在线留言',val:'0',checked:true},
-                {name:'问题咨询',val:'1',checked:false},
-                {name:'其他',val:'2',checked:false},
-            ]
+            
         },
         methods:{}
             

@@ -7,7 +7,7 @@
     width: 95%;
     height: 5rem;
     background-color: #ffffff;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 0.3rem;
 
 }
@@ -29,10 +29,11 @@
     color: #686868;
 }
 .RedDefault{
-    font-size: 0.5rem;
-    background-color: #f96165;
+    font-size: 0.3rem;
+    background-color: #0CD4D3;
     color: #ffffff;
     border-radius: 0.3rem; 
+    padding: 0 0.3rem;
 }
 .InvoicePersonal{
     font-size: 0.5rem;
@@ -43,4 +44,19 @@
     justify-content: space-between;
     align-items: center;
     color: #686868;
+}
+.InvoiceBtn{
+    height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BtnAdd{
+    width: 95%;
+    height: 2.5rem;
+    color: white;
+    background-color: #0cd4d3;
+    border: none;
+    outline: none;
+    border-radius: 0.3rem;
 }
