@@ -1,16 +1,17 @@
 .informationDateTime{
-    height: 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .DateTime{
-    width: 50%;
     color: #ffffff;
     font-size: 0.8rem;
     background-color: #cdcdcd;
     text-align: center;
-    border-radius: 0.2rem;
+    border-radius: 0.6rem;
+    padding: 0.1rem 0.5rem;
+    box-sizing: border-box;
+    margin: 0.5rem 0;
 }
 
 .informationContent{
@@ -44,7 +45,6 @@
 }
 .informationTitle p{
     line-height: 1.2rem;
-    height: 3.5rem;
     border: none;
     outline: none;
     color: #707070;
@@ -58,5 +58,10 @@
 
 .ImageDiv{
     height: 10rem;
-    background-color: #707070;    
+    border-radius:   0.5rem; 
+}
+.ImageDiv img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../css/home/element.css">
     <link rel="stylesheet" href="../../css/home/shopcar.css">
     <link rel="stylesheet" href="../../css/me/ApplicationforInvoice.css">
-    <title>申请开票</title>
+    <title>申请发票</title>
     <style>
 
     </style>
@@ -20,7 +20,8 @@
 
             <div class="ulList">
                 <div class="checkboxs">
-                    <el-checkbox class="daffdfa" v-model="checked"></el-checkbox>
+                    <input :id="'shopCart_id'+ index" class="color-input-red" type="checkbox" v-model="checkboxitem" :value="item" />
+                    <label :for="'shopCart_id' + index"></label>
                 </div>
 
                 <div class="contenttest">
@@ -38,7 +39,9 @@
 
         <div class="bottombtn">
             <div class="checkboxs checkedtwo">
-                <el-checkbox class="daffdfa" v-model="checkedAll">全选</el-checkbox>
+                <input id="color-input-all" class=" color-input-red" type="checkbox" :checked='selectAll' />
+                <label for="color-input-all" class="marginRight"></label >
+                        全选  
             </div>
             <div class="displayright">
                 <div class="rightbuju">

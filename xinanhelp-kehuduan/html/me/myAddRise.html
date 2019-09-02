@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/me/myAddRise.css">
     <link rel="stylesheet" href="../../css/home/element.css">
     
-    <title>添加抬头</title>
+    <title>添加抬头</title>              
     <style>
         *{
             margin: 0;
@@ -94,7 +94,15 @@
 
                     </div>
                     
-                    
+                    <div class="defaults">
+                        <span>设为默认抬头</span>
+                        
+                        <el-switch
+                        v-model="value"
+                        active-color="#e4e4e4"
+                        inactive-color="#0cd4d3">
+                    </el-switch>
+                    </div>
                             
                 </div>
 
@@ -110,11 +118,13 @@
     </div>
 </body>
 <script src="../../js/vue.js"></script>
+<script src="../../js/element.js"></script>
 <script>
     
     var app = new Vue({
         el:'.app',
         data:{
+            value: true,
             optiontest:[
                 {name:'单位',val:'0',checked:false},
                 {name:'个人/非单位',val:'1',checked:true},

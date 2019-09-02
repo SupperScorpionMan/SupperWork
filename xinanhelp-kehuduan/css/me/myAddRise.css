@@ -114,4 +114,12 @@ input[type=radio] {
     position: relative;
     border-radius: 50%;
 }
+.defaults{
+    width:10   0%;
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem 0 ;
+     display: flex;
+     justify-content: space-between;
+}
 

@@ -1,38 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en" style="height: 100%;background-color: #ecebeb;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/me/mymored.css">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1379977_aaxc3aipxu.css">
-    <script type="text/javascript" src="//at.alicdn.com/t/font_1379977_aaxc3aipxu.js"></script>
+    <link rel="stylesheet" href="../../css/icon/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
-    
-    <title>海露会员商店（个人首页）</title>
+    <title>我的</title>
     <style>
         *{
             margin: 0;
         }
-        .app{
-            background-color: #ecebeb;
-        }
-        .icon{
-            width: 2rem;
-            height: 2rem;
-            color: #fc8003;
-            border: 0.01rem solid #fc8003;
-
+        .iconfonts{
+            width: 1.5rem;
+            height: 1.5rem;
         }
     </style>
 </head>
 <body style="height: 100%;">
     <div class="app" style="height: 100%;">
- 
         <!-- app头部栏 -->
         <div class="headGeren">
             <div class="gerenXinXi">
+                <img src="../../img/daffodil.jpg" alt="">
             </div>
             <p class="gerenNub">156****4758</p>
         </div>
@@ -44,39 +36,55 @@
                     <span> 我的订单</span>
                     <div class="flexbuju" >
                         <div>
-                            <p class="time">查看全部订单<span>
-                              
-                            </span></p>
+                            <p class="time">查看全部订单
+                                <span>
+                                    <svg class="icon" aria-hidden="true" style="height: 0.9rem;width:0.9rem;">
+                                        <use xlink:href="#icondaifahuo1"></use>
+                                    </svg>
+                            </span>
+                        </p>
                         </div>
                         </div>
                 </div>
                 <div class="myChoice">
                     <div class="ChoiceTitle">
                         <div class="Choice">
-                            1
+                            <svg class="icon iconfonts" aria-hidden="true" >
+                                <use xlink:href="#icondaifukuan2"></use>
+                            </svg>
                         </div>
                         <p>待付款</p>
                     </div>
                     <div class="ChoiceTitle">
                         <div class="Choice">
-                            1
+                            <svg class="icon iconfonts" aria-hidden="true" >
+                                <use xlink:href="#icondaifahuo2"></use>
+                            </svg>
                         </div>
                         <p>待发货</p>
                     </div>
                     <div class="ChoiceTitle">
                         <div class="Choice">
-                            1
+                                <svg class="icon iconfonts" aria-hidden="true" >
+                                        <use xlink:href="#iconyifahuo2"></use>
+                                    </svg>
                         </div>
                         <p>已发货</p>
                     </div>
                     <div class="ChoiceTitle">
                         <div class="Choice">
-                            1
+                                <svg class="icon iconfonts" aria-hidden="true" >
+                                        <use xlink:href="#iconyiwancheng2"></use>
+                                    </svg>
                         </div>
                         <p>已完成</p>
                     </div>
                     <div class="ChoiceTitle">
-                        <div class="Choice">￥</div>
+                        <div class="Choice">
+                            <svg class="icon iconfonts" aria-hidden="true" >
+                                <use xlink:href="#icontuikuanshouhou"></use>
+                            </svg>
+                        </div>
                         <p>退货/售后</p>
                     </div>       
                 </div>
@@ -90,19 +98,35 @@
 
                 <div class="myTicket">
                     <div class="TicketTitle">
-                        <div class="Ticket">￥</div>
+                        <div class="Ticket">
+                                <svg class="icon iconfonts" aria-hidden="true" >
+                                        <use xlink:href="#iconfapiaotaitou"></use>
+                                    </svg>
+                        </div>
                         <p>发票抬头</p>
                     </div>
                     <div class="TicketTitle">
-                            <div class="Ticket">￥</div>
+                            <div class="Ticket">
+                                    <svg class="icon iconfonts" aria-hidden="true" >
+                                            <use xlink:href="#iconshenqingfapiao"></use>
+                                        </svg>
+                            </div>
                         <p>申请发票</p>
                     </div>
                     <div class="TicketTitle">
-                        <div class="Ticket">￥</div>
+                        <div class="Ticket">
+                                <svg class="icon iconfonts" aria-hidden="true" >
+                                        <use xlink:href="#iconyikaifapiao"></use>
+                                    </svg>
+                        </div>
                         <p>已开发票</p>
                     </div>
                     <div class="TicketTitle">
-                        <div class="Ticket">￥</div>
+                        <div class="Ticket">
+                                <svg class="icon iconfonts" aria-hidden="true" >
+                                        <use xlink:href="#iconkaipiaoxuzhi"></use>
+                                    </svg>
+                        </div>
                         <p>开票须知</p>
                     </div>
                 </div>
@@ -111,25 +135,38 @@
             <div class="myContentHelp">
                     <div class="myHelp">
                         <div class="HelpTitle">
-                            <div class="Help">￥</div>
-                            <p>发票抬头</p>
+                            <div class="Help">
+                                    <svg class="icon iconfonts" aria-hidden="true" >
+                                            <use xlink:href="#iconwodedizhi"></use>
+                                        </svg>
+                            </div>
+                            <p>我的地址</p>
                         </div>
                         <div class="HelpTitle">
-                            <div class="Help">￥</div>
-                            <p>申请发票</p>
+                            <div class="Help">
+                                    <svg class="icon iconfonts" aria-hidden="true" >
+                                            <use xlink:href="#iconbangzhuzhongxin"></use>
+                                        </svg>
+                            </div>
+                            <p>帮助中心</p>
                         </div>
                         <div class="HelpTitle">
-                            <div class="Help">￥</div>
-                            <p>已开发票</p>
+                            <div class="Help">
+                                    <svg class="icon iconfonts" aria-hidden="true" >
+                                            <use xlink:href="#iconkefufankui"></use>
+                                        </svg>
+                            </div>
+                            <p>客服反馈</p>
                         </div>   
                         <div class="HelpTitle">
-                            <div class="Help">￥</div>    
-                            <p>开票须知</p>
+                            <div class="Help">
+                                    <svg class="icon iconfonts" aria-hidden="true" >
+                                            <use xlink:href="#iconxiaoxizhongxin"></use>
+                                        </svg>
+                            </div>    
+                            <p>消息中心</p>
                         </div>
-                        <div class="HelpTitle">
-                                <div class="Help">￥</div>    
-                                <p>开票须知</p>
-                            </div>
+                        
                 </div>
             </div>
 
