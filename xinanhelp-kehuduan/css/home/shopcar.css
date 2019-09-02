@@ -2,12 +2,15 @@
     padding: 0.5rem ;
 }
 .ulList{
-    margin-bottom: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 0.8rem 0.5rem;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
     width: 100%;
-    height: 4rem;
+    height: 6rem;
     display: flex;
     border-radius: 0.5rem;
-    padding: 0.5rem 0;
 }
 .checkboxs{
  width: 10%;
@@ -31,13 +34,27 @@
  position: relative;
 }
 .testxianqing{
+    width: 80%;
     margin: 0;
+    font-size: 0.8rem;
+    display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp: 1;
+     overflow: hidden;
+     margin-top: 0.2rem;
+
+}
+.testxianqingtwo{
+    margin: 0;
+    width: 80%;
+    font-size: 0.6rem;
+    color: #9597A6;
     font-size: 0.6rem;
     display: -webkit-box;
      -webkit-box-orient: vertical;
-     -webkit-line-clamp: 2;
+     -webkit-line-clamp: 1;
      overflow: hidden;
-
+     margin-top: 0.2rem;
 }
 .pircenumber{
     position: absolute;
@@ -106,8 +123,8 @@
 }
 .redBtn{
     height: 100%;
-    width: 50%;
-    background: red;
+    width: 40%;
+    background: #0CD4D3;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -137,4 +154,20 @@ input[type=checkbox]{
 }
 .marginRight{
     margin-right: 0.3rem;
+}
+.rightbuju{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.del{
+    height: 100%;
+    width: 20%;
+    background: #FCAF03;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

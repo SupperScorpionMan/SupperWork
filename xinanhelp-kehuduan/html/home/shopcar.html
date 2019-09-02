@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en" style="height: 100%;background: #F1F1F1;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -8,7 +8,7 @@
     <script src="../../js/vue.js"></script>
     <title>购物车</title>
     <style>
-        
+       
        
     </style>  
 </head>
@@ -25,6 +25,7 @@
                 </div>
                 <div class="contenttest">
                      <p class="testxianqing">{{item.title}}</p>
+                     <p  class="testxianqingtwo">{{item.test}}</p>
                      <div class="pircenumber">
                          <span class="span">￥{{item.pirce}}</span>
                          <div class="sdfafd">
@@ -41,19 +42,21 @@
             <div class="checkboxs checkedtwo">
                 <input id="color-input-all" class=" color-input-red" type="checkbox"  :checked='selectAll'   />
                 <label  for="color-input-all" class="marginRight"></label >
-                    全选   
+                    全选
             </div>
             <div class="displayright">
                 <div class="rightbuju">
                     <p>合计：730.00</p>
-                    <span class="spans">不含运费</span>
+                </div>
+                <div class="del">
+                    删除
                 </div>
                 <div class="redBtn">
                     结算<span>(2)</span>
                 </div>
             </div>
         </div> 
-
+        
     </div>
 </body>
 
@@ -65,9 +68,9 @@
                 selectAll:false,
                 checkboxitem:[],
                 shopcartList:[
-                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1},
-                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1},
-                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,}
+                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',test:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1},
+                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',test:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1},
+                    {title:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',test:'海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家',img:'../../img/daffodil.jpg',pirce:730.00,num:1,}
                 ]
         },
         methods:{
