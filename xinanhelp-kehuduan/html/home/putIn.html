@@ -22,20 +22,6 @@
     </style>
 </head>
 
-<<<<<<< HEAD
-<body>
-    <div class="app">
-        <div class="siteDetails" v-if='site.length'>
-
-            <div class="userInfo">
-                <div><i class="el-icon-location-outline"></i>收件人：</div>
-                <div style="margin-right: 20%">{{site[0].recipients}}</div>
-                <div>{{site[0].phone}}</div>
-            </div>
-            <div class="siteInfo">
-                <div>收货地址:</div>
-                <div>{{site[0].site}}</div>
-=======
 <body style="height: 100%;">
     <div class="app" style="height: 100%;">
         <div class="siteContent">
@@ -83,7 +69,6 @@
                         </svg>
                     </div>
                 </div>
->>>>>>> 92cf1f7e019b2a34ac707bdea2537e7936df6b6d
             </div>
 
         </div>
@@ -128,13 +113,14 @@
                     </div>
                     <div class="lineText">
                         <p class="TextPo">开具发票</p>
-                        <p class="TextPt">本次不开具发票
-                            <span class="svgSpan">
+                        <div class="TextPtBox">
+                            <p class="TextPt">本次不开具发票</p>
+                            <p class="svgSpan">
                                 <svg class="icon" aria-hidden="true" style="width: 0.5rem;height:0.5rem;">
                                     <use xlink:href="#iconxiaofanhui"></use>
                                 </svg>
-                            </span>
-                        </p>
+                            </p>
+                        </div>
 
                     </div>
                     <div class="lineTextBox">
@@ -199,7 +185,7 @@
             ],
             modityList: [
                 { img: '../../img/daffodil.jpg', wen: '海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家', portTile: '免费领取安装、换新机、检测维护、免费领取安装、换新机、检测维护', spaice: '￥730.00', num: '1' },
-                { img: '../../img/daffodil.jpg', wen: '海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家', portTile: '免费领取安装、换新机、检测维护', spaice: '￥730.00', num: '1' }
+                { img: '../../img/daffodil.jpg', wen: '中化石油加油卡礼包', portTile: '内含一张1000元加油卡', spaice: '￥730.00', num: '1' }
 
             ]
         },

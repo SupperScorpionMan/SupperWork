@@ -46,16 +46,18 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0.3rem;
 }
 .shoptitle p{
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     
 }
 .modity {
     width: 90%;
     background-color: white;
     box-sizing: border-box;
-    padding: 1rem 1rem 1.5rem 1rem;
+    padding: 0.5rem 1rem 1rem 1rem;
     border-radius: 0.5rem;
 }
 .modityBox{
@@ -85,6 +87,8 @@
 }
 .details {
     width: 80%;
+    box-sizing: border-box;
+    padding: 0 0 0 0.5rem;
 }
 .details p{
     font-size: 0.5rem;
@@ -95,10 +99,12 @@
     display:-webkit-box;  
     -webkit-box-orient:vertical;  
     -webkit-line-clamp:1;
+    margin-bottom: 0.6rem;
     
 }
 .textwen{
-    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
     overflow:hidden;  
     text-overflow:ellipsis;  
     white-space: normal;  
@@ -116,6 +122,7 @@
     margin-top: 2%;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.2rem;
 
     
 }
@@ -159,6 +166,14 @@
 }
 .TextPt{
     font-size: 0.5rem;
+    margin-right: 0.5rem;
+}
+.TextPtBox{
+    width: 15%;
+    height: 2rem ;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .TextCheckBox{
     width: 22%;
@@ -172,8 +187,9 @@
     color: #ff4536;
 }
 .svgSpan{
-    width: 0.8rem;
-    height: 0.5rem;    
+    display: flex;
+    justify-content: center;
+    align-items: center 
 }
 
 .lineTextBox{
@@ -209,9 +225,9 @@
     display: flex;
 }
 
-.foot div {
+/* .foot div {
     flex: 1;
-}
+} */
 
 .footBtn {
     width: 30%;
@@ -226,9 +242,9 @@
     width: 70%;
     color: #F96165;
     font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
+    text-align: left ;
     line-height: 3rem;
+    margin-left: 0.5rem;
 }
 
 
@@ -365,37 +381,4 @@
 }
 .means div{
     margin-top: 2%;
-}
-.el-radio{
-    margin-right: 10%;
-}
-.el-radio__label{
-    padding-left: 0;
-    font-size: 0.5rem;
-}
-.el-radio__input.is-checked+.el-radio__label{
-    color: #000;
-}
-.el-radio__input.is-checked .el-radio__inner{
-    border-color: #F96165;
-    background: #F96165;
-}
-
-.reserve{
-    width: 100%;
-    padding: 4%;
-    border-bottom: #707070 solid 0.05rem;
-}
-.empty div{
-    margin-bottom: 2%;
-}
-.particulars{
-    font-size: 0.8rem;
-    padding: 4%;
-}
-.protocol{
-    text-align: center;
-}
-.el-checkbox__input.is-checked+.el-checkbox__label{
-    color: #000;
 }
