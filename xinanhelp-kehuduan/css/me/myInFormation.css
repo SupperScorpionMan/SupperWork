@@ -48,13 +48,6 @@
     border: none;
     outline: none;
     color: #707070;
-<<<<<<< HEAD
-    overflow: hidden;
-    /* display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical; */
-=======
->>>>>>> 92cf1f7e019b2a34ac707bdea2537e7936df6b6d
     overflow:hidden;  
     text-overflow:ellipsis;  
     white-space: normal;  
