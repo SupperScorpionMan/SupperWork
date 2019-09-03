@@ -7,42 +7,74 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../../css/me/myInFormation.css">
     <script src="../../js/vue.js"></script>
-<<<<<<< HEAD
-    <title>消息中心</title>
-=======
     <script src="../../js/iconfont.js"></script>
     <title>我的--信息中心</title>
->>>>>>> 92cf1f7e019b2a34ac707bdea2537e7936df6b6d
     <style>
         * {
             margin: 0;
         }
-        html{
+
+        html {
             background-color: #ecebeb;
         }
+
         .app {
             background-color: #ecebeb;
+        }
+
+        .MactionDateTime {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .MactionBox span {
+            margin-bottom: 0.2rem;
+        }
+
+        .MactionBox p {
+            line-height: 1.2rem;
+            border: none;
+            outline: none;
+            color: #707070;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05rem;
+        }
+
+        .informationChores {
+            font-size: 0.8rem;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.8rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .MactionTime {
+            color: #ffffff;
+            font-size: 0.8rem;
+            background-color: #cdcdcd;
+            text-align: center;
+            border-radius: 0.6rem;
+            padding: 0.1rem 0.5rem;
+            box-sizing: border-box;
+            margin: 0.5rem 0;
         }
     </style>
 </head>
 
 <body style="height: 100%;">
     <div class="app" style="height: 100%;">
-<<<<<<< HEAD
-        <div class="informationDateTime">
-            <span class="DateTime">2019年08月29日13:01</span>
-        </div>
-        <div class="informationContent">
-            <div class="informationTitle">
-                <span>消息标题</span>  
-                <p>消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内大发大容</p>
-            </div>
-        </div>
-=======
->>>>>>> 92cf1f7e019b2a34ac707bdea2537e7936df6b6d
 
         <div v-if="arrlist.length !== 0">
-            <div class="informationtitle" v-for="(item,index) in arrlist" v-model="TitleMain">
+            <div class="informationtitle" v-for="(item,index) in arrlist">
                 <div class="informationDateTime">
                     <span class="DateTime">{{ item.date }}</span>
                 </div>
@@ -50,28 +82,40 @@
                     <div class="informationTitle">
                         <span>{{ item.Title }}</span>
                         <p>{{ item.neitong }}</p>
-                        <div class="ImageDiv">
-                            {{ item.Img }}
-                        </div>
-                        <div class="informationlist"><span class="listTile">查看详情</span>
-                            <svg class="icon" aria-hidden="true" style="width: 0.8rem;height:0.8rem;">
-                                <use xlink:href="#iconxiaofanhui"></use>
-                            </svg>
-                        </div>
+                        <div class="ImageDiv"><img :src="item.Img"></div>
                     </div>
                 </div>
 
             </div>
-<<<<<<< HEAD
-            <div class="informationContent">
-                <div class="informationTitle">
-                    <span>消息标题</span>
-                    <p>消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容</p>
-                    <div class="ImageDiv">
-                        <img src="../../img/daffodil.jpg" alt="">
+
+            <div class="informationMaction" v-for="(i,index) in Mactionlist">
+                <div class="MactionDateTime">
+                    <span class="MactionTime">{{ i.MaDate }}</span>
+                </div>
+                <div class="MactionBox">
+                    <span>{{i.TitleMa}}</span>
+                    <p>{{ i.TitleCon }}</p>
+                </div>
+            </div>
+
+
+            <div class="informationChores" v-for="(Chores,index) in Choreslist">
+                <div class="MactionDateTime">
+                    <span class="MactionTime">{{ Chores.CMaDate }}</span>
+                </div>
+                <div class="MactionBox">
+                    <span>{{Chores.CTitleMa}}</span>
+                    <p>{{ Chores.CTitleCon }}</p>
+                    <div class="informationlist"><span class="listTile">{{ Chores.CDetails }}</span>
+                        <svg class="icon" aria-hidden="true" style="width: 0.8rem;height:0.8rem;">
+                            <use xlink:href="#iconxiaofanhui"></use>
+                        </svg>
                     </div>
                 </div>
-=======
+            </div>
+
+
+
         </div>
 
         <div class="dingDanNull" v-else>
@@ -79,14 +123,11 @@
                 <svg class="icon" aria-hidden="true" style="height:5rem;width:5rem;">
                     <use xlink:href="#icondingdan1"></use>
                 </svg>
->>>>>>> 92cf1f7e019b2a34ac707bdea2537e7936df6b6d
             </div>
             <p class="NullLconWords">暂时没有任何消息哦！</p>
         </div>
 
     </div>
-
-
 
 
 </body>
@@ -99,8 +140,16 @@
         data: {
 
             arrlist: [
-                { date: '2019年08月29日13:01', Title: '消息标题', neitong: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454', Img: '' },
-                { date: '2019年08月29日13:01', Title: '消息标题', neitong: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454' },
+                { date: '2019年08月29日13:01', Title: '消息标题', neitong: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454', Img: '../../img/daffodil.jpg' }
+
+            ],
+            Mactionlist: [
+                { MaDate: '2019年09月01日13:01', TitleMa: '信息标题', TitleCon: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454' },
+
+            ],
+            Choreslist: [
+                { CMaDate: '2019年09月01日13:01', CTitleMa: '信息标题', CTitleCon: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454', CDetails: '查看详情' },
+
             ]
         },
         methods: {
