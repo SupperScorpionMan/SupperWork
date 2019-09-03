@@ -64,12 +64,16 @@ h2{
 .iconimg div{
  flex: 1;
  display: flex;
- justify-content: center;
  flex-flow: row wrap;
  align-items: center;
  background: #fff;
  font-size: 0.8rem;
  color: #979595;
+}
+.iconimg div p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .shopcar{
     background: #FCAF03;

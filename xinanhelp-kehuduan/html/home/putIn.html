@@ -88,11 +88,11 @@
                         <div class="textwen" style="font-size: 0.6rem">{{ item.wen }}</div>
                         <p>{{ item.portTile }}</p>
                         <div class="addNum">
-                            <div class="red">{{ item.spaice }}</div>
+                            <div class="red">￥{{ item.spaice }}</div>
                             <div class="right">
-                                <div class="btn" @click='subtract(item.num)'>-</div>
+                                <div class="btn" @click='subtract(index,item.num)'>-</div>
                                 <div style="font-size: 0.6rem;">{{item.num}}</div>
-                                <div class="btn active" @click='addnum(item.num)'>+</div>
+                                <div class="btn active" @click='addnum(index,item.num)'>+</div>
                             </div>
                         </div>
                     </div>
@@ -107,8 +107,9 @@
                     <div class="lineText">
                         <p class="TextPo">安装服务</p>
                         <div class="TextCheckBox">
-                            <p class="TextPtRed">￥0.00</p>
-                            <input type="checkbox" name="" id="" class="TextCheckInput">
+                            <p class="TextPtRed">￥{{anzhuang}}</p>
+                            <input id="color" type="checkbox"  class="color" v-model="checkeds" :value="anzhuang" >
+                            <label  for="color" class="color"></label >
                         </div>
                     </div>
                     <div class="lineText">
@@ -139,7 +140,7 @@
 
 
         <div class="foot">
-            <div class="money">￥730.00</div>
+            <div class="money">￥{{total}}</div>
             <div class="footBtn" @click='putin'>提交订单</div>
         </div>
 
@@ -172,7 +173,8 @@
     var app = new Vue({
         el: '.app',
         data: {
-
+            checkeds:[],
+            anzhuang:"20.22",
             checked1: true,
             num: 1,
             show: false,
@@ -184,30 +186,38 @@
                 }
             ],
             modityList: [
-                { img: '../../img/daffodil.jpg', wen: '海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家', portTile: '免费领取安装、换新机、检测维护、免费领取安装、换新机、检测维护', spaice: '￥730.00', num: '1' },
-                { img: '../../img/daffodil.jpg', wen: '中化石油加油卡礼包', portTile: '内含一张1000元加油卡', spaice: '￥730.00', num: '1' }
+                { img: '../../img/daffodil.jpg', wen: '海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家', portTile: '免费领取安装、换新机、检测维护、免费领取安装、换新机、检测维护', spaice: "730.01", num: 1 },
+                { img: '../../img/daffodil.jpg', wen: '中化石油加油卡礼包', portTile: '内含一张1000元加油卡', spaice: "730.20", num: 1 }
 
-            ]
+            ],
+            
+            
         },
         computed: {
-
+            total(){
+                var sum=0
+                for(let i=0;i<this.modityList.length;i++){
+                    sum+=parseFloat(this.modityList[i].spaice)*parseInt(this.modityList[i].num)
+                }
+                if(this.checkeds.length!=0){
+                    sum+=parseFloat(this.checkeds)
+                    return sum.toFixed(2)
+                }
+                return sum.toFixed(2)
+            }
         },
         methods: {
-
-            subtract(num) {
-                // console.log(num)
-                if (num < 1) {
-                    this.num = 0
-                } else {
-                    this.num = num - 1
-                    console.log(this.num)
-                }
-
+            //数量减少
+            subtract(index,num) {
+                if (num >1) {
+                    this.modityList[index].num = num-1
+                } 
             },
-            addnum(num) {
-                this.num = num + 1
-                console.log(this.num)
+            //数量增加
+            addnum(index,num) {
+                this.modityList[index].num = num + 1
             },
+
             putin() {
                 this.show = true
             },
