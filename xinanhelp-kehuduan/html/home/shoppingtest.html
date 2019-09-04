@@ -13,9 +13,6 @@
     <script src="../../js/vue.js"></script>
     <title>商品详情</title>
     <style>
-      .swiper-container {
-        height: 20rem;
-      }
     </style> 
   </head>
   <body>
@@ -40,8 +37,23 @@
           <h2>￥730.00</h2>
           <P class="beforePirce">原价：￥180.00</P>
         </div>
-        <div class="PostOffice">配送方式：快递</div>
-        <div class="details">商品详情</div>
+        <div class="PostOffice">发货地：广东珠海 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 快递：0.00元</div>
+        
+          <div id="dddd" class="downmove" :class="navBarFixed == true ? 'navBarWrap' :''">
+            <p v-for="(item,index) in list" :class="num==index?'addd':''" @click="chang(index)">{{item}}</p>
+          </div>
+          <div class="heightbox" :class="navBarFixed == true ? 'fdafaf' :''">
+              <div class="specification" v-if="num==1">
+                  <div class="title" v-for='(item,iindex) in specification'>
+                  <div style="flex: 1;">{{item.title}}</div>
+                  <div style="flex: 2;">{{item.content}}</div>
+                  </div>
+                  
+              </div>
+              <div v-else>
+                  <img src="../../img/xiangqing.png" style="height: 100%;width:100%;">
+              </div>
+          </div>
       </div>
 
       <div class="optionss">
@@ -75,6 +87,45 @@
     </div>
   </body>
   <script>
+    var app = new Vue({
+      el: ".app",
+      data: {
+        navBarFixed:false,
+        list:[
+              "产品说明",
+              "规格参数"
+        ],
+        specification: [{
+          title: '产品名称',
+          content: '中航牌DS-RA型反渗透净水机'
+          }, {
+          title: '型号',
+          content: 'DS-RO-A'
+          }, 
+
+],
+        num:0
+      },
+      mounted() {
+        window.addEventListener("scroll", this.watchScroll);
+      },
+      methods:{
+        watchScroll() {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+          var dsfdf = document.getElementsByClassName("heightbox")[0].offsetTop
+          // console.log(document.getElementsByClassName("heightbox")[0].offsetHeight)
+          if (scrollTop > dsfdf) {
+            this.navBarFixed = true;
+          } else {
+            this.navBarFixed = false;
+          }
+        },
+        chang(index){
+          this.num=index
+        }
+      }
+      
+    });
     window.onload = function() {
       var mySwiper = new Swiper(".swiper-container", {
         autoplay: 4000, //可选选项，自动滑动
@@ -82,10 +133,6 @@
         pagination: ".pagination"
       });
     };
-    var app = new Vue({
-      el: ".app",
-      data: {},
-      methods: {}
-    });
+    
   </script>
 </html>

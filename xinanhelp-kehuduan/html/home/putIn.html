@@ -130,15 +130,8 @@
                             placeholder="选填、请注意商品详情说明"></textarea>
                     </div>
                 </div>
-
             </div>
-
-
-
         </div>
-
-
-
         <div class="foot">
             <div class="money">￥{{total}}</div>
             <div class="footBtn" @click='putin'>提交订单</div>
@@ -156,7 +149,7 @@
             </div>
             <div class="means" @click='pay'>
 
-                <div class="meansName" style="color: blue;">支付宝支付</div>
+                <div class="meansName" style="color: blue;" @click="goAlipay">支付宝支付</div>
             </div>
             <div class="means" @click='pay'>
 
@@ -226,7 +219,10 @@
             },
             pay() {
                 this.show = false
-            }
+            },
+            goAlipay () {
+                console.log("这是支付宝支付，支付了"+this.total+"")
+             }
         }
 
     })

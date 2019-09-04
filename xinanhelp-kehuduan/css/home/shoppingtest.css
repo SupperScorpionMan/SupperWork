@@ -25,12 +25,17 @@ h2{
 }
 .PostOffice{
      background: #fff;
-     padding: 1rem 1rem;
+     padding: 0.8rem 1rem;
      margin: 1rem 0;
+     font-size: 0.9rem;
 }
 .details{
  background: #fff;
      padding: 1rem 1rem;
+     display: flex;
+     justify-content: center;
+     font-size: 0.9rem;
+
 }
 .optionss{
     position: fixed;
@@ -83,3 +88,57 @@ h2{
     height: 100%;
     width: 100%;
 }
+.heightbox{
+    background: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    
+}
+.downmove{
+    height: 2.5rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
+
+}
+.downmove p{
+    width: 30%;
+}
+.swiper-container {
+    height: 20rem;
+  }
+  .downmove.navBarWrap {
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 1
+  }
+  .fdafaf{
+      margin-top: 6rem;
+  }
+  .addd{
+      color: #0CD4D3;
+  }
+  .specification {
+    width: 90%;
+    margin: 0 auto;
+    }
+    .specification:first-child {
+
+    }
+    .specification .title {
+    display: flex;
+    font-size: 0.8rem;
+    background-color: #ffffff;
+    padding: 1% 1%;
+    box-sizing: border-box;
+    color: #565656;
+    }
+    .specification .title:nth-child(odd) {
+    background-color: #F0F1F5;
+    }
