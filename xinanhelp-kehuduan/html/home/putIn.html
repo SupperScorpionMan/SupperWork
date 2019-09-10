@@ -15,37 +15,35 @@
         * {
             margin: 0;
         }
-
+        
         .app {
             background-color: #ecebeb;
         }
-
-
+        
         .el-checkbox__inner {
             border-radius: 50%;
         }
-
+        
         .el-checkbox__input.is-checked .el-checkbox__inner,
         .el-checkbox__input.is-indeterminate .el-checkbox__inner {
             background-color: #F96165;
             border-color: #F96165;
         }
-
+        
         .el-checkbox__inner:hover {
             border-color: #F96165;
         }
-
+        
         .el-checkbox__input.if-focus .el-checkbox__inner {
             border-color: #F96165;
         }
-
+        
         .el-checkbox__inner {
             z-index: 0;
         }
     </style>
 </head>
 
-<<<<<<< HEAD
 <body>
     <div class="app">
         <div class="siteDetails" v-if='site.length'>
@@ -58,34 +56,6 @@
             <div class="siteInfo">
                 <div>收货地址:</div>
                 <div>{{site[0].site}}</div>
-=======
-<body style="height: 100%;">
-    <div class="app" style="height: 100%;">
-        <div class="siteContent">
-
-            <div class="siteHead">
-                <div class="headman">
-                    <svg class="icon" aria-hidden="true" style="width: 2rem;height:2rem;">
-                        <use xlink:href="#icondizhi"></use>
-                    </svg>
-                </div>
-
-                <div class="siteDetails" v-if='site.length'>
-                    <div class="userInfo">
-                        <div style="margin-right: 20%">{{site[0].recipients}}</div>
-                        <div class="phoneNub">{{site[0].phone}}</div>
-                    </div>
-                    <div class="siteInfo">
-                        <div>{{site[0].site}}</div>
-                    </div>
-                </div>
-
-                <div class="jiantou">
-                    <svg class="icon" aria-hidden="true" style="width: 0.8rem;height:0.8rem;">
-                        <use xlink:href="#iconxiaofanhui"></use>
-                    </svg>
-                </div>
->>>>>>> 92cf1f7e019b2a34ac707bdea2537e7936df6b6d
             </div>
 
         </div>
@@ -189,24 +159,24 @@
         <div class="model" v-if='show' @click='shut'></div>
         <div class="modelInfo" v-if='show'>
             <div class="means">
-                
+
                 <div class="meansName">选择支付方式</div>
             </div>
             <div class="means" @click='pay'>
-                
+
                 <div class="meansName" style="color: green;">微信支付</div>
             </div>
             <div class="means" @click='pay'>
-                
-                <div class="meansName"  style="color: blue;">支付宝支付</div>
+
+                <div class="meansName" style="color: blue;">支付宝支付</div>
             </div>
             <div class="means" @click='pay'>
-                
-                <div class="meansName"  style="color: orange;">货到付款</div>
+
+                <div class="meansName" style="color: orange;">货到付款</div>
             </div>
             <div class="means" @click='pay'>
-                
-                <div class="meansName"  style="color: red;">（珠海）上门交易</div>
+
+                <div class="meansName" style="color: red;">（珠海）上门交易</div>
             </div>
         </div>
     </div>
@@ -215,7 +185,7 @@
     var app = new Vue({
         el: '.app',
         data: {
-            
+
             checked1: true,
             num: 1,
             show: false,
@@ -232,7 +202,7 @@
                 content: '3.可挂墙壁，支持多种安装方式'
             }, {
                 content: '4.免费上门安装，免费换滤芯，免费售后维修'
-            },]
+            }, ]
         },
         computed: {
 

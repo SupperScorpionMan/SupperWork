@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../js/vue.js"></script>
+    <title>规格参数</title>
+    <style style="height: 100%;">
+        * {
+            margin: 0;
+        }
+        
+        .scroll {
+            height: 2000px;
+        }
+        
+        .header {
+            height: 90px;
+            background: red;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .nav {
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            background: greenyellow;
+            text-align: center;
+        }
+        
+        .navBarWrap {
+            position: fixed;
+            top: 0;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="scroll">
+            <div class="header">header</div>
+            <div class="nav" :class="navBarFixed == true ? 'navBarWrap' :''">吸顶导航</div>
+        </div>
+
+
+
+
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {
+
+            navBarFixed: false,
+        },
+        mounted() {
+            window.addEventListener("scroll", this.watchScroll);
+        },
+
+
+        methods: {
+            watchScroll() {
+                var scrollTop =
+                    window.pageYOffset ||
+                    document.documentElement.scrollTop ||
+                    document.body.scrollTop;
+                console.log(scrollTop)
+                    //  当滚动超过 90 时，实现吸顶效果
+                if (scrollTop > 90) {
+                    this.navBarFixed = true;
+                } else {
+                    this.navBarFixed = false;
+                }
+            }
+
+
+
+        },
+
+    })
+</script>
+
+</html>
