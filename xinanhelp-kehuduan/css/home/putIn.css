@@ -2,31 +2,36 @@
     display: flex;
     width: 92%;
     padding: 4%;
-    border-bottom: #0CD4D3 0.2rem dashed;
     background-color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
 }
-
-.addSite .btn {
-    width: 2rem;
-    height: 2rem;
-    background-color: #0CD4D3;
-    color: #ffffff;
-    text-align: center;
-    line-height: 2rem;
-    font-weight: bold;
-    font-size: 1.5rem;
+.addSiteBtn{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.addSite .right {
-    position: absolute;
-    right: 4%;
-    top: 3%;
+.btn {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.addSite .explain {
-    margin-left: 4%;
-    line-height: 4%;
-    line-height: 195%;
+.explaIcon{
+    height: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.explain {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
 
 }
 .siteModity{
@@ -41,17 +46,18 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    box-sizing: border-box;
+    padding: 0.3rem;
 }
 .shoptitle p{
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     
 }
 .modity {
     width: 90%;
     background-color: white;
-    position: relative;
     box-sizing: border-box;
-    padding: 1rem 1rem 1.5rem 1rem;
+    padding: 0.5rem 1rem 1rem 1rem;
     border-radius: 0.5rem;
 }
 .modityBox{
@@ -74,21 +80,37 @@
     background: #000;
     border-radius: 0.5rem;
 }
-
+.modity .modityImg .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
 .details {
-    width: 60%;
-    position: absolute;
-    right: 4%;
-    top: 20%;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0 0 0 0.5rem;
 }
 .details p{
     font-size: 0.5rem;
     color: #707070;
+    overflow:hidden;  
+    text-overflow:ellipsis;  
+    white-space: normal;  
+    display:-webkit-box;  
+    -webkit-box-orient:vertical;  
+    -webkit-line-clamp:1;
+    margin-bottom: 0.6rem;
     
 }
 .textwen{
-    margin-top: 0.5rem;
-    
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    overflow:hidden;  
+    text-overflow:ellipsis;  
+    white-space: normal;  
+    display:-webkit-box;  
+    -webkit-box-orient:vertical;  
+    -webkit-line-clamp:1;
 }
 .red {
     color: #F96165;
@@ -97,14 +119,12 @@
 
 .addNum {
     display: flex;
-    margin-top: 10%;
+    margin-top: 2%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.2rem;
+
     
-}
-
-.addNum .right {
-    position: absolute;
-    right: 4%;
-
 }
 
 .addNum .right div {
@@ -127,10 +147,10 @@
     color: #ffffff;
 }
 .lineBox{
-    width: 90%;
-    height: 2rem;
-   border-top: 0.1rem solid #ecebeb;
-   border-radius: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+   border-top: 0.05rem solid #ecebeb;
+   background-color: white;
    
 }
 .lineText {
@@ -139,9 +159,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    box-sizing: border-box;
-    padding: 1rem;
 }
 .TextPo{
     font-size: 0.5rem;
@@ -149,14 +166,32 @@
 }
 .TextPt{
     font-size: 0.5rem;
+    margin-right: 0.5rem;
+}
+.TextPtBox{
+    width: 15%;
+    height: 2rem ;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.TextCheckBox{
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.TextCheckBox p{
+    margin-right: 0.5rem;
 }
 .TextPtRed{
     font-size: 0.5rem;
     color: #ff4536;
 }
 .svgSpan{
-    width: 0.8rem;
-    height: 0.5rem;    
+    display: flex;
+    justify-content: center;
+    align-items: center 
 }
 
 .lineTextBox{
@@ -171,20 +206,18 @@
     width: 30%;
     font-size: 0.5rem;
     color: #707070;
-    box-sizing: border-box;
-    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
 }
 .TextPtBox{
     width: 70%;
-    height: 1rem;
+    height: 0.8rem;
     outline: none;
     border: none;
+    resize: none;
 }
-textarea::-webkit-textarea-placeholder{
-    text-align: right;
-    
-}
-
 .foot {
     width: 100%;
     height: 3rem;
@@ -194,9 +227,9 @@ textarea::-webkit-textarea-placeholder{
     display: flex;
 }
 
-.foot div {
+/* .foot div {
     flex: 1;
-}
+} */
 
 .footBtn {
     width: 30%;
@@ -211,9 +244,9 @@ textarea::-webkit-textarea-placeholder{
     width: 70%;
     color: #F96165;
     font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
+    text-align: left ;
     line-height: 3rem;
+    margin-left: 0.5rem;
 }
 
 
@@ -266,8 +299,7 @@ textarea::-webkit-textarea-placeholder{
 }
 .siteHead{
     width: 90%;
-    box-sizing: border-box;
-    padding: 1rem;
+    height: 6rem;
     background-color: #ffffff;
     margin-top:1rem;    
     border-radius: 0.5rem;
@@ -277,28 +309,37 @@ textarea::-webkit-textarea-placeholder{
 
 }
 .headman{
-    width: 2rem;
-    height: 2rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .siteDetails {
     width: 92%;
-    box-sizing: border-box;
-    padding: 0.5rem;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
+.DetailsManIcon{
+    width: 70%;
+}
 .userInfo {
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
-
-.userInfo div {
-    display: inline-block;
-
+.userInfoName{
+    width: 30%;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
 }
 .phoneNub{
+    width: 50%;
     color: #707070;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
 }
 .siteInfo {
     width: 100%;
@@ -308,10 +349,6 @@ textarea::-webkit-textarea-placeholder{
     display: inline-block;
     font-size: 0.5rem;
     color: #707070;
-}
-.jiantou{
-    width: 0.8rem;
-    height: 0.8rem;
 }
 .model {
     width: 100%;
@@ -347,36 +384,27 @@ textarea::-webkit-textarea-placeholder{
 .means div{
     margin-top: 2%;
 }
-.el-radio{
-    margin-right: 10%;
-}
-.el-radio__label{
-    padding-left: 0;
-    font-size: 0.5rem;
-}
-.el-radio__input.is-checked+.el-radio__label{
-    color: #000;
-}
-.el-radio__input.is-checked .el-radio__inner{
-    border-color: #F96165;
-    background: #F96165;
+.color+label {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: white;
+    border-radius: 50%;
+    border: 0.05rem solid #dedad7;
 }
 
-.reserve{
-    width: 100%;
-    padding: 4%;
-    border-bottom: #707070 solid 0.05rem;
-}
-.empty div{
-    margin-bottom: 2%;
-}
-.particulars{
-    font-size: 0.8rem;
-    padding: 4%;
-}
-.protocol{
+.color:checked+label::before {
+    display: block;
+    content: "\2714";
     text-align: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    color: white;
+    background: #0CD4D3;
 }
-.el-checkbox__input.is-checked+.el-checkbox__label{
-    color: #000;
+
+input[type=checkbox] {
+    display: none;
 }

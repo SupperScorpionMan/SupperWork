@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../css/home/swiper.css">
     <link rel="stylesheet" href="../../css/home/pagination.css">
     <link rel="stylesheet" href="../../css/home/home.css">
+    <link rel="stylesheet" href="../../css/icon/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <script src="../../js/swiper.js"></script>
     <script src="../../js/vue.js"></script>
     <title>海露会员商店</title>
@@ -23,7 +25,8 @@
         <!-- //轮播图 -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"> Slide1</div>
+                <div class="swiper-slide"> <img src="../../img/daffodil.jpg" class="navimg"></div>
+                <div class="swiper-slide"> <img src="../../img/daffodil.jpg" class="navimg"></div>
             </div>
             <div class="pagination"></div>
         </div>
@@ -32,11 +35,17 @@
         <div class="content">
             <div class="first">
                 <div class="content-one" v-for='(item,index) in content'>
-                    <div class="content-oneDiv"></div>
+                    <div class="content-oneDiv">
+                        <img :src="item.img" >
+                    </div>
                     <p class="text">{{item.text}}</p>
                     <div class="text-content">
                         <p class="text-nub">￥{{item.textnub}}<span class="text-hua">￥{{item.texthua}}</span></p>
-                        <p class="text-biao">￥</p>
+                        <p class="text-biao">
+                            <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;">
+                                <use xlink:href="#icongouwuche1-copy"></use>
+                            </svg>
+                        </p>
                     </div>
                 </div>
 
@@ -59,23 +68,29 @@
         el: '.app',
         data: {
             content: [{
+                img:'../../img/daffodil.jpg',
                 text: '1中石化中石化中石化中石化中石化中石化',
-                img: '',
                 textnub: '730.00',
                 texthua: '6900'
             }, {
+                img:'../../img/daffodil.jpg',
                 text: '2中石化中石化中石化中石化中石化中石化',
-                img: '',
                 textnub: '730.00',
                 texthua: '6900'
             }, {
+                img:'../../img/daffodil.jpg',
                 text: '3中石化中石化中石化中石化中石化中石化',
-                img: '',
                 textnub: '730.00',
                 texthua: '6900'
             }, {
+                img:'../../img/daffodil.jpg',
                 text: '4中石化中石化中石化中石化中石化中石化',
-                img: '',
+                textnub: '730.00',
+                texthua: '6900'
+            }
+            , {
+                img:'../../img/daffodil.jpg',
+                text: '4中石化中石化中石化中石化中石化中石化',
                 textnub: '730.00',
                 texthua: '6900'
             }]

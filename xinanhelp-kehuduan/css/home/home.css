@@ -22,16 +22,19 @@ html {
     display: inline-block;
     padding: 2%;
     margin: 2%;
-    /* margin-right: 2%; */
+    border-radius: 0.5rem;
 }
 
 .content-oneDiv {
     width: 100%;
     height: 60%;
-    background-color: red;
     margin: 0 auto;
 }
-
+.content-oneDiv img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
 .content .text {
     width: 100%;
     height: 20%;
@@ -56,4 +59,11 @@ html {
 .text-biao {
     float: right;
     margin-top: -13%;
+}
+.swiper-container{
+    height: 20rem;
+}
+.navimg{
+    height: 100%;
+    width: 100%;
 }

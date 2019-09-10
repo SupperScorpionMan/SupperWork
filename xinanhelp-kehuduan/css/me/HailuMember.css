@@ -1,0 +1,496 @@
+/* 会员信息头部区域 */
+.WelcomeContent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1.5rem;
+}
+.WelcomeTitle{
+    width: 100%;
+    height: 9rem;
+    background-color: #41D5EF;
+    color: white;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+
+}
+.WelcomeTitle span{
+    width: 100%;    
+    font-size: 1.3rem; 
+    display: flex;
+    justify-content: flex-start;
+    font-weight:900;
+    
+}
+.WelcomeTitle p{
+    margin-top: 0.5rem;
+    width: 100%;    
+    font-size: 0.8rem; 
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+/* 会员权益区域 */
+.EquityContent{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0rem 1.5rem 0.5rem 1.5rem;
+}
+.EquityTitle{
+    display: flex;
+    justify-content: flex-start;
+    color: #0CD4D3;
+    font-size: 0.8rem;
+
+}
+.EquityTitle p {
+    border-left: 0.2rem solid #0CD4D3;
+    text-indent: 0.5rem;
+    font-weight: 520;
+    letter-spacing: 0.02rem;
+}
+.EquityBlock{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.EquityBlock .BlockBox{
+    width: 47%;
+    max-width: 50%;
+    height: 9rem;
+    margin-top: 0.8rem;
+    border: 0.1rem solid #ecebeb;
+    box-shadow: 0rem 0.15rem 0rem #e4e3e3; 
+    border-radius: 0.5rem;
+}
+.BlockBox .BlockSvg{
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BlockBox .BlockLabel{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+.BlockLabel p{
+    font-size: 0.8rem;
+    text-align: center;
+    color: #707070;
+
+}
+
+
+
+/* 成为会员按钮区域 */
+.optionss {
+    position: fixed;
+    bottom: 15%;
+    left: 0;
+    width: 100%;
+    
+}
+.ButContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ButContent button{
+    width: 90%;
+    height: 2.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: white;
+    background-color: #0DD5D4; 
+    border-radius: 1.5rem;
+    letter-spacing: 0.08rem;
+    outline: none;
+    border: none;
+}
+.Butfooter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Butfooter div{
+    width: 35%;
+    height: 0.2rem;
+    bottom: 0;
+    background-color: black;
+    border-radius: 0.5rem;
+}
+
+
+/* 会员资料填写 */
+.MembershipInformation{
+    width: 100%;
+    height: 100%;
+    background-color: #ecebeb; 
+}
+.ShipInformationTitle{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.2rem 1rem 0.8rem 1rem;
+
+}
+.ShipInformationTitle p {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+}
+.ShipInformationTitle span {
+    font-size: 0.15rem;
+    letter-spacing: 0.02rem;
+    color: #0CD4D3;
+}
+.ShipInformationContent{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0rem 1rem 0rem 1rem;
+}
+.ContentInput{
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    background-color: white;
+    margin-bottom: 0.8rem;
+}
+.ContentInput input{
+    width: 90%;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+}
+input::-webkit-input-placeholder{
+    color: #9597A6;
+    text-indent: 0.5rem;
+}
+.OrderBut{
+    position: fixed;
+    bottom: 1.5rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.BlockTextBox{
+    width: 100%;
+    height: 1.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.BlockTextBox div {
+    width: 35%;
+    height: 0.2rem;
+    background-color: black;
+    border-radius: 0.5rem;
+}
+
+.OrderBut .OrderSpace{
+    width: 70%;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+
+}
+.OrderSpace p {
+    color: #FF4536;
+    font-size: 0.8rem;
+    text-indent: 1rem;
+}
+.OrderSpace span {
+    font-size: 0.2rem;
+    text-indent: 0.5rem;
+    color: #ADADAD;
+}
+.OrderBut .OrderSend{
+    width: 30%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0CD4D3;
+    color: white;
+    font-size: 0.8rem;
+}
+
+/* 支付方式 */
+.model {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+.modelInfo{
+    width: 100%;
+    height: 40%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.modelInfo>div{
+    width: 100%;
+    height: 15%;
+    border-bottom: #ecebeb solid 0.05rem;
+}
+.means{
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.means div{
+    margin-top: 2%;
+}
+.color+label {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: white;
+    border-radius: 50%;
+    border: 0.05rem solid #dedad7;
+}
+
+.color:checked+label::before {
+    display: block;
+    content: "\2714";
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    color: white;
+    background: #0CD4D3;
+}
+
+
+.meansBlockTextBox{
+    width: 100%;
+    height: 1rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.meansBlockTextBox div {
+    width: 35%;
+    height: 0.2rem;
+    background-color: black;
+    border-radius: 0.5rem;
+}
+
+
+
+/* 支付方式 */
+.model {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+.modelInfo{
+    width: 100%;
+    height: 40%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.modelInfo>div{
+    width: 100%;
+    height: 15%;
+    border-bottom: #ecebeb solid 0.05rem;
+}
+.means{
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.means div{
+    margin-top: 2%;
+}
+.color+label {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: white;
+    border-radius: 50%;
+    border: 0.05rem solid #dedad7;
+}
+
+.color:checked+label::before {
+    display: block;
+    content: "\2714";
+    text-align: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    color: white;
+    background: #0CD4D3;
+}
+.meansBlockTextBox{
+    width: 100%;
+    height: 1rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.meansBlockTextBox div {
+    width: 35%;
+    height: 0.2rem;
+    background-color: black;
+    border-radius: 0.5rem;
+}
+
+.confirm{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+.confirmPay{
+    width: 100%;
+    height: 70%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 0rem 1rem 1rem 1rem;
+}
+.PayTitle{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.01rem solid #ecebeb;
+}
+.TitleIconLeft{
+    width: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.TitleP{
+    font-weight: 520;
+    width: 80%;
+    text-align: center;
+
+}
+.TitleIconRight{
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.PayContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.PayContent p{
+    font-size: 1.5rem;
+}
+.PayContent div{
+    margin-top: 1rem;
+    width: 100%;
+    height: 5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.InformationText{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-bottom: 0.01rem solid #ecebeb;
+}
+.InformationText .TextAccount {
+    color: #9597A6;  
+}
+.InformationText .TextHua{
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.PayBut {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+}
+.PayBut button {
+    width: 100%;
+    height: 2rem;
+    color: white;
+    background-color: #0090FA;
+    border: none;
+    outline: none;
+    border-radius: 0.2rem;
+}
+.BlockBoxFooter{
+    width: 100%;
+    height: 2rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.01rem solid #ecebeb;
+}
+.BlockBoxFooter div {
+    width: 35%;
+    height: 0.2rem;
+    background-color: black;
+    border-radius: 0.5rem;
+}

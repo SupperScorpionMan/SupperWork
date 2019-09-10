@@ -19,140 +19,121 @@
         .app {
             background-color: #ecebeb;
         }
-        
-        .el-checkbox__inner {
-            border-radius: 50%;
-        }
-        
-        .el-checkbox__input.is-checked .el-checkbox__inner,
-        .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-            background-color: #F96165;
-            border-color: #F96165;
-        }
-        
-        .el-checkbox__inner:hover {
-            border-color: #F96165;
-        }
-        
-        .el-checkbox__input.if-focus .el-checkbox__inner {
-            border-color: #F96165;
-        }
-        
-        .el-checkbox__inner {
-            z-index: 0;
-        }
     </style>
 </head>
 
-<body>
-    <div class="app">
-        <div class="siteDetails" v-if='site.length'>
+<body style="height: 100%;">
+    <div class="app" style="height: 100%;">
+        <div class="siteContent">
 
-            <div class="userInfo">
-                <div><i class="el-icon-location-outline"></i>收件人：</div>
-                <div style="margin-right: 20%">{{site[0].recipients}}</div>
-                <div>{{site[0].phone}}</div>
-            </div>
-            <div class="siteInfo">
-                <div>收货地址:</div>
-                <div>{{site[0].site}}</div>
+            <div class="siteHead">
+                <div class="siteDetails" v-if='site.length'>
+                    <div class="headman">
+                        <svg class="icon" aria-hidden="true" style="width: 2.8rem;height:2.8rem;">
+                            <use xlink:href="#icondizhi"></use>
+                        </svg>
+                    </div>
+                    <div class="DetailsManIcon">
+                        <div class="userInfo">
+                            <div class="userInfoName">{{site[0].recipients}}</div>
+                            <div class="phoneNub">{{site[0].phone}}</div>
+                        </div>
+                        <div class="siteInfo">
+                            <div>{{site[0].site}}</div>
+                        </div>
+                    </div>
+
+                    <div class="jiantou">
+                        <svg class="icon" aria-hidden="true" style="width: 0.8rem;height:0.8rem;">
+                            <use xlink:href="#iconxiaofanhui"></use>
+                        </svg>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="addSite" v-else>
+                    <div class="addSiteBtn">
+                        <div class="btn">
+                            <svg class="icon" aria-hidden="true" style="width: 2.5rem;height:2.5rem;">
+                                <use xlink:href="#icontianjiadizhi"></use>
+                            </svg>
+                        </div>
+                        <div class="explain">新建收货地址</div>
+                    </div>
+                    <div class="explaIcon">
+                        <svg class="icon" aria-hidden="true" style="width: 0.8rem;height:0.8rem;">
+                            <use xlink:href="#iconxiaofanhui"></use>
+                        </svg>
+                    </div>
+                </div>
             </div>
 
         </div>
 
-        <div class="addSite" v-else>
-            <div class="btn">+</div>
-            <div class="explain">新建收货地址</div>
-            <div class="right">></div>
-        </div>
 
         <div class="siteModity">
-
-
             <div class="modity">
                 <div class="shoptitle">
                     <p>商品信息</p>
                 </div>
-
-                <div class="modityBox">
+                <div class="modityBox" v-for="(item,index) in modityList">
                     <div class="modityImg">
-                        <div class="img"></div>
+                        <div class="img"><img :src="item.img"></div>
                     </div>
+
                     <div class="details">
-                        <div class="textwen" style="font-size: 0.6rem">海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家
-                        </div>
-                        <p>免费领取安装、换新机、检测维护</p>
+                        <div class="textwen" style="font-size: 0.6rem">{{ item.wen }}</div>
+                        <p>{{ item.portTile }}</p>
                         <div class="addNum">
-                            <div class="red">￥730.00</div>
+                            <div class="red">￥{{ item.spaice }}</div>
                             <div class="right">
-                                <div class="btn" @click='subtract(num)'>-</div>
-                                <div style="font-size: 0.6rem;">{{num}}</div>
-                                <div class="btn active" @click='addnum(num)'>+</div>
+                                <div class="btn" @click='subtract(index,item.num)'>-</div>
+                                <div style="font-size: 0.6rem;">{{item.num}}</div>
+                                <div class="btn active" @click='addnum(index,item.num)'>+</div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
-            </div>
-
-
-            <div class="modity">
-
-                <div class="modityBox">
-                    <div class="modityImg">
-                        <div class="img"></div>
+                <div class="lineBox">
+                    <div class="lineText">
+                        <p class="TextPo">配送方式</p>
+                        <p class="TextPt">快递</p>
                     </div>
-                    <div class="details">
-                        <div class="textwen" style="font-size: 0.6rem">海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家
-                        </div>
-                        <p>免费领取安装、换新机、检测维护</p>
-                        <div class="addNum">
-                            <div class="red">￥730.00</div>
-                            <div class="right">
-                                <div class="btn" @click='subtract(num)'>-</div>
-                                <div style="font-size: 0.6rem;">{{num}}</div>
-                                <div class="btn active" @click='addnum(num)'>+</div>
-                            </div>
+                    <div class="lineText">
+                        <p class="TextPo">安装服务</p>
+                        <div class="TextCheckBox">
+                            <p class="TextPtRed">￥{{anzhuang}}</p>
+                            <input id="color" type="checkbox" class="color" v-model="checkeds" :value="anzhuang">
+                            <label for="color" class="color"></label >
                         </div>
                     </div>
-                </div>
+                    <div class="lineText">
+                        <p class="TextPo">开具发票</p>
+                        <div class="TextPtBox">
+                            <p class="TextPt">本次不开具发票</p>
+                            <p class="svgSpan">
+                                <svg class="icon" aria-hidden="true" style="width: 0.5rem;height:0.5rem;">
+                                    <use xlink:href="#iconxiaofanhui"></use>
+                                </svg>
+                            </p>
+                        </div>
 
-            </div>
-
-            <div class="lineBox">
-                <div class="lineText">
-                    <p class="TextPo">配送方式</p>
-                    <p class="TextPt">快递</p>
-                </div>
-                <div class="lineText">
-                    <p class="TextPo">安装服务</p>
-                    <p class="TextPtRed">￥0.00</p>
-                </div>
-                <div class="lineText">
-                    <p class="TextPo">开具发票</p>
-                    <p class="TextPt">本次不开具发票
-                        <span class="svgSpan">
-                            <svg class="icon" aria-hidden="true" style="width: 0.5rem;height:0.5rem;">
-                                <use xlink:href="#iconxiaofanhui"></use>
-                            </svg>
-                        </span>
-                    </p>
-
-                </div>
-                <div class="lineTextBox">
-                    <div class="TextPoBox">订单备注</div>
-                    <textarea class="TextPtBox" name="" id="" cols="30" rows="10" placeholder="选填、请注意商品详情说明"></textarea>
+                    </div>
+                    <div class="lineTextBox">
+                        <div class="TextPoBox">订单备注</div>
+                        <textarea class="TextPtBox" name="" id="" cols="30" rows="10"
+                            placeholder="选填、请注意商品详情说明"></textarea>
+                    </div>
                 </div>
             </div>
-
-
-
         </div>
-
-
-
         <div class="foot">
-            <div class="money">￥730.00</div>
+            <div class="money">￥{{total}}</div>
             <div class="footBtn" @click='putin'>提交订单</div>
         </div>
 
@@ -168,7 +149,7 @@
             </div>
             <div class="means" @click='pay'>
 
-                <div class="meansName" style="color: blue;">支付宝支付</div>
+                <div class="meansName" style="color: blue;" @click="goAlipay">支付宝支付</div> 
             </div>
             <div class="means" @click='pay'>
 
@@ -184,45 +165,52 @@
 <script>
     var app = new Vue({
         el: '.app',
-        data: {
-
+        data: {   
+            checkeds:[],
+            anzhuang:"20.22",
             checked1: true,
             num: 1,
             show: false,
-            site: [{
-                recipients: '郭大大',
-                phone: '15288884562',
-                site: '广东省珠海市新香洲区柠溪路'
-            }],
-            particulars: [{
-                content: '1.全国统一零售价：6880元'
-            }, {
-                content: '2.国际5A净水系统，达到值饮水标准'
-            }, {
-                content: '3.可挂墙壁，支持多种安装方式'
-            }, {
-                content: '4.免费上门安装，免费换滤芯，免费售后维修'
-            }, ]
+            site: [
+                {
+                    recipients: '郭大大',
+                    phone: '15288884562',
+                    site: '广东省珠海市新香洲区柠溪路广东省珠海市新香洲区柠溪路'
+                }
+            ],
+            modityList: [
+                { img: '../../img/daffodil.jpg', wen: '海露中航国际5A净水系统一体直饮净水机 您身边的健康饮水专家', portTile: '免费领取安装、换新机、检测维护、免费领取安装、换新机、检测维护', spaice: "730.01", num: 1 },
+                { img: '../../img/daffodil.jpg', wen: '中化石油加油卡礼包', portTile: '内含一张1000元加油卡', spaice: "730.20", num: 1 }
+
+            ],
+            
+            
         },
         computed: {
-
+            total(){
+                var sum=0
+                for(let i=0;i<this.modityList.length;i++){
+                    sum+=parseFloat(this.modityList[i].spaice)*parseInt(this.modityList[i].num)
+                }
+                if(this.checkeds.length!=0){
+                    sum+=parseFloat(this.checkeds)
+                    return sum.toFixed(2)
+                }
+                return sum.toFixed(2)
+            }
         },
         methods: {
-
-            subtract(num) {
-                // console.log(num)
-                if (num < 1) {
-                    this.num = 0
-                } else {
-                    this.num = num - 1
-                    console.log(this.num)
-                }
-
+            //数量减少
+            subtract(index,num) {
+                if (num >1) {
+                    this.modityList[index].num = num-1
+                } 
             },
-            addnum(num) {
-                this.num = num + 1
-                console.log(this.num)
+            //数量增加
+            addnum(index,num) {
+                this.modityList[index].num = num + 1
             },
+
             putin() {
                 this.show = true
             },
@@ -231,7 +219,10 @@
             },
             pay() {
                 this.show = false
-            }
+            },
+            goAlipay () {
+                console.log("这是支付宝支付，支付了"+this.total+"")
+             }
         }
 
     })
