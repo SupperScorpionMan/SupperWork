@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en" style="height: 100%;background-color: #ecebeb;">
 
 <head>
     <meta charset="UTF-8">
@@ -13,25 +13,25 @@
         * {
             margin: 0;
         }
-
+        
         html {
             background-color: #ecebeb;
         }
-
+        
         .app {
             background-color: #ecebeb;
         }
-
+        
         .MactionDateTime {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
+        
         .MactionBox span {
             margin-bottom: 0.2rem;
         }
-
+        
         .MactionBox p {
             line-height: 1.2rem;
             border: none;
@@ -46,7 +46,7 @@
             margin-bottom: 0.5rem;
             letter-spacing: 0.05rem;
         }
-
+        
         .informationChores {
             font-size: 0.8rem;
             width: 100%;
@@ -56,7 +56,7 @@
             display: flex;
             flex-direction: column;
         }
-
+        
         .MactionTime {
             color: #ffffff;
             font-size: 0.8rem;
@@ -134,21 +134,31 @@
 
 
 <script>
-
     var app = new Vue({
         el: '.app',
         data: {
 
-            arrlist: [
-                { date: '2019年08月29日13:01', Title: '消息标题', neitong: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454', Img: '../../img/daffodil.jpg' }
+            arrlist: [{
+                    date: '2019年08月29日13:01',
+                    Title: '消息标题',
+                    neitong: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454',
+                    Img: '../../img/daffodil.jpg'
+                }
 
             ],
-            Mactionlist: [
-                { MaDate: '2019年09月01日13:01', TitleMa: '信息标题', TitleCon: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454' },
+            Mactionlist: [{
+                    MaDate: '2019年09月01日13:01',
+                    TitleMa: '信息标题',
+                    TitleCon: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454'
+                },
 
             ],
-            Choreslist: [
-                { CMaDate: '2019年09月01日13:01', CTitleMa: '信息标题', CTitleCon: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454', CDetails: '查看详情' },
+            Choreslist: [{
+                    CMaDate: '2019年09月01日13:01',
+                    CTitleMa: '信息标题',
+                    CTitleCon: '消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容消息内容5454',
+                    CDetails: '查看详情'
+                },
 
             ]
         },

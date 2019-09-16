@@ -1,9 +1,14 @@
-.informationDateTime{
+.informationDateTime {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.DateTime{
+
+* {
+    margin: 0;
+}
+
+.DateTime {
     color: #ffffff;
     font-size: 0.8rem;
     background-color: #cdcdcd;
@@ -14,81 +19,88 @@
     margin: 0.5rem 0;
 }
 
-.informationContent{
+.informationContent {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.informationTitle{
+
+.informationTitle {
     font-size: 0.8rem;
     width: 90%;
-    box-sizing: border-box; 
-    padding: 0.8rem;  
+    box-sizing: border-box;
+    padding: 0.8rem;
     border-radius: 0.5rem;
     background-color: #ffffff;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
-.informationMaction{
+
+.informationMaction {
     font-size: 0.8rem;
     width: 100%;
-    box-sizing: border-box; 
-    padding: 0.8rem;  
+    box-sizing: border-box;
+    padding: 0.8rem;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
 }
-.MactionBox{
+
+.MactionBox {
     margin-top: 1rem;
     font-size: 0.8rem;
-    box-sizing: border-box; 
-    padding: 0.8rem;  
+    box-sizing: border-box;
+    padding: 0.8rem;
     border-radius: 0.5rem;
     background-color: #ffffff;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
-.informationlist{
+
+.informationlist {
     margin-top: 0.8rem;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     color: blue;
     border-top: #707070 solid 0.01rem;
 }
-.listTile{
+
+.listTile {
     color: blue;
 }
 
-
-.informationTitle span{
+.informationTitle span {
     margin-bottom: 0.2rem;
 }
-.informationTitle p{
+
+.informationTitle p {
     line-height: 1.2rem;
     border: none;
     outline: none;
     color: #707070;
-    overflow:hidden;  
-    text-overflow:ellipsis;  
-    white-space: normal;  
-    display:-webkit-box;  
-    -webkit-box-orient:vertical;  
-    -webkit-line-clamp:2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     margin-bottom: 0.5rem;
     letter-spacing: 0.05rem;
 }
 
-.ImageDiv{
+.ImageDiv {
     height: 10rem;
     background-color: #707070;
-    border-radius: 0.5rem;    
+    border-radius: 0.5rem;
 }
-.ImageDiv img{
+
+.ImageDiv img {
     width: 100%;
     height: 10rem;
     border-radius: 0.5rem;
 }
+
 .dingDanNull {
     width: 100%;
     height: 43.5rem;

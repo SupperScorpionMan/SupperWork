@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../js/vue.js"></script>
+    <title>规格参数</title>
+    <style style="height: 100%;">
+        * {
+            margin: 0;
+        }
+        
+        .specification {
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        .specification:first-child {
+            margin-top: 4%;
+        }
+        
+        .specification .title {
+            width: 96%;
+            display: flex;
+            font-size: 0.8rem;
+            background-color: #ffffff;
+            padding: 1% 2%;
+            color: #565656;
+        }
+        
+        .specification .title:nth-child(odd) {
+            background-color: #F0F1F5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="specification">
+            <div class="title" v-for='(item,iindex) in specification'>
+                <div style="flex: 1;">{{item.title}}</div>
+                <div style="flex: 2;">{{item.content}}</div>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {
+            specification: [{
+                    title: '产品名称',
+                    content: '中航牌DS-RA型反渗透净水机'
+                }, {
+                    title: '型号',
+                    content: 'DS-RO-A'
+                }, {
+                    title: '产品标准',
+                    content: 'GB4706.1-2005'
+                }, {
+                    title: '技术要求',
+                    content: 'GB470619-2008'
+                }, {
+                    title: '货号',
+                    content: '688'
+                }, {
+                    title: '适用电压',
+                    content: '220V'
+                }, {
+                    title: '频率',
+                    content: '50HZ'
+                }, {
+                    title: '进水压力',
+                    content: '0-0.4MPA'
+                }, {
+                    title: '净水流量',
+                    content: '11L/H'
+                }, {
+                    title: '源水水温要求',
+                    content: '5°C-45°C'
+                }, {
+                    title: '净重',
+                    content: '8.2KG'
+                }, {
+                    title: '毛重',
+                    content: '13.5KG'
+                }, {
+                    title: '包装尺寸',
+                    content: '685*353*495MM'
+                }, {
+                    title: '批准文号',
+                    content: '粤卫水字[2015]第S2419号'
+                }
+
+            ]
+        },
+        methods: {
+
+        }
+    })
+</script>
+
+</html>

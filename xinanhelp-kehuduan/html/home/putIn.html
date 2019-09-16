@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en" style="height: 100%;background-color: #ecebeb;">
 
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,7 @@
         * {
             margin: 0;
         }
+        
         .app {
             background-color: #ecebeb;
         }
@@ -107,8 +108,8 @@
                         <p class="TextPo">安装服务</p>
                         <div class="TextCheckBox">
                             <p class="TextPtRed">￥{{anzhuang}}</p>
-                            <input id="color" type="checkbox"  class="color" v-model="checkeds" :value="anzhuang" >
-                            <label  for="color" class="color"></label >
+                            <input id="color" type="checkbox" class="color" v-model="checkeds" :value="anzhuang">
+                            <label for="color" class="color"></label >
                         </div>
                     </div>
                     <div class="lineText">

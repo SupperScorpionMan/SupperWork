@@ -6,183 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/home/element.css">
     <link rel="stylesheet" href="../../css/me/dispose.css">
+    <link rel="stylesheet" href="../../css/icon/iconfont.css">
+    <script src="../../js/iconfont.js"></script>
     <script src="../../js/vue.js"></script>
+    <script src="../../js/element.js"></script>
     <title>申请售后</title>
     <style>
-        * {
-            margin: 0;
-        }
-        
-        html {
-            background-color: #F1F1F1;
-        }
-        
-        .dispose {
-            width: 100%;
-        }
-        
-        .dispose>div {
-            width: 86%;
-            padding: 4%;
-            background-color: #ffffff;
-            margin: 0 auto;
-            margin-top: 4%;
-            border-radius: 0.5rem;
-            font-size: 0.8rem;
-            color: #030303;
-        }
-        
-        .select {
-            display: flex;
-        }
-        
-        .money input {
-            width: 74%;
-            background: none;
-            outline: none;
-            border: none;
-            margin-top: 8%;
-            color: #FF4536;
-        }
-        
-        textarea {
-            border: none;
-            resize: none;
-            height: 2rem;
-            outline: none;
-        }
-        
-        input {
-            width: 90%;
-            background: none;
-            outline: none;
-            border: none;
-        }
-        
-        .img {
-            display: flex;
-        }
-        
-        .img div {
-            flex: 1;
-            background-color: #dddddd;
-            width: 30%;
-            height: 5rem;
-            margin: 4% 2%;
-            border-radius: 0.5rem;
-            text-align: center;
-            line-height: 5rem;
-            color: #ffffff;
-            font-weight: bold;
-        }
-        
-        .dispose .upBtn {
-            text-align: center;
-            background-color: #0CD4D3;
-            color: #ffffff;
-        }
-        
-        .model {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .modelInfo {
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            background-color: #ffffff;
-            border-radius: 0.5rem 0.5rem 0 0;
-        }
-        
-        .modelInfo div {
-            padding: 4%;
-            width: 90%;
-            text-align: center;
-            margin: 0 auto;
-            border-bottom: #EBEBEB solid 0.05rem;
-        }
-        
-        .fadelogIn {
-            -webkit-animation: fadelogIn .4s;
-            animation: fadelogIn .4s;
-        }
-        
-        @keyframes fadelogIn {
-            0% {
-                -webkit-transform: translate3d(0, 100%, 0);
-                -webkit-transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
-                transform: translate3d(0, 100%, 0);
-            }
-            100% {
-                -webkit-transform: none;
-                transform: none;
-            }
-        }
-        
-        @-webkit-keyframes fadelogIn {
-            0% {
-                -webkit-transform: translate3d(0, 100%, 0);
-            }
-            100% {
-                -webkit-transform: none;
-            }
-        }
-        
-        .ensure {
-            width: 80%;
-            position: fixed;
-            top: 30%;
-            left: 10%;
-            background-color: #ffffff;
-            text-align: center;
-            /* padding: 5% 5% 0 5%; */
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-        
-        .ensure div {
-            margin-top: 4%;
-        }
-        
-        .ensure .icon {
-            width: 3.5rem;
-            height: 3.5rem;
-            border: #0CD4D3 solid 0.5rem;
-            border-radius: 50%;
-            margin: 0 auto;
-            margin-top: 4%;
-        }
-        
-        .notice {
-            width: 70%;
-            margin: 0 auto;
-            font-size: 0.8rem;
-            color: #707070;
-        }
-        
-        .btn {
-            padding: 3% 0;
-            background-color: #0CD4D3;
-            color: #ffffff;
-        }
-        
-        .upInput {
-            width: 100%;
-            height: 100%;
-            outline: none;
-            background-color: transparent;
-            filter: alpha(opacity=0);
-            -moz-opacity: 0;
-            -khtml-opacity: 0;
-            opacity: 0;
-        }
+
     </style>
 </head>
 
@@ -208,9 +38,14 @@
             <div class="upImg">
                 <div>上传图片</div>
                 <div class="img">
-                    <div><input type='file' class="upInput" @change="addImg" ref="inputer"></div>
-                    <div></div>
-                    <div></div>
+
+                    <el-upload action="https://jsonplaceholder.typicode.com/posts/" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove" multiple :limit="3">
+                        <i class="el-icon-plus"></i>
+                    </el-upload>
+                    <el-dialog :visible.sync="dialogVisible" size="tiny">
+                        <img width="100%" :src="dialogImageUrl" alt="">
+                    </el-dialog>
+
                 </div>
             </div>
             <div class="upBtn" @click='upApply'>提交申请</div>
@@ -218,11 +53,14 @@
         <div class="model" @click='shut' v-if='show'></div>
         <div class="modelInfo fadelogIn" v-if='modelShow'>
             <div @click='change(index)' v-for='(item,index) in modelInfo'>{{item.select}}</div>
-
         </div>
         <div class="ensure" v-if='hint'>
 
-            <div class="icon"></div>
+            <div class="icon">
+                <svg class="icon" aria-hidden="true" style="width: 3rem;height:3rem;">
+                            <use xlink:href="#icontijiaochenggong"></use>
+                    </svg>
+            </div>
             <div class="">提交成功</div>
             <div class="notice">商家将尽快处理您的售后申请请注意查看售后订单状态</div>
             <div class="btn" @click='know'>知道了</div>
@@ -252,7 +90,10 @@
             }, {
                 select: '商品更换',
                 money: ''
-            }]
+            }],
+            imglist: ['../../img/daffodil.jpg'],
+            dialogImageUrl: '',
+            dialogVisible: false
         },
         computed: {
 
@@ -287,9 +128,18 @@
                 this.show = false
                 this.hint = false
             },
-            addImg(e) {
-                console.log(this.$refs.inputer)
+            // addImg(e) {
+            //     console.log(this.$refs.inputer)
+            //     let oFIle = document.getElementById('upload-ele').files[0];
+            // }
+            handleRemove(file, fileList) {
+                console.log(file, fileList);
+            },
+            handlePictureCardPreview(file) {
+                this.dialogImageUrl = file.url;
+                this.dialogVisible = true;
             }
+
 
         }
 
