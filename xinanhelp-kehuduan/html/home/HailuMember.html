@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/home/element.css">
+    <link rel="stylesheet" href="../../css/me/HailuMember.css">
+    <link rel="stylesheet" href="../../css/icon/iconfont.css">
+    <script src="../../js/vue.js"></script>
+    <script src="../../js/element.js"></script>
+    <script src="../../js/iconfont.js"></script>
+    <title>海露会员商店</title>
+    <style>
+        * {
+            margin: 0;
+        } 
+
+
+    </style>
+</head>
+
+<body style="height: 100%;">
+    <div class="app" style="height: 100%;"> 
+        
+        
+        <div class="HailuMemberStop">
+            
+            
+            <!-- 会员信息头部区域 -->
+            <div class="WelcomeContent">
+                <div class="WelcomeTitle">
+                    <span>Welcome</span>
+                    <p>欢迎光临海露会员商店</p>
+                </div>
+            </div>
+
+            <!-- 会员权益区域 -->
+            <div class="EquityContent">
+                <div class="EquityTitle"><p>会员权益</p></div>
+                <div class="EquityBlock">
+
+                    <!-- 第一个Box块 -->
+                    <div class="BlockBox" @click="ShopWay">
+                        <div class="BlockSvg">
+                            <svg class="icon" aria-hidden="true" style="width: 2.8rem;height:2.8rem;">
+                                <use xlink:href="#icontuikuanshouhou"></use>
+                            </svg>
+                        </div>
+                        <div class="BlockLabel">
+                            <p>心安救助80种大病救助最高150万互助金额</p>
+                        </div>
+                    </div>
+
+                    <!-- 第一个Box块 -->
+                    <div class="BlockBox" @click="ShopWay">
+                            <div class="BlockSvg">
+                                <svg class="icon" aria-hidden="true" style="width: 2.8rem;height:2.8rem;">
+                                    <use xlink:href="#icontuikuanshouhou"></use>
+                                </svg>
+                            </div>
+                            <div class="BlockLabel">
+                                <p>心安救助80种大病救助最高150万互助金额</p>
+                            </div>
+                        </div>
+                        
+                    <!-- 第一个Box块 -->
+                    <div class="BlockBox" @click="ShopWay">
+                            <div class="BlockSvg">
+                                
+                                <svg class="icon" aria-hidden="true" style="width: 2.8rem;height:2.8rem;">
+                                    <use xlink:href="#icontuikuanshouhou"></use>
+                                </svg>
+                                
+                            </div>
+                            <div class="BlockLabel">
+                                <p>心安救助80种大病救助最高150万互助金额</p>
+                            </div>
+                        </div>
+
+                    <!-- 第一个Box块 -->
+                    <div class="BlockBox" @click="ShopWay">
+                            <div class="BlockSvg">
+                                <svg class="icon" aria-hidden="true" style="width: 2.8rem;height:2.8rem;">
+                                    <use xlink:href="#icontuikuanshouhou"></use>
+                                </svg>
+                            </div>
+                            <div class="BlockLabel">
+                                <p>心安救助80种大病救助最高150万互助金额</p>
+                            </div>
+                        </div>
+
+                    <!-- 第一个Box块 -->
+                    <div class="BlockBox" @click="ShopWay">
+                            <div class="BlockSvg">
+                                <svg class="icon" aria-hidden="true" style="width: 2.8rem;height:2.8rem;">
+                                    <use xlink:href="#icontuikuanshouhou"></use>
+                                </svg>
+                            </div>
+                            <div class="BlockLabel">
+                                <p>心安救助80种大病救助最高150万互助金额</p>
+                            </div>
+                        </div>
+
+                    <!-- 第一个Box块 -->
+                    <div class="BlockBox" @click="ShopWay">
+                            <div class="BlockSvg">
+                                <svg class="icon" aria-hidden="true" style="width: 2.8rem;height:2.8rem;">
+                                    <use xlink:href="#icontuikuanshouhou"></use>
+                                </svg>
+                            </div>
+                            <div class="BlockLabel">
+                                <p>心安救助80种大病救助最高150万互助金额</p>
+                            </div>
+                        </div>
+                    
+                </div>
+
+            </div>
+
+            <!-- 弹框区域 -->
+            <div class="Wayconfirm" v-if="Wayss">
+                <div  v-if="Wayss" class="ElasticFrame">
+                    <div class="WayTanKuang" v-if="Wayss" @click="wayPaydiv">
+                        <div class="TanKuangDiv"><p>心安救助80种大病救助</p></div>
+                        <ul class="TanKuangPtitle">
+                            <li>海露会员可在心安救助APP上获得80种 重大疾病救助</li>
+                            <li>覆盖年龄为0-58周岁，最高150万获救金额</li>
+                            <li>每位会员账号仅使用一次</li>
+                            <li>不得转让</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="TanKuangIcon">
+                        <div v-if="Wayss" @click="wayPayicon">
+                        <svg class="icon" aria-hidden="true" style="width: 2.8rem;height:2.8rem;">
+                            <use xlink:href="#iconyiwancheng2"></use>
+                        </svg>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+
+
+
+            <!-- 成为会员按钮区域 -->
+            <div class="optionss">
+                <div class="ButContent">
+                <button>￥888/年 成为会员</button> 
+                </div>
+                
+            </div>
+
+
+        </div>
+    </div>
+</body> 
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {   
+            showBow: false,
+            show: false,
+            showpay: false,
+            Wayss: false,
+            showpayPrize: false
+        },
+        computed: {
+           
+        },
+        methods: {
+            ShopWay(){
+                this.Wayss = true
+             },
+             SuccessfulPayment(){
+                this.showpayPrize = true
+            },
+            wayPaydiv(){
+                this.Wayss = true
+            },
+            wayPayicon(){
+                this.Wayss = false
+            }
+        }
+
+    })
+</script>
+
+</html> 

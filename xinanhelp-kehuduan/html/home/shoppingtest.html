@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="../../css/home/pagination.css" />
     <link rel="stylesheet" href="../../css/home/shoppingtest.css" />
     <link rel="stylesheet" href="../../css/icon/iconfont.css" />
+    <link rel="stylesheet" href="../../css/home/element.css"/>
+
+    <script src="../../js/vue.js"></script>
     <script src="../../js/iconfont.js"></script>
     <script src="../../js/swiper.js"></script>
-    <script src="../../js/vue.js"></script>
-    <title>商品详情</title>
+    <script src="../../js/element.js"></script>
+    <title>商品详情</title> 
     <style>
     </style> 
   </head>
@@ -22,7 +25,7 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="../../img/daffodil.jpg" class="img" />
+              <img src="../../img/daffodil.jpg" class="img" />      
             </div>
             <div class="swiper-slide">
               <img src="../../img/daffodil.jpg" class="img" />
@@ -34,10 +37,53 @@
         <div class="describe">
           <h3>海露中航国际5A净水系统一体直饮净水机您身边的健康饮水专家</h3>
           <p class="fontsize">（免费领取安装、换新机、检测、维护）</p>
-          <h2>￥730.00</h2>
-          <P class="beforePirce">原价：￥180.00</P>
+          <div class="fontsizeLL">
+            <h2>￥730.00<span class="beforePirce">原价：￥180.00</span></h2>
+            <p><span>
+                <svg class="icon" aria-hidden="true" style="width:1.5rem;height:1.5rem;">
+                    <use xlink:href="#iconshoucang"></use>
+                </svg>
+            </span>  <span>
+                <svg class="icon" aria-hidden="true" style="width:1.5rem;height:1.5rem;">
+                    <use xlink:href="#iconiconzhengli_fenxiang"></use>
+                </svg>
+            </span></p>
+          </div>
+          
         </div>
-        <div class="PostOffice">发货地：广东珠海 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 快递：0.00元</div>
+        <div class="PostOffice">
+          <p>优惠</p>
+          <div><p><span class="vipPirce">会员价</span>海露会员立省6150元</p><p @click="drawer = true">
+            <svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;">
+              <use xlink:href="#iconshenglvehao"></use>
+          </svg></p></div>     
+        </div>
+
+        <div class="dsadadafa">
+          <div class="jdlkfjad">
+              <p>已选</p>
+              <div><p>净水机，1台<br><span class="colorhui">本产品支持365天免费换新，免费安装</span></p><p><svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;">
+                  <use xlink:href="#iconshenglvehao"></use>
+              </svg></p></div>   
+          </div>
+          <div class="jdlkfjad">
+              <p>送至</p>
+              <div><p>广东省珠海市香洲区<span class="clolor">[现货]</span></p><p><svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;">
+                  <use xlink:href="#iconshenglvehao"></use>
+              </svg></p></div>   
+          </div>
+          <div class="diadeld">
+            <div>   
+                <span><svg class="icon" aria-hidden="true" style="width:0.9rem;height:0.9rem;">
+                  <use xlink:href="#iconyiwancheng2"></use></svg>商家发货售后</span>
+                <span>商家发货售后</span>
+            </div>
+            <p  @click="dfaf = true"><svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;">
+                <use xlink:href="#iconshenglvehao"></use>
+            </svg></p>
+
+          </div>
+        </div>
         
           <div id="dddd" class="downmove" :class="navBarFixed == true ? 'navBarWrap' :''">
             <p v-for="(item,index) in list" :class="num==index?'addd':''" @click="chang(index)">{{item}}</p>
@@ -56,7 +102,7 @@
           </div>
       </div>
 
-      <div class="optionss">
+      <div class="optionss"> 
         <div class="iconimg">
           <div>
             <p>
@@ -82,8 +128,37 @@
         </div>
 
         <div class="btn shopcar">加入购物车</div>
-        <div class="btn nowshop">立即购买</div>
+        <div class="btn nowshop" >立即购买</div>
       </div>
+
+        
+        <el-drawer
+          title="优惠"
+          :visible.sync="drawer"
+          direction="btt"
+          :before-close="handleClose">
+          <div class="paddings">
+            <p class="pdians">促销</p>
+            <p><span class="btncolor">办理会员</span>购买海露直饮净水器仅需730元</p> 
+          </div>
+        </el-drawer>
+
+        <el-drawer
+        title="服务"
+        :visible.sync="dfaf"
+        direction="btt"
+        :before-close="hand" >
+        <div class="paddings flexs" >
+          <span><svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;">
+              <use xlink:href="#iconyiwancheng2"></use>
+          </svg></span>
+          <div>
+            <p>海露发货&售后</p>
+            <p>由海露发货，并提供售后</p>
+          </div>
+        </div>
+      </el-drawer>
+
     </div>
   </body>
   <script>
@@ -102,9 +177,10 @@
           title: '型号',
           content: 'DS-RO-A'
           }, 
-
-],
-        num:0
+        ],
+        num:0,
+        drawer: false,
+        dfaf: false,
       },
       mounted() {
         window.addEventListener("scroll", this.watchScroll);
@@ -122,7 +198,14 @@
         },
         chang(index){
           this.num=index
+        },
+        handleClose(done) {      
+            done();
+        },
+        hand(done) {      
+            done();
         }
+
       }
       
     });

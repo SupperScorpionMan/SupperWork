@@ -21,13 +21,70 @@ h2{
 .beforePirce{
     margin-top: 0.5rem;
     font-size: 0.8rem;
-    color: #8A8A8A;
+    color: #B9B9B9;
+    text-decoration: line-through;
 }
 .PostOffice{
      background: #fff;
      padding: 0.8rem 1rem;
      margin: 1rem 0;
      font-size: 0.9rem;
+     display: flex;
+}
+.PostOffice>p{
+    width: 15%;
+    display: flex;
+    justify-content: flex-start;
+    color: #ABABAB;
+}
+.PostOffice>div{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+.vipPirce{
+    font-size: 0.5rem;
+    border: 0.05rem solid #0CD4D3;
+    color: #0CD4D3;
+    margin-right: 0.5rem;
+}
+.dsadadafa{
+    background: #fff;
+     padding: 0.8rem 1rem;
+     margin: 1rem 0;
+     font-size: 0.9rem;
+}
+.jdlkfjad{
+    width: 100%;
+    border-bottom: 0.1rem solid #E2E2E2;
+    display: flex;
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+}
+.jdlkfjad>p{
+    width: 15%;
+    display: flex;
+    justify-content: flex-start;
+    color: #ABABAB;
+}
+.jdlkfjad>div{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+.diadeld{
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.diadeld span{
+    margin-right: 0.2rem;
+}
+.clolor{
+    color: #0CD4D3;
+}
+.colorhui{
+    color: #B9B9B9;
 }
 .details{
  background: #fff;
@@ -128,9 +185,7 @@ h2{
     width: 90%;
     margin: 0 auto;
     }
-    .specification:first-child {
 
-    }
     .specification .title {
     display: flex;
     font-size: 0.8rem;
@@ -142,3 +197,32 @@ h2{
     .specification .title:nth-child(odd) {
     background-color: #F0F1F5;
     }
+    .fontsizeLL{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .pdians{
+        color:  #707070;
+    }
+    .btncolor{
+        font-size: 0.5rem;
+    border: 0.05rem solid #0CD4D3;
+    color: #0CD4D3;
+    margin-right: 0.5rem;
+    }
+    .paddings{
+        padding:0 1rem ;
+        box-sizing: border-box;
+    }
+    .flexs{
+        display: flex;
+    }
+    .flexs span{
+        width: 10%;
+    }
+    .flexs p:nth-child(2){
+        color: #ACACAC;
+    }
+    
+ 

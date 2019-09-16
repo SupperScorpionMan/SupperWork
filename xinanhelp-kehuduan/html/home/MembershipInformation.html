@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/home/element.css">
+    <link rel="stylesheet" href="../../css/me/HailuMember.css">
+    <link rel="stylesheet" href="../../css/icon/iconfont.css">
+    <script src="../../js/vue.js"></script>
+    <script src="../../js/element.js"></script>
+    <script src="../../js/iconfont.js"></script>
+    <title>成为会员</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body style="height: 100%;">
+    <div class="app" style="height: 100%;">
+          
+    <!-- 会员资料填写 -->
+    <div class="MembershipInformation">
+            
+            <!-- 提示栏 -->
+            <div class="ShipInformationTitle">
+                <p>填写会员资料</p>
+                <span>请仔细填写会员资料，避免您的礼品无法准时到达</span>
+            </div>
+
+            <div class="ShipInformationContent">
+                <div class="ContentInput">
+                    <input type="text" placeholder="请输入会员姓名">
+                </div>
+                <div class="ContentInput">
+                    <input type="text" placeholder="请输入会员身份证号">
+                </div>
+                <div class="ContentInput">
+                    <input type="text" placeholder="请输入会员手机号">
+                </div>
+                <div class="ContentInput">
+                    <input type="text" placeholder="请输入邀请码">
+                </div>
+            </div>
+
+
+            <!-- 提交订单栏 -->
+            <div class="OrderBut">
+                <div class="OrderSpace"><p>￥888.00</p><span>/年</span></div>
+                <div class="OrderSend" @click="SendThing"><p>提交订单</p></div>
+                
+            </div>
+
+           
+        </div>
+        
+         <!-- 支付方式框 -->  
+        <div class="model" v-if='show' @click='shut'></div>
+        <div class="modelInfo" v-if='show'>
+        <div class="means">
+
+            <div class="meansName">选择支付方式</div>
+        </div>
+        <div class="means" @click='pay'>
+
+            <div class="meansName" style="color: green;">微信支付</div>
+        </div>
+        <div class="means" @click='pay'>
+
+            <div class="meansName" style="color: blue;" @click="goAlipay">支付宝支付</div> 
+        </div>
+        <div class="means" @click='pay'>
+
+            <div class="meansName" style="color: orange;">货到付款</div>
+        </div>
+        <div class="means" @click='pay'>
+
+            <div class="meansName" style="color: red;">（珠海）上门交易</div>
+        </div>
+        
+       
+        </div>
+
+    </div>
+
+    </div>
+   
+
+       
+        
+</body> 
+<script>
+    var app = new Vue({
+        el: '.app',
+        data: {   
+             show:false   
+        },
+        computed: {
+           
+        },
+        methods: {
+            
+            SendThing(){
+                this.show = true
+            },
+            shut() {
+                this.show = false
+            },
+            pay() {
+                this.show = false
+            }
+        }
+
+    })
+</script>
+
+</html> 
