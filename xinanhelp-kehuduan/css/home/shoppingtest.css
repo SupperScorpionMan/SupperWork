@@ -224,5 +224,138 @@ h2{
     .flexs p:nth-child(2){
         color: #ACACAC;
     }
+    .fasdfadf{
+        height: 100px;
+        overflow-y:auto;
+      }
+      .paddings{
+        height: 500px;
+      }
+    .mtaikuang{
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+
+    }
+    .backgroundcolor{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-height: 25rem;
+        border-radius: 0.5rem 0.5rem 0 0 ;
+        padding: 0.5rem 0.5rem;
+        box-sizing: border-box;
+        background: #fff;
+
+    }
+    .shoppings{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .imgg{
+        width: 25%;
+        height: 5rem;
+        border-radius: 0.5rem;
+    }
+    .imgg img{
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5rem;
+
+    }
+    .shopinfo{
+        width: 70%;
+        
+    }
+    .shopinfo h4{
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+    .shopinfo h3{
+        color: #D83022;
+    }
+    .shopinfo p{
+        color: #B9B9B9;
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+    .optionsss{
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    .ulli{
+        width: 100%;
+    }
+    .ulli p{
+        color: #0F0F0F;
+        font-size: 0.9rem;           
+    }
+   .colroption{
+       display: flex;
+       flex-flow: row wrap;
+       width: 100%;
+       margin-top: 0.5rem;
+   }
+   .optioninfo{
+      font-size: 0.9rem;
+       background: #F1F1F1;
+       border-radius: 0.5rem;
+       padding: 0.2rem 0.8rem;
+       margin-right: 0.5rem;
+       margin-bottom: 0.5rem;
+   }
+   .naemssnum{
+       display: flex;
+       justify-content: space-between;
+   }
+   .naemssnum span{
+       font-size: 0.9rem;
+   }
+   .namess{
+       display: flex;
+   }
+   .namess div:nth-child(1){
+       width: 1.2rem;
+       height: 1.2rem;
+        border-radius:50%;  
+        border: 0.1rem solid #9597A6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+   }
+   .namess div:nth-child(3){
+    width: 1.3rem;
+    height: 1.3rem;
+     border-radius:50%;  
+     background: #0CD4D3;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #fff;
+}
+.namess p{
+    padding: 0 0.5rem;
+}
+.btnqueren{
+    width: 100%;
+    height: 2rem;
+    background: #FCAF03;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
     
  

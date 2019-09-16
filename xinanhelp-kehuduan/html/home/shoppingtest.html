@@ -12,10 +12,11 @@
 
     <script src="../../js/vue.js"></script>
     <script src="../../js/iconfont.js"></script>
-    <script src="../../js/swiper.js"></script>
+    <script src="../../js/swiper.js"></script>                   
     <script src="../../js/element.js"></script>
     <title>商品详情</title> 
     <style>
+      
     </style> 
   </head>
   <body>
@@ -62,7 +63,7 @@
         <div class="dsadadafa">
           <div class="jdlkfjad">
               <p>已选</p>
-              <div><p>净水机，1台<br><span class="colorhui">本产品支持365天免费换新，免费安装</span></p><p><svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;">
+              <div><p>净水机，1台<br><span class="colorhui">本产品支持365天免费换新，免费安装</span></p><p><svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;" @click="infodemo = true">
                   <use xlink:href="#iconshenglvehao"></use>
               </svg></p></div>   
           </div>
@@ -127,8 +128,8 @@
           </div>
         </div>
 
-        <div class="btn shopcar">加入购物车</div>
-        <div class="btn nowshop" >立即购买</div>
+        <div class="btn shopcar" @click="infodemo = true">加入购物车</div>
+        <div class="btn nowshop" @click="infodemo = true">立即购买</div>
       </div>
 
         
@@ -137,10 +138,14 @@
           :visible.sync="drawer"
           direction="btt"
           :before-close="handleClose">
-          <div class="paddings">
-            <p class="pdians">促销</p>
-            <p><span class="btncolor">办理会员</span>购买海露直饮净水器仅需730元</p> 
+          <div class="fasdfadf">
+              <div class="paddings">
+                  <p class="pdians">促销</p>
+                  <p><span class="btncolor">办理会员</span>购买海露直饮净水器仅需730元</p> 
+                </div>
+
           </div>
+          
         </el-drawer>
 
         <el-drawer
@@ -148,16 +153,67 @@
         :visible.sync="dfaf"
         direction="btt"
         :before-close="hand" >
-        <div class="paddings flexs" >
-          <span><svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;">
-              <use xlink:href="#iconyiwancheng2"></use>
-          </svg></span>
-          <div>
-            <p>海露发货&售后</p>
-            <p>由海露发货，并提供售后</p>
+        <div class="fasdfadf">
+            <div class="paddings flexs" >
+                <span><svg class="icon" aria-hidden="true" style="width:1.2rem;height:1.2rem;">
+                    <use xlink:href="#iconyiwancheng2"></use>
+                </svg></span>
+                <div>
+                  <p>海露发货&售后</p>
+                  <p>由海露发货，并提供售后</p>
+                </div>
+              </div>
+
+        </div>
+        
+      </el-drawer>
+
+
+      <div class="mtaikuang" v-if="infodemo">
+        <div class="backgroundcolor">
+          <p style="text-align: right;">
+              <span @click="infodemo = false"><svg class="icon" aria-hidden="true" style="width:1.5rem;height:1.5rem;">
+                  <use xlink:href="#iconRectangle"></use>
+              </svg>
+              </span>
+          </p>
+          <div class="shoppings">
+            <div class="imgg"><img src="../../img/daffodil.jpg" alt=""></div>
+            <div class="shopinfo">
+                <h4>海露中航国际5A净水系统一体…</h4>
+                <h3>￥730.00</h3>
+                <p>
+                  反间谍法建安费地方撒经理房间发的发反间谍法建安
+                </p>
+            </div>
+
+          </div>
+          <div class="optionsss">
+            <div class="ulli">
+              <p>颜色</p>
+              <div class="colroption">
+                <div class="optioninfo">1321</div>
+              </div>
+            </div>
+            <div class="naemssnum">
+              <span>数量</span>
+              <div class="namess">
+                <div @click="jian(numbers)">-</div>
+                <p>{{numbers}}</p>
+                <div @click="adds(numbers)">+</div>
+              </div>
+            </div>
+
+            <div class="btnqueren">
+                  确认
+            </div>
+
           </div>
         </div>
-      </el-drawer>
+      </div>
+
+
+
 
     </div>
   </body>
@@ -178,14 +234,25 @@
           content: 'DS-RO-A'
           }, 
         ],
+        numbers:1,
         num:0,
         drawer: false,
         dfaf: false,
+        infodemo:false
       },
       mounted() {
         window.addEventListener("scroll", this.watchScroll);
       },
       methods:{
+        jian(n){
+          if(n>1){
+            this.numbers=n-1
+          }
+
+        },
+        adds(n){
+          this.numbers=n+1
+        },
         watchScroll() {
           var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
           var dsfdf = document.getElementsByClassName("heightbox")[0].offsetTop
