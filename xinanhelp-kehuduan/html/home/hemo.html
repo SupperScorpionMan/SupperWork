@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en" style="height: 100%; ">
 
 <head>
     <meta charset="UTF-8">
@@ -9,19 +9,36 @@
     <link rel="stylesheet" href="../../css/home/pagination.css">
     <link rel="stylesheet" href="../../css/home/home.css">
     <link rel="stylesheet" href="../../css/icon/iconfont.css">
+    <link rel="stylesheet" href="../../css/home/element.css">
     <script src="../../js/iconfont.js"></script>
     <script src="../../js/swiper.js"></script>
     <script src="../../js/vue.js"></script>
+    <script src="../../js/element.js"></script>
     <title>海露会员商店</title>
-    <style style="height: 100%;">
-        * {
-            margin: 0;
-        }
+    <style>
+        
     </style>
 </head>
 
 <body style="height: 100%;">
+    
     <div class="app" style="height: 100%;">
+        <!-- 头部 -->
+    <div class="navBar">
+            <div class="positions">
+                    <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;margin-right:0.3rem;">
+                            <use xlink:href="#icondizhi1"></use>
+                    </svg>
+                    <span style="font-size: 0.9rem;">珠海</span>
+            </div>
+            <div class="inputbtn">
+                        <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;margin-right:0.3rem;" @click="search">
+                                <use xlink:href="#iconsearch"></use>
+                        </svg>
+                    <input type="text" placeholder="周边美食" class="inputs" v-model="searchText">
+    
+            </div>
+        </div>
         <!-- //轮播图 -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -33,26 +50,31 @@
 
         <!-- 内容 -->
         <div class="content">
-            <div class="first">
-                <div class="content-one" v-for='(item,index) in content'>
-                    <div class="content-oneDiv">
-                        <img :src="item.img" >
-                    </div>
-                    <p class="text">{{item.text}}</p>
-                    <div class="text-content">
-                        <p class="text-nub">￥{{item.textnub}}<span class="text-hua">￥{{item.texthua}}</span></p>
-                        <p class="text-biao">
-                            <svg class="icon" aria-hidden="true" style="width: 1rem;height:1rem;">
-                                <use xlink:href="#icongouwuche1-copy"></use>
-                            </svg>
-                        </p>
-                    </div>
-                </div>
-
-
-
+            <div class="divinfo" v-for="(item,index) in  llist">
+                <img :src="item.img">
+                <p>{{item.test}}</p>
             </div>
         </div>
+        <!-- 优惠区 -->
+        <div class="streen">
+            <div><img src="../../img/daffodil.jpg"></div>
+            <div><img src="../../img/daffodil.jpg"></div>
+            <div><img src="../../img/daffodil.jpg"></div>
+        </div>
+        <div  class="image">
+                <img src="../../img/daffodil.jpg">
+        </div>
+        <div class="shopinginfo">
+            <div class="divinfodd">
+                <img src="../../img/daffodil.jpg" >
+                <div class="infotest">
+                    <h4>云味馆(珠海印象城店)</h4>
+                    <div class="spandian"><span>停车位</span></div>
+                    <div class="positionsbottom">25元&nbsp;|&nbsp;单品牛杂</div>
+                </div>
+            </div>
+        </div>
+        
 
     </div>
 </body>
@@ -67,35 +89,26 @@
     var app = new Vue({
         el: '.app',
         data: {
-            content: [{
-                img:'../../img/daffodil.jpg',
-                text: '1中石化中石化中石化中石化中石化中石化',
-                textnub: '730.00',
-                texthua: '6900'
-            }, {
-                img:'../../img/daffodil.jpg',
-                text: '2中石化中石化中石化中石化中石化中石化',
-                textnub: '730.00',
-                texthua: '6900'
-            }, {
-                img:'../../img/daffodil.jpg',
-                text: '3中石化中石化中石化中石化中石化中石化',
-                textnub: '730.00',
-                texthua: '6900'
-            }, {
-                img:'../../img/daffodil.jpg',
-                text: '4中石化中石化中石化中石化中石化中石化',
-                textnub: '730.00',
-                texthua: '6900'
-            }
-            , {
-                img:'../../img/daffodil.jpg',
-                text: '4中石化中石化中石化中石化中石化中石化',
-                textnub: '730.00',
-                texthua: '6900'
-            }]
+            searchText:'',
+            llist:[
+                {id:1,img:'../../img/daffodil.jpg',test:'美食'},
+                {id:2,img:'../../img/daffodil.jpg',test:'百货购物'},
+                {id:3,img:'../../img/daffodil.jpg',test:'酒店住宿'},
+                {id:4,img:'../../img/daffodil.jpg',test:'旅游景点'},
+                {id:5,img:'../../img/daffodil.jpg',test:'休闲娱乐'},
+                {id:5,img:'../../img/daffodil.jpg',test:'休闲娱乐'},
+            ]
         },
+        
         methods: {
+            search(){
+                if(this.searchText.length==0){
+                    this.$message('请输入搜索内容');
+                }else{
+                    this.searchText=''
+                }
+                
+            }
 
         }
     })

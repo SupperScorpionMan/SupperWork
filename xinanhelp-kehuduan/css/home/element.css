@@ -10005,7 +10005,7 @@
 }
 
 .el-message {
-    min-width: 380px;
+    min-width: 80%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border-width: 1px;
